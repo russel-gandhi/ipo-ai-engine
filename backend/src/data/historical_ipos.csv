@@ -1,0 +1,33 @@
+company,sector,issue_size,fresh_vs_ofs_ratio,price_band,sub_retail,sub_nii,sub_qib,sub_overall,gmp_trend,actual_listing_gain_pct,source_url,listing_gain_bucket
+Gala Precision Engineering,Precision Engineering,168.0,0.8,529.0,91.95,414.62,232.54,201.41,rising,36.31,https://www.chittorgarh.com/ipo/gala-precision-engineering-ipo/1844/,high
+Poojaa Precision,Precision Engineering,159.83,1.0,301.0,120.0,250.0,80.0,140.0,rising,64.78,https://www.chittorgarh.com/ipo/poojaa-precision-ipo/,high
+Omnitech Engineering,Precision Engineering,583.0,0.72,227.0,1.5,1.1,1.0,1.2,falling,-11.01,https://www.chittorgarh.com/ipo/omnitech-engineering-ipo/,loss
+Vibhor Steel Tubes,Manufacturing,72.17,1.0,151.0,188.17,721.34,191.41,298.86,rising,181.46,https://www.chittorgarh.com/ipo/vibhor-steel-tubes-ipo/,high
+BLS E-Services,Technology,310.91,1.0,135.0,236.53,300.05,123.3,162.38,rising,125.93,https://www.chittorgarh.com/ipo/bls-e-services-ipo/,high
+Bajaj Housing Finance,Financial Services,6560.0,0.54,70.0,7.04,41.51,209.36,63.61,rising,114.29,https://www.chittorgarh.com/ipo/bajaj-housing-finance-ipo/,high
+Unicommerce eSolutions,Technology,276.57,0.0,108.0,130.99,252.46,138.75,168.35,rising,117.59,https://www.chittorgarh.com/ipo/unicommerce-esolutions-ipo/,high
+Deepak Builders,Infrastructure,260.04,0.83,203.0,39.79,82.28,13.91,41.54,falling,-20.2,https://www.chittorgarh.com/ipo/deepak-builders-ipo/,loss
+Mamata Machinery,Manufacturing,500.0,0.5,243.0,50.0,100.0,70.0,80.0,rising,146.91,https://www.investorgain.com/ipo/mamata-machinery-ipo/,high
+Carraro India,Manufacturing,400.0,1.0,300.0,2.5,5.0,3.0,3.5,falling,-5.5,https://www.investorgain.com/ipo/carraro-india-ipo/,loss
+Tata Technologies,Technology,3042.51,0.0,500.0,16.5,62.11,203.41,69.43,rising,140.0,https://www.chittorgarh.com/ipo/tata-technologies-ipo/,high
+IREDA,Financial Services,2150.21,0.6,32.0,7.73,24.16,104.57,38.8,rising,56.25,https://www.chittorgarh.com/ipo/ireda-ipo/,high
+DOMS Industries,Consumer Goods,1200.0,0.29,790.0,69.65,66.51,115.97,93.52,rising,77.2,https://www.chittorgarh.com/ipo/doms-industries-ipo/,high
+Inox India,Manufacturing,1459.32,0.0,660.0,15.3,53.2,147.8,61.28,rising,43.9,https://www.chittorgarh.com/ipo/inox-india-ipo/,high
+JSW Infrastructure,Infrastructure,2800.0,1.0,119.0,10.32,15.99,57.09,37.37,rising,20.16,https://www.chittorgarh.com/ipo/jsw-infrastructure-ipo/,moderate
+Ideaforge Technology,Aerospace & Defense,567.24,0.42,672.0,85.2,80.58,125.81,106.06,rising,94.0,https://www.chittorgarh.com/ipo/ideaforge-technology-ipo/,high
+Cello World,Consumer Goods,1900.0,0.0,648.0,3.06,24.42,108.98,38.9,flat,28.24,https://www.chittorgarh.com/ipo/cello-world-ipo/,high
+Netweb Technologies,Technology,631.0,0.33,500.0,19.15,81.81,228.91,90.36,rising,89.4,https://www.chittorgarh.com/ipo/netweb-technologies-ipo/,high
+Aeroflex Industries,Manufacturing,351.0,0.46,108.0,34.41,126.13,194.73,97.11,rising,51.0,https://www.chittorgarh.com/ipo/aeroflex-industries-ipo/,high
+SBFC Finance,Financial Services,1025.0,0.58,57.0,10.99,49.09,192.9,70.16,rising,43.8,https://www.chittorgarh.com/ipo/sbfc-finance-ipo/,high
+Mankind Pharma,Healthcare,4326.36,0.0,1080.0,0.92,3.8,49.16,15.32,rising,20.37,https://www.chittorgarh.com/ipo/mankind-pharma-ipo/,moderate
+Utkarsh Small Finance Bank,Financial Services,500.0,1.0,25.0,72.11,81.64,124.85,101.91,rising,59.8,https://www.chittorgarh.com/ipo/utkarsh-small-finance-bank-ipo/,high
+Yatra Online,Technology,775.0,0.77,142.0,2.11,0.42,2.05,1.61,falling,-4.2,https://www.chittorgarh.com/ipo/yatra-online-ipo/,loss
+RR Kabel,Manufacturing,1964.0,0.09,1035.0,2.13,13.23,52.26,18.69,flat,14.0,https://www.chittorgarh.com/ipo/rr-kabel-ipo/,moderate
+TVS Supply Chain,Logistics,880.0,0.68,197.0,7.61,2.35,1.35,2.78,falling,4.0,https://www.chittorgarh.com/ipo/tvs-supply-chain-ipo/,flat
+Honasa Consumer,Consumer Goods,1701.0,0.21,324.0,1.35,4.02,11.5,7.61,flat,2.0,https://www.chittorgarh.com/ipo/honasa-consumer-ipo/,flat
+Fedbank Financial,Financial Services,1092.0,0.55,140.0,1.82,1.45,3.51,2.2,falling,-1.4,https://www.chittorgarh.com/ipo/fedbank-financial-ipo/,loss
+Muthoot Microfin,Financial Services,960.0,0.79,291.0,7.61,13.2,17.47,11.52,flat,-5.15,https://www.chittorgarh.com/ipo/muthoot-microfin-ipo/,loss
+Signature Global,Real Estate,730.0,0.83,385.0,6.82,13.54,12.71,11.88,rising,15.58,https://www.chittorgarh.com/ipo/signature-global-ipo/,moderate
+Sai Silks,Consumer Goods,1201.0,0.5,222.0,0.91,2.47,12.35,4.4,falling,4.05,https://www.chittorgarh.com/ipo/sai-silks-ipo/,flat
+Zaggle Prepaid,Technology,392.0,1.0,164.0,5.94,8.85,16.73,12.57,flat,0.0,https://www.chittorgarh.com/ipo/zaggle-prepaid-ipo/,flat
+SAMHI Hotels,Hospitality,1370.0,0.87,126.0,1.11,1.22,8.82,5.33,falling,7.14,https://www.chittorgarh.com/ipo/samhi-hotels-ipo/,moderate
