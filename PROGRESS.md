@@ -14,3 +14,11 @@
 - [x] Added `source_url` for strict auditability per AGENT_RULES.
 
 **Status:** Completed
+
+## Stage 2 - Allotment Calculator
+- [x] Built pure, deterministic lottery math for allotment odds.
+- [x] Implemented output payload to naturally support the `EXPLAIN_LAYER_COPY.md` analogy ("raffle ticket").
+- [x] Created unit tests explicitly verifying Indo-MIM's 3.07x subscription.
+- [x] Documented the approximation of SEBI's true algorithm limits in the explain text.
+
+**Status:** Completed
