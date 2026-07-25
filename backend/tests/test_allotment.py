@@ -1,33 +1,57 @@
 import pytest
-from backend.src.allotment.calculator import calculate_allotment_odds
+from backend.src.allotment.calculator import calculate_sebi_allotment_odds, validate_pan
 
-def test_calculate_allotment_odds_undersubscribed():
-    # If subscription is 0.5x, odds should be 100%
-    res = calculate_allotment_odds("Retail", 1, 0.5)
+def test_pan_validation():
+    # Valid PAN
+    assert validate_pan("ABCDE1234F") == "ABCDE1234F"
+    assert validate_pan(" abcde1234f ") == "ABCDE1234F"
+    
+    # Invalid PANs
+    with pytest.raises(ValueError, match="Invalid PAN layout"):
+        validate_pan("ABCD12345F")
+    
+    with pytest.raises(ValueError, match="Invalid PAN layout"):
+        validate_pan("12345ABCDE")
+
+def test_retail_oversubscribed_with_spillover():
+    ipo_data = {
+        "retail_shares_quota": 100000,
+        "shni_shares_quota": 50000,
+        "bhni_shares_quota": 50000,
+        "qib_shares_quota": 200000,
+        "employee_shares_quota": 10000,
+        "qib_subscription_multiple": 0.5, # Undersubscribed (100k shares spillover)
+        "employee_subscription_multiple": 0.5, # Undersubscribed (5k shares spillover)
+        "retail_gross_applications": 50000,
+        "min_lot_shares_retail": 10
+    }
+    
+    # Adjusted retail shares = 100k + 100k + 5k = 205k
+    # L_R = floor(205000 / 10) = 20500 lots
+    # N_R = 50000 * 0.97 = 48500 unique valid apps
+    # P_R = (20500 / 48500) * 100 = 42.268%
+    
+    res = calculate_sebi_allotment_odds("ABCDE1234F", "Retail", 15000, ipo_data)
+    
+    assert res["probability_pct"] == 42.27
+    assert res["masked_pan"] == "⁕⁕⁕⁕⁕⁕234F"
+    assert "Applying for multiple lots" in res["guardrail"]
+    assert "volatile memory" in res["privacy_note"]
+    
+    print("Test Retail Oversubscribed with Spillover Passed:", res)
+
+def test_qib_always_100_percent():
+    res = calculate_sebi_allotment_odds("QWERT9876A", "QIB", 5000000, {})
     assert res["probability_pct"] == 100.0
-    assert res["lots_applied"] == 1
+    assert "strictly proportional" in res["explain_text"]
 
-def test_calculate_allotment_odds_indo_mim():
-    # Indo-MIM Limited actual current numbers: ~3.07x overall subscription
-    res = calculate_allotment_odds("Retail", 1, 3.07)
-    
-    # 1 / 3.07 = 0.3257 -> ~32.57%
-    assert res["probability_pct"] == 32.57
-    assert "3.07x subscription" in res["explain_text"]
-    assert "roughly 32.57%" in res["explain_text"]
-    assert "33 out of 100 raffle tickets" in res["explain_text"]
-    assert "approximates the real SEBI lottery algorithm" in res["explain_text"]
-    
-    print("Indo-MIM Retail Test Passed:", res)
-
-def test_calculate_allotment_odds_highly_oversubscribed():
-    # e.g., Vibhor Steel Tubes Retail was 188.17x
-    res = calculate_allotment_odds("Retail", 1, 188.17)
-    # 1 / 188.17 = 0.00531 -> 0.53%
-    assert res["probability_pct"] == 0.53
-    print("Vibhor Steel Tubes Retail Test Passed:", res)
+def test_invalid_pan_returns_error():
+    res = calculate_sebi_allotment_odds("INVALIDPAN", "Retail", 15000, {})
+    assert "error" in res
+    assert "Invalid PAN layout" in res["error"]
 
 if __name__ == "__main__":
-    test_calculate_allotment_odds_undersubscribed()
-    test_calculate_allotment_odds_indo_mim()
-    test_calculate_allotment_odds_highly_oversubscribed()
+    test_pan_validation()
+    test_retail_oversubscribed_with_spillover()
+    test_qib_always_100_percent()
+    test_invalid_pan_returns_error()
