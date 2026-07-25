@@ -101,3 +101,10 @@ After implementing the model or allotment calculator:
   plainly and propose the fallback (allotment calculator + honestly-labeled
   "insufficient data" state) rather than quietly shipping something
   fabricated to look complete.
+
+## 9. Strict SEBI Compliance & Future Licensing Mandate
+**CRITICAL DIRECTIVE:** This system is being built with the explicit goal of strict SEBI compliance to support future SEBI registration/licensing (e.g., as an RIA or RA).
+- The system must NEVER output "half-baked" math, generic estimations, or unverified probability models.
+- All algorithms (especially Allotment Engines) must mirror official, real-world SEBI registrar formulas (including technical rejection buffers, category-specific lot limits, fractional rounding floors, and spillover pooling).
+- The platform must maintain strict Data Privacy (Zero-Discovery Protocol for PANs) and never persist sensitive financial identities.
+- If a feature cannot be built to strict SEBI regulatory standards, it must be omitted rather than approximated. Do not cut corners to make a feature "work" for a demo.
