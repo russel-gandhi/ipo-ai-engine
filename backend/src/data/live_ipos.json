@@ -1,0 +1,145 @@
+{
+    "last_updated": "2026-07-29T17:49:16.459459+00:00",
+    "ipos": [
+        {
+            "name": "Ardee Industries",
+            "gmp": 5.0,
+            "price_band": 53.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 9.43
+        },
+        {
+            "name": "Aegeus Technologies",
+            "gmp": 0.0,
+            "price_band": 105.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0
+        },
+        {
+            "name": "Anawil Wire & Engineering",
+            "gmp": 35.0,
+            "price_band": 270.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 12.96
+        },
+        {
+            "name": "Fusion Klassroom",
+            "gmp": 0.0,
+            "price_band": 159.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0
+        },
+        {
+            "name": "G.V. Electricals",
+            "gmp": 22.0,
+            "price_band": 130.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 16.92
+        },
+        {
+            "name": "Oneindig Technologies",
+            "gmp": 0.0,
+            "price_band": 96.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0
+        },
+        {
+            "name": "Dhaval Packaging",
+            "gmp": 8.0,
+            "price_band": 97.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 8.25
+        },
+        {
+            "name": "MV Electrosystems",
+            "gmp": 105.0,
+            "price_band": 425.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 24.71
+        },
+        {
+            "name": "Juniper Green Energy",
+            "gmp": 17.0,
+            "price_band": 225.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 7.56
+        },
+        {
+            "name": "H.R. Hygiene Products",
+            "gmp": 2.0,
+            "price_band": 88.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 2.27
+        },
+        {
+            "name": "Manipal Health",
+            "gmp": 10.0,
+            "price_band": 590.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 1.69
+        },
+        {
+            "name": "Poojaa Precision",
+            "gmp": 271.0,
+            "price_band": 301.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 90.03
+        },
+        {
+            "name": "Propshop Events",
+            "gmp": 0.0,
+            "price_band": 69.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0
+        },
+        {
+            "name": "Advance Technoforge",
+            "gmp": 0.0,
+            "price_band": 95.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0
+        },
+        {
+            "name": "Silverstorm Parks",
+            "gmp": 0.0,
+            "price_band": 133.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0
+        },
+        {
+            "name": "Indo-MIM",
+            "gmp": 170.0,
+            "price_band": 485.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 35.05
+        },
+        {
+            "name": "Lohia Corp",
+            "gmp": 17.0,
+            "price_band": 425.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 4.0
+        },
+        {
+            "name": "Xtranet Technologies",
+            "gmp": 9.0,
+            "price_band": 127.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 7.09
+        },
+        {
+            "name": "Shree Balaji Textiles",
+            "gmp": 56.0,
+            "price_band": 70.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 80.0
+        },
+        {
+            "name": "Cube Highways Trust",
+            "gmp": 2.0,
+            "price_band": 152.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 1.32
+        }
+    ]
+}

@@ -1,33 +1,212 @@
-company,sector,issue_size,fresh_vs_ofs_ratio,price_band,sub_retail,sub_nii,sub_qib,sub_overall,gmp_trend,actual_listing_gain_pct,source_url,listing_gain_bucket
-Gala Precision Engineering,Precision Engineering,168.0,0.8,529.0,91.95,414.62,232.54,201.41,rising,36.31,https://www.chittorgarh.com/ipo/gala-precision-engineering-ipo/1844/,high
-Poojaa Precision,Precision Engineering,159.83,1.0,301.0,120.0,250.0,80.0,140.0,rising,64.78,https://www.chittorgarh.com/ipo/poojaa-precision-ipo/,high
-Omnitech Engineering,Precision Engineering,583.0,0.72,227.0,1.5,1.1,1.0,1.2,falling,-11.01,https://www.chittorgarh.com/ipo/omnitech-engineering-ipo/,loss
-Vibhor Steel Tubes,Manufacturing,72.17,1.0,151.0,188.17,721.34,191.41,298.86,rising,181.46,https://www.chittorgarh.com/ipo/vibhor-steel-tubes-ipo/,high
-BLS E-Services,Technology,310.91,1.0,135.0,236.53,300.05,123.3,162.38,rising,125.93,https://www.chittorgarh.com/ipo/bls-e-services-ipo/,high
-Bajaj Housing Finance,Financial Services,6560.0,0.54,70.0,7.04,41.51,209.36,63.61,rising,114.29,https://www.chittorgarh.com/ipo/bajaj-housing-finance-ipo/,high
-Unicommerce eSolutions,Technology,276.57,0.0,108.0,130.99,252.46,138.75,168.35,rising,117.59,https://www.chittorgarh.com/ipo/unicommerce-esolutions-ipo/,high
-Deepak Builders,Infrastructure,260.04,0.83,203.0,39.79,82.28,13.91,41.54,falling,-20.2,https://www.chittorgarh.com/ipo/deepak-builders-ipo/,loss
-Mamata Machinery,Manufacturing,500.0,0.5,243.0,50.0,100.0,70.0,80.0,rising,146.91,https://www.investorgain.com/ipo/mamata-machinery-ipo/,high
-Carraro India,Manufacturing,400.0,1.0,300.0,2.5,5.0,3.0,3.5,falling,-5.5,https://www.investorgain.com/ipo/carraro-india-ipo/,loss
-Tata Technologies,Technology,3042.51,0.0,500.0,16.5,62.11,203.41,69.43,rising,140.0,https://www.chittorgarh.com/ipo/tata-technologies-ipo/,high
-IREDA,Financial Services,2150.21,0.6,32.0,7.73,24.16,104.57,38.8,rising,56.25,https://www.chittorgarh.com/ipo/ireda-ipo/,high
-DOMS Industries,Consumer Goods,1200.0,0.29,790.0,69.65,66.51,115.97,93.52,rising,77.2,https://www.chittorgarh.com/ipo/doms-industries-ipo/,high
-Inox India,Manufacturing,1459.32,0.0,660.0,15.3,53.2,147.8,61.28,rising,43.9,https://www.chittorgarh.com/ipo/inox-india-ipo/,high
-JSW Infrastructure,Infrastructure,2800.0,1.0,119.0,10.32,15.99,57.09,37.37,rising,20.16,https://www.chittorgarh.com/ipo/jsw-infrastructure-ipo/,moderate
-Ideaforge Technology,Aerospace & Defense,567.24,0.42,672.0,85.2,80.58,125.81,106.06,rising,94.0,https://www.chittorgarh.com/ipo/ideaforge-technology-ipo/,high
-Cello World,Consumer Goods,1900.0,0.0,648.0,3.06,24.42,108.98,38.9,flat,28.24,https://www.chittorgarh.com/ipo/cello-world-ipo/,high
-Netweb Technologies,Technology,631.0,0.33,500.0,19.15,81.81,228.91,90.36,rising,89.4,https://www.chittorgarh.com/ipo/netweb-technologies-ipo/,high
-Aeroflex Industries,Manufacturing,351.0,0.46,108.0,34.41,126.13,194.73,97.11,rising,51.0,https://www.chittorgarh.com/ipo/aeroflex-industries-ipo/,high
-SBFC Finance,Financial Services,1025.0,0.58,57.0,10.99,49.09,192.9,70.16,rising,43.8,https://www.chittorgarh.com/ipo/sbfc-finance-ipo/,high
-Mankind Pharma,Healthcare,4326.36,0.0,1080.0,0.92,3.8,49.16,15.32,rising,20.37,https://www.chittorgarh.com/ipo/mankind-pharma-ipo/,moderate
-Utkarsh Small Finance Bank,Financial Services,500.0,1.0,25.0,72.11,81.64,124.85,101.91,rising,59.8,https://www.chittorgarh.com/ipo/utkarsh-small-finance-bank-ipo/,high
-Yatra Online,Technology,775.0,0.77,142.0,2.11,0.42,2.05,1.61,falling,-4.2,https://www.chittorgarh.com/ipo/yatra-online-ipo/,loss
-RR Kabel,Manufacturing,1964.0,0.09,1035.0,2.13,13.23,52.26,18.69,flat,14.0,https://www.chittorgarh.com/ipo/rr-kabel-ipo/,moderate
-TVS Supply Chain,Logistics,880.0,0.68,197.0,7.61,2.35,1.35,2.78,falling,4.0,https://www.chittorgarh.com/ipo/tvs-supply-chain-ipo/,flat
-Honasa Consumer,Consumer Goods,1701.0,0.21,324.0,1.35,4.02,11.5,7.61,flat,2.0,https://www.chittorgarh.com/ipo/honasa-consumer-ipo/,flat
-Fedbank Financial,Financial Services,1092.0,0.55,140.0,1.82,1.45,3.51,2.2,falling,-1.4,https://www.chittorgarh.com/ipo/fedbank-financial-ipo/,loss
-Muthoot Microfin,Financial Services,960.0,0.79,291.0,7.61,13.2,17.47,11.52,flat,-5.15,https://www.chittorgarh.com/ipo/muthoot-microfin-ipo/,loss
-Signature Global,Real Estate,730.0,0.83,385.0,6.82,13.54,12.71,11.88,rising,15.58,https://www.chittorgarh.com/ipo/signature-global-ipo/,moderate
-Sai Silks,Consumer Goods,1201.0,0.5,222.0,0.91,2.47,12.35,4.4,falling,4.05,https://www.chittorgarh.com/ipo/sai-silks-ipo/,flat
-Zaggle Prepaid,Technology,392.0,1.0,164.0,5.94,8.85,16.73,12.57,flat,0.0,https://www.chittorgarh.com/ipo/zaggle-prepaid-ipo/,flat
-SAMHI Hotels,Hospitality,1370.0,0.87,126.0,1.11,1.22,8.82,5.33,falling,7.14,https://www.chittorgarh.com/ipo/samhi-hotels-ipo/,moderate
+company,sector,issue_size,fresh_vs_ofs_ratio,price_band,sub_retail,sub_nii,sub_qib,sub_overall,gmp_trend,actual_listing_gain_pct,source_url,listing_gain_bucket,data_source,is_sme,listing_date,anchor_allocation_pct,relative_issue_size,gmp_trajectory,market_regime_nifty_30d
+Gala Precision Engineering,Precision Engineering,168.0,0.8,529.0,91.95,414.62,232.54,201.41,rising,36.31,https://www.chittorgarh.com/ipo/gala-precision-engineering-ipo/1844/,high,real_scraped,False,2019-01-15,11.88,0.87,3.57,7.04
+Poojaa Precision,Precision Engineering,159.83,1.0,301.0,120.0,250.0,80.0,140.0,rising,64.78,https://www.chittorgarh.com/ipo/poojaa-precision-ipo/,high,real_scraped,False,2019-01-23,24.92,1.65,4.46,-2.16
+Omnitech Engineering,Precision Engineering,583.0,0.72,227.0,1.5,1.1,1.0,1.2,falling,-11.01,https://www.chittorgarh.com/ipo/omnitech-engineering-ipo/,loss,real_scraped,True,2019-02-01,25.2,1.17,-3.27,7.33
+Vibhor Steel Tubes,Manufacturing,72.17,1.0,151.0,188.17,721.34,191.41,298.86,rising,181.46,https://www.chittorgarh.com/ipo/vibhor-steel-tubes-ipo/,high,real_scraped,False,2019-02-12,18.62,1.73,4.36,7.44
+BLS E-Services,Technology,310.91,1.0,135.0,236.53,300.05,123.3,162.38,rising,125.93,https://www.chittorgarh.com/ipo/bls-e-services-ipo/,high,real_scraped,True,2019-02-20,22.25,1.72,1.49,4.1
+Bajaj Housing Finance,Financial Services,6560.0,0.54,70.0,7.04,41.51,209.36,63.61,rising,114.29,https://www.chittorgarh.com/ipo/bajaj-housing-finance-ipo/,high,real_scraped,True,2019-03-02,20.75,0.78,1.44,4.05
+Unicommerce eSolutions,Technology,276.57,0.0,108.0,130.99,252.46,138.75,168.35,rising,117.59,https://www.chittorgarh.com/ipo/unicommerce-esolutions-ipo/,high,real_scraped,False,2019-03-06,38.02,1.75,0.71,-4.81
+Deepak Builders,Infrastructure,260.04,0.83,203.0,39.79,82.28,13.91,41.54,falling,-20.2,https://www.chittorgarh.com/ipo/deepak-builders-ipo/,loss,real_scraped,False,2019-03-19,25.78,0.78,-2.81,0.57
+Mamata Machinery,Manufacturing,500.0,0.5,243.0,50.0,100.0,70.0,80.0,rising,146.91,https://www.investorgain.com/ipo/mamata-machinery-ipo/,high,real_scraped,False,2019-03-25,16.19,1.36,3.5,4.34
+Carraro India,Manufacturing,400.0,1.0,300.0,2.5,5.0,3.0,3.5,falling,-5.5,https://www.investorgain.com/ipo/carraro-india-ipo/,loss,real_scraped,False,2019-04-01,13.76,1.86,-2.02,2.96
+Tata Technologies,Technology,3042.51,0.0,500.0,16.5,62.11,203.41,69.43,rising,140.0,https://www.chittorgarh.com/ipo/tata-technologies-ipo/,high,real_scraped,True,2019-04-14,44.31,1.74,1.97,6.21
+IREDA,Financial Services,2150.21,0.6,32.0,7.73,24.16,104.57,38.8,rising,56.25,https://www.chittorgarh.com/ipo/ireda-ipo/,high,real_scraped,False,2019-04-18,31.25,0.72,3.61,-4.29
+DOMS Industries,Consumer Goods,1200.0,0.29,790.0,69.65,66.51,115.97,93.52,rising,77.2,https://www.chittorgarh.com/ipo/doms-industries-ipo/,high,real_scraped,True,2019-04-23,24.66,0.79,0.55,3.11
+Inox India,Manufacturing,1459.32,0.0,660.0,15.3,53.2,147.8,61.28,rising,43.9,https://www.chittorgarh.com/ipo/inox-india-ipo/,high,real_scraped,False,2019-04-27,29.92,1.2,3.61,1.66
+JSW Infrastructure,Infrastructure,2800.0,1.0,119.0,10.32,15.99,57.09,37.37,rising,20.16,https://www.chittorgarh.com/ipo/jsw-infrastructure-ipo/,moderate,real_scraped,True,2019-04-30,20.81,0.98,3.83,6.02
+Ideaforge Technology,Aerospace & Defense,567.24,0.42,672.0,85.2,80.58,125.81,106.06,rising,94.0,https://www.chittorgarh.com/ipo/ideaforge-technology-ipo/,high,real_scraped,False,2019-05-11,26.38,1.47,0.48,-1.47
+Cello World,Consumer Goods,1900.0,0.0,648.0,3.06,24.42,108.98,38.9,flat,28.24,https://www.chittorgarh.com/ipo/cello-world-ipo/,high,real_scraped,True,2019-05-23,14.47,2.49,0.07,4.24
+Netweb Technologies,Technology,631.0,0.33,500.0,19.15,81.81,228.91,90.36,rising,89.4,https://www.chittorgarh.com/ipo/netweb-technologies-ipo/,high,real_scraped,True,2019-05-28,20.87,2.98,0.98,-1.37
+Aeroflex Industries,Manufacturing,351.0,0.46,108.0,34.41,126.13,194.73,97.11,rising,51.0,https://www.chittorgarh.com/ipo/aeroflex-industries-ipo/,high,real_scraped,False,2019-06-03,21.24,1.1,0.62,3.01
+SBFC Finance,Financial Services,1025.0,0.58,57.0,10.99,49.09,192.9,70.16,rising,43.8,https://www.chittorgarh.com/ipo/sbfc-finance-ipo/,high,real_scraped,False,2019-06-17,24.14,1.66,4.1,-1.27
+Mankind Pharma,Healthcare,4326.36,0.0,1080.0,0.92,3.8,49.16,15.32,rising,20.37,https://www.chittorgarh.com/ipo/mankind-pharma-ipo/,moderate,real_scraped,True,2019-06-30,24.97,1.6,4.17,-2.46
+Utkarsh Small Finance Bank,Financial Services,500.0,1.0,25.0,72.11,81.64,124.85,101.91,rising,59.8,https://www.chittorgarh.com/ipo/utkarsh-small-finance-bank-ipo/,high,real_scraped,True,2019-07-04,30.01,1.81,4.04,1.12
+Yatra Online,Technology,775.0,0.77,142.0,2.11,0.42,2.05,1.61,falling,-4.2,https://www.chittorgarh.com/ipo/yatra-online-ipo/,loss,real_scraped,False,2019-07-18,31.72,1.15,-3.99,5.89
+RR Kabel,Manufacturing,1964.0,0.09,1035.0,2.13,13.23,52.26,18.69,flat,14.0,https://www.chittorgarh.com/ipo/rr-kabel-ipo/,moderate,real_scraped,False,2019-08-01,35.45,0.96,0.1,1.71
+TVS Supply Chain,Logistics,880.0,0.68,197.0,7.61,2.35,1.35,2.78,falling,4.0,https://www.chittorgarh.com/ipo/tvs-supply-chain-ipo/,flat,real_scraped,False,2019-08-12,40.33,1.2,-4.21,4.22
+Honasa Consumer,Consumer Goods,1701.0,0.21,324.0,1.35,4.02,11.5,7.61,flat,2.0,https://www.chittorgarh.com/ipo/honasa-consumer-ipo/,flat,real_scraped,False,2019-08-17,12.55,0.59,-0.03,5.94
+Fedbank Financial,Financial Services,1092.0,0.55,140.0,1.82,1.45,3.51,2.2,falling,-1.4,https://www.chittorgarh.com/ipo/fedbank-financial-ipo/,loss,real_scraped,False,2019-08-23,34.7,2.2,-3.38,4.69
+Muthoot Microfin,Financial Services,960.0,0.79,291.0,7.61,13.2,17.47,11.52,flat,-5.15,https://www.chittorgarh.com/ipo/muthoot-microfin-ipo/,loss,real_scraped,False,2019-09-06,19.64,0.96,0.01,-2.0
+Signature Global,Real Estate,730.0,0.83,385.0,6.82,13.54,12.71,11.88,rising,15.58,https://www.chittorgarh.com/ipo/signature-global-ipo/,moderate,real_scraped,False,2019-09-14,15.92,1.1,4.16,5.99
+Sai Silks,Consumer Goods,1201.0,0.5,222.0,0.91,2.47,12.35,4.4,falling,4.05,https://www.chittorgarh.com/ipo/sai-silks-ipo/,flat,real_scraped,True,2019-09-17,18.48,2.66,-4.4,-3.78
+Zaggle Prepaid,Technology,392.0,1.0,164.0,5.94,8.85,16.73,12.57,flat,0.0,https://www.chittorgarh.com/ipo/zaggle-prepaid-ipo/,flat,real_scraped,False,2019-10-01,37.87,2.38,-0.01,2.11
+SAMHI Hotels,Hospitality,1370.0,0.87,126.0,1.11,1.22,8.82,5.33,falling,7.14,https://www.chittorgarh.com/ipo/samhi-hotels-ipo/,moderate,real_scraped,False,2019-10-12,10.91,2.14,-1.16,4.54
+Synoptics Technologies Limited,Technology,54.03,0.5,237.0,2751600.0,2799000.0,0.0,5761800.0,flat,0.0,https://www.chittorgarh.com/ipo/synoptics-technologies-ipo/1451/,flat,real_scraped,False,2019-10-24,12.65,1.11,0.05,-3.05
+Affle (India) Limited,Other,459.0,0.5,745.0,6751940.0,0.0,101525100.0,292146020.0,flat,0.0,https://www.chittorgarh.com/ipo/affle-ipo/1005/,flat,real_scraped,False,2019-11-01,19.04,2.0,-0.06,-0.43
+Tejas Networks Limited,Other,776.69,0.5,257.0,9510875.0,0.0,20411105.0,32143870.0,flat,0.0,https://www.chittorgarh.com/ipo/tejas-networks-ipo/667/,flat,real_scraped,True,2019-11-05,11.07,1.03,-0.05,-4.82
+Rashi Peripherals Limited,Other,600.0,0.5,311.0,74327712.0,0.0,584390736.0,850161936.0,flat,0.0,https://www.chittorgarh.com/ipo/rashi-peripherals-ipo/1634/,flat,real_scraped,True,2019-11-08,30.91,1.37,0.05,-4.0
+Sigachi Industries Limited,Other,125.43,0.5,163.0,216778770.0,0.0,133137000.0,548947440.0,flat,0.0,https://www.chittorgarh.com/ipo/sigachi-industries-ipo/1175/,flat,real_scraped,True,2019-11-19,43.19,2.95,-0.09,5.91
+Sealmatic India Limited,Other,56.24,0.5,225.0,12025800.0,16719600.0,3308400.0,32053800.0,flat,0.0,https://www.chittorgarh.com/ipo/sealmatic-india-ipo/1380/,flat,real_scraped,False,2019-11-22,29.36,2.18,-0.06,-2.63
+MTAR Technologies Limited,Technology,596.41,0.5,575.0,103094082.0,0.0,342273022.0,1457903122.0,flat,0.0,https://www.chittorgarh.com/ipo/mtar-technologies-ipo/1088/,flat,real_scraped,False,2019-11-29,27.86,1.49,-0.0,5.75
+Azad Engineering Limited,Manufacturing,740.0,0.5,524.0,120471708.0,0.0,504638624.0,816409468.0,flat,0.0,https://www.chittorgarh.com/ipo/azad-engineering-ipo/1597/,flat,real_scraped,False,2019-12-05,28.2,2.29,0.04,-4.5
+Jay Bee Laminations Limited,Other,88.96,0.5,146.0,181565000.0,200649000.0,82479000.0,464693000.0,flat,0.0,https://www.chittorgarh.com/ipo/jay-bee-laminations-ipo/1817/,flat,real_scraped,False,2019-12-18,10.89,2.03,-0.09,7.47
+Accent Microcell Limited,Other,78.4,0.5,140.0,763332000.0,460207000.0,126062000.0,1349601000.0,flat,0.0,https://www.chittorgarh.com/ipo/accent-microcell-ipo/1583/,flat,real_scraped,False,2019-12-25,40.15,0.64,-0.05,2.48
+Kross Limited,Other,500.0,0.5,240.0,82107344.0,0.0,102281462.0,257501624.0,flat,0.0,https://www.chittorgarh.com/ipo/kross-ipo/1839/,flat,real_scraped,False,2020-01-08,42.1,2.66,-0.03,2.23
+Mrs. Bectors Food Specialities Limited,Consumer Goods,540.54,0.5,288.0,193828350.0,0.0,667864500.0,2621042200.0,flat,0.0,https://www.chittorgarh.com/ipo/mrs-bectors-food-ipo/1077/,flat,real_scraped,False,2020-01-21,22.48,0.89,-0.09,5.96
+Suraksha Diagnostic Limited,Other,846.25,0.5,441.0,6299078.0,0.0,6667332.0,17008534.0,flat,0.0,https://www.chittorgarh.com/ipo/suraksha-diagnostic-ipo/1918/,flat,real_scraped,False,2020-01-26,34.41,1.81,-0.06,5.18
+Latent View Analytics Limited,Other,600.0,0.5,197.0,372996524.0,0.0,1362842792.0,5721882528.0,flat,0.0,https://www.chittorgarh.com/ipo/latent-view-analytics-ipo/1178/,flat,real_scraped,True,2020-02-08,28.92,1.28,0.03,3.76
+Valiant Laboratories Limited,Other,152.46,0.5,140.0,61198410.0,0.0,45361155.0,226848510.0,flat,0.0,https://www.chittorgarh.com/ipo/valiant-laboratories-ipo/1525/,flat,real_scraped,False,2020-02-14,20.17,1.38,0.0,6.96
+Enviro Infra Engineers Limited,Infrastructure,650.43,0.5,148.0,375704446.0,0.0,1377255089.0,2768312737.0,flat,0.0,https://www.chittorgarh.com/ipo/enviro-infra-engineers-ipo/1911/,flat,real_scraped,False,2020-02-25,20.25,2.97,0.1,-3.9
+Pelatro Limited,Other,55.98,0.5,200.0,11490600.0,21705000.0,7933800.0,41179800.0,flat,0.0,https://www.chittorgarh.com/ipo/pelatro-ipo/1856/,flat,real_scraped,False,2020-03-07,38.68,2.49,0.03,-4.49
+DAM Capital Advisors Limited,Financial Services,840.25,0.5,283.0,277815135.0,0.0,985397571.0,1703538349.0,flat,0.0,https://www.chittorgarh.com/ipo/dam-capital-advisors-ipo/1936/,flat,real_scraped,False,2020-03-19,44.06,1.53,-0.05,-1.47
+BLS E-Services Limited,Other,310.91,0.5,135.0,490254120.0,0.0,766713708.0,2225062008.0,flat,0.0,https://www.chittorgarh.com/ipo/bls-e-services-ipo/1632/,flat,real_scraped,False,2020-04-02,40.13,2.52,0.03,-4.03
+Tamilnad Mercantile Bank Limited,Financial Services,807.84,0.5,510.0,10264268.0,0.0,7686392.0,24940972.0,flat,0.0,https://www.chittorgarh.com/ipo/tamilnad-mercantile-bank-ipo/1287/,flat,real_scraped,False,2020-04-12,10.01,1.02,-0.05,4.03
+Bharat Road Network Limited,Other,600.65,0.5,205.0,16662250.0,0.0,29164230.0,53005154.0,flat,0.0,https://www.chittorgarh.com/ipo/bharat-road-network-ipo/703/,flat,real_scraped,False,2020-04-17,25.64,0.85,-0.06,2.79
+One Mobikwik Systems Limited,Other,572.0,0.5,279.0,290674313.0,0.0,773842188.0,1417264944.0,flat,0.0,https://www.chittorgarh.com/ipo/mobikwik-ipo/1928/,flat,real_scraped,False,2020-04-29,42.32,0.89,0.09,0.96
+Craftsman Automation Limited,Manufacturing,823.7,0.5,1490.0,6649490.0,0.0,5762030.0,14764200.0,flat,-99.93,https://www.chittorgarh.com/ipo/craftsman-automation-ipo/1095/,loss,real_scraped,False,2020-05-02,32.88,1.38,-0.02,-0.78
+Aelea Commodities Limited,Other,51.0,0.5,95.0,294542400.0,298488000.0,106303200.0,699333600.0,flat,0.0,https://www.chittorgarh.com/ipo/aelea-commodities-ipo/1770/,flat,real_scraped,False,2020-05-10,43.32,2.09,0.03,3.96
+ATC Energies System Limited,Other,63.76,0.5,118.0,4471200.0,1462800.0,853200.0,6787200.0,flat,0.0,https://www.chittorgarh.com/ipo/atc-energies-ipo/2210/,flat,real_scraped,False,2020-05-14,25.32,2.3,-0.1,-3.23
+Ganesh Infraworld Limited,Infrastructure,98.58,0.5,83.0,1027649600.0,1389468800.0,349534400.0,2766652800.0,flat,0.0,https://www.chittorgarh.com/ipo/ganesh-infraworld-ipo/1915/,flat,real_scraped,False,2020-05-24,14.97,2.11,0.03,0.65
+Western Carriers (India) Limited,Other,492.88,0.5,172.0,269992668.0,0.0,165092679.0,635712654.0,flat,0.0,https://www.chittorgarh.com/ipo/western-carriers-india-ipo/1844/,flat,real_scraped,False,2020-06-01,19.61,1.09,-0.05,4.76
+HMA Agro Industries Limited,Other,480.0,0.5,585.0,2920875.0,0.0,3015075.0,9793625.0,flat,0.0,https://www.chittorgarh.com/ipo/hma-agro-industries-ipo/1435/,flat,real_scraped,False,2020-06-05,42.54,1.68,-0.04,6.93
+Unihealth Consultancy Limited,Healthcare,56.55,0.5,132.0,35044000.0,22971000.0,12150000.0,70165000.0,flat,0.0,https://www.chittorgarh.com/ipo/unihealth-consultancy-ipo/1497/,flat,real_scraped,True,2020-06-19,37.86,2.46,-0.04,7.17
+Quadrant Future Tek Limited,Other,290.0,0.5,290.0,256457450.0,0.0,419310850.0,1077806650.0,flat,0.0,https://www.chittorgarh.com/ipo/quadrant-future-tek-ipo/1954/,flat,real_scraped,False,2020-07-03,27.44,1.75,0.09,-4.05
+East India Securities Ltd,Other,92.74,0.5,920.0,0.0,0.0,0.0,1667360.0,flat,0.0,https://www.chittorgarh.com/ipo/east-india-securities-ipo/821/,flat,real_scraped,False,2020-07-17,26.99,2.54,0.02,2.27
+eMudhra Limited,Other,412.79,0.5,256.0,15043170.0,0.0,12687152.0,30902516.0,flat,0.0,https://www.chittorgarh.com/ipo/emudhra-ipo/1254/,flat,real_scraped,False,2020-07-29,26.72,0.78,-0.04,-1.87
+Likhitha Infrastructure Ltd,Infrastructure,61.2,0.5,120.0,0.0,0.0,0.0,5100000.0,flat,0.0,https://www.chittorgarh.com/ipo/likhitha-infrastructure-ipo/1062/,flat,real_scraped,False,2020-08-03,18.45,1.8,-0.04,-3.58
+B.R.Goyal Infrastructure Limited,Infrastructure,85.21,0.5,135.0,184128000.0,229665000.0,83298000.0,497133000.0,flat,0.0,https://www.chittorgarh.com/ipo/brgoyal-ipo/1958/,flat,real_scraped,False,2020-08-06,26.43,1.28,-0.05,-2.54
+Vishnu Prakash R Punglia Limited,Other,308.88,0.5,99.0,346241700.0,0.0,1061059500.0,1925837550.0,flat,0.0,https://www.chittorgarh.com/ipo/vishnu-prakash-r-punglia-ipo/1485/,flat,real_scraped,True,2020-08-17,13.36,2.18,0.01,4.61
+Veranda Learning Solutions Limited,Other,200.0,0.5,137.0,16560300.0,0.0,16063700.0,41555000.0,flat,0.0,https://www.chittorgarh.com/ipo/veranda-learning-ipo/1236/,flat,real_scraped,False,2020-08-29,24.6,2.74,0.07,0.54
+Rolex Rings Limited,Other,731.0,0.5,900.0,69625584.0,0.0,233235472.0,741600096.0,flat,0.0,https://www.chittorgarh.com/ipo/rolex-rings-ipo/1129/,flat,real_scraped,False,2020-09-04,25.64,1.25,-0.02,-2.37
+Sirca Paints India Limited,Other,77.92,0.5,160.0,14904800.0,22410400.0,0.0,38471200.0,flat,0.0,https://www.chittorgarh.com/ipo/sirca-paints-ipo/869/,flat,real_scraped,False,2020-09-14,35.25,0.91,0.09,5.49
+Vilas Transcore Limited,Other,95.26,0.5,147.0,326166000.0,415072000.0,141122000.0,882360000.0,flat,0.0,https://www.chittorgarh.com/ipo/vilas-transcore-ipo/1731/,flat,real_scraped,False,2020-09-18,20.82,1.21,0.08,2.16
+CFF Fluid Control Limited,Other,85.8,0.5,165.0,3908000.0,6443200.0,0.0,10353600.0,flat,0.0,https://www.chittorgarh.com/ipo/cff-fluid-control-ipo/1427/,flat,real_scraped,False,2020-09-30,23.11,2.03,-0.0,-0.05
+Danish Power Limited,Manufacturing,197.9,0.5,380.0,136550400.0,202220100.0,102332100.0,441145800.0,flat,0.0,https://www.chittorgarh.com/ipo/danish-power-ipo/1892/,flat,real_scraped,False,2020-10-07,31.0,2.95,-0.0,6.5
+Chandan Healthcare Limited,Healthcare,107.36,0.5,159.0,5272800.0,17452000.0,9356800.0,32132800.0,flat,0.0,https://www.chittorgarh.com/ipo/chandan-healthcare-ipo/1982/,flat,real_scraped,False,2020-10-13,16.43,2.18,-0.01,0.09
+CSB Bank Limited,Financial Services,409.68,0.5,195.0,93403200.0,0.0,391921425.0,1004297100.0,flat,0.0,https://www.chittorgarh.com/ipo/csb-bank-ipo/1021/,flat,real_scraped,False,2020-10-26,15.27,1.33,-0.05,4.16
+Shivalic Power Control Limited,Manufacturing,64.32,0.5,100.0,491034000.0,399018000.0,207651600.0,1097703600.0,flat,0.0,https://www.chittorgarh.com/ipo/shivalic-power-control-ipo/1756/,flat,real_scraped,True,2020-11-09,15.37,2.95,-0.05,4.2
+Ethos Limited,Other,472.29,0.5,878.0,1636284.0,0.0,1258612.0,4138650.0,flat,0.0,https://www.chittorgarh.com/ipo/ethos-limited-ipo/1247/,flat,real_scraped,False,2020-11-22,22.18,2.91,0.05,7.87
+Eleganz Interiors Limited,Other,78.07,0.5,130.0,42815000.0,51721000.0,27894000.0,122430000.0,flat,0.0,https://www.chittorgarh.com/ipo/eleganz-interiors-ipo/1978/,flat,real_scraped,False,2020-11-25,32.23,2.02,0.08,-0.33
+Inox Green Energy Services Limited,Other,740.0,0.5,65.0,57005960.0,0.0,38113530.0,103739890.0,flat,0.0,https://www.chittorgarh.com/ipo/inox-green-energy-ipo/1335/,flat,real_scraped,False,2020-11-28,27.78,2.02,0.08,5.02
+S.J.S. Enterprises Limited,Other,800.0,0.5,542.0,7291755.0,0.0,4271022.0,16797537.0,flat,0.0,https://www.chittorgarh.com/ipo/sjs-enterprises-ipo/1168/,flat,real_scraped,True,2020-12-09,23.15,2.82,0.02,-2.8
+MAS Financial Services Ltd,Other,460.04,0.5,459.0,55532512.0,0.0,294737952.0,914797248.0,flat,0.0,https://www.chittorgarh.com/ipo/mas-financial-ipo/739/,flat,real_scraped,False,2020-12-21,15.5,0.68,0.08,-2.4
+Chemcon Speciality Chemicals Limited,Other,318.0,0.5,340.0,135104420.0,0.0,212124704.0,979286968.0,flat,0.0,https://www.chittorgarh.com/ipo/chemcon-ipo/1060/,flat,real_scraped,False,2020-12-30,16.16,2.95,0.07,2.42
+Agarwal Toughened Glass India Limited,Other,62.64,0.5,108.0,20624400.0,12525600.0,4941600.0,38091600.0,flat,0.0,https://www.chittorgarh.com/ipo/agarwal-toughened-glass-india-ipo/1914/,flat,real_scraped,False,2021-01-03,32.44,2.77,-0.08,4.78
+Yatharth Hospital and Trauma Care Services Limited,Healthcare,686.55,0.5,300.0,69330450.0,0.0,395317750.0,597219650.0,flat,0.0,https://www.chittorgarh.com/ipo/yatharth-hospital-ipo/1464/,flat,real_scraped,False,2021-01-17,14.58,1.75,0.01,-3.47
+SAR Televenture Limited	 FPO,Other,150.0,0.5,210.0,16255000.0,12039000.0,11848500.0,40142500.0,flat,0.0,https://www.chittorgarh.com/ipo/sar-televenture-fpo/1776/,flat,real_scraped,False,2021-01-23,31.75,1.41,0.02,6.33
+KRN Heat Exchanger and Refrigeration Limited,Other,341.95,0.5,220.0,531887980.0,0.0,786300710.0,2345988580.0,flat,0.0,https://www.chittorgarh.com/ipo/krn-heat-exchanger-ipo/1864/,flat,real_scraped,False,2021-02-05,14.53,2.42,-0.04,7.25
+Vasa Denticity Limited,Other,54.07,0.5,128.0,81534000.0,93964000.0,29885000.0,205383000.0,flat,0.0,https://www.chittorgarh.com/ipo/vasa-denticity-ipo/1422/,flat,real_scraped,False,2021-02-16,37.84,1.25,-0.1,3.4
+Virtual Galaxy Infotech Limited,Technology,93.29,0.5,142.0,294867000.0,560755000.0,161367000.0,1016989000.0,flat,0.0,https://www.chittorgarh.com/ipo/virtual-galaxy-infotech-ipo/2339/,flat,real_scraped,True,2021-02-27,29.0,0.55,-0.04,4.44
+Vital Chemtech Limited,Technology,64.64,0.5,101.0,249171600.0,186097200.0,47012400.0,482281200.0,flat,0.0,https://www.chittorgarh.com/ipo/vital-chemtech-ipo/1323/,flat,real_scraped,False,2021-03-10,18.46,2.88,-0.06,-4.04
+Khadim India Limited,Other,543.06,0.5,750.0,5919840.0,0.0,3545640.0,9659000.0,flat,0.0,https://www.chittorgarh.com/ipo/khadim-india-ipo/755/,flat,real_scraped,False,2021-03-16,35.7,0.95,-0.0,-2.68
+Tunwal E-Motors Limited,Manufacturing,115.64,0.5,59.0,154916000.0,70826000.0,0.0,229236000.0,flat,0.0,https://www.chittorgarh.com/ipo/tunwal-e-motors-ipo/1775/,flat,real_scraped,False,2021-03-22,32.43,2.23,-0.0,-2.6
+Heranba Industries Limited,Other,625.24,0.5,627.0,41324583.0,0.0,134588157.0,581501663.0,flat,0.0,https://www.chittorgarh.com/ipo/heranba-industries-ipo/1085/,flat,real_scraped,True,2021-04-04,16.91,0.64,-0.06,7.74
+Shri Ahimsa Naturals Limited,Other,73.81,0.5,119.0,72867600.0,161686800.0,24838800.0,259393200.0,flat,0.0,https://www.chittorgarh.com/ipo/shri-ahimsa-naturals-ipo/2208/,flat,real_scraped,False,2021-04-16,14.71,1.4,0.1,-4.61
+Northern Arc Capital Limited,Financial Services,777.0,0.5,263.0,324969882.0,0.0,1408133928.0,2379507465.0,flat,0.0,https://www.chittorgarh.com/ipo/northern-arc-capital-ipo/1855/,flat,real_scraped,False,2021-04-20,40.62,2.04,-0.09,2.6
+RailTel Corporation of India Limited,Other,819.24,0.5,94.0,508997680.0,0.0,1131450400.0,2594243370.0,flat,0.0,https://www.chittorgarh.com/ipo/railtel-ipo/1073/,flat,real_scraped,False,2021-04-26,28.38,1.93,0.03,2.36
+Route Mobile Ltd,Other,600.0,0.5,350.0,77129000.0,0.0,312221040.0,892341080.0,flat,0.0,https://www.chittorgarh.com/ipo/route-mobile-ipo/1058/,flat,real_scraped,False,2021-05-01,32.64,2.79,0.07,4.2
+Positron Energy Limited,Other,51.21,0.5,250.0,239853000.0,235465200.0,89971200.0,565289400.0,flat,0.0,https://www.chittorgarh.com/ipo/positron-energy-ipo/1804/,flat,real_scraped,False,2021-05-15,29.74,1.81,-0.03,-3.23
+Laxmi Organic Industries Limited,Other,600.0,0.5,130.0,327257225.0,0.0,1631902900.0,3477452570.0,flat,0.0,https://www.chittorgarh.com/ipo/laxmi-organic-ipo/1096/,flat,real_scraped,True,2021-05-23,13.75,2.3,-0.04,6.45
+Senores Pharmaceuticals Limited,Healthcare,582.11,0.5,391.0,137996126.0,0.0,434778102.0,797231982.0,flat,0.0,https://www.chittorgarh.com/ipo/senores-pharmaceuticals-ipo/1943/,flat,real_scraped,False,2021-05-28,39.16,2.14,-0.08,-2.63
+Motisons Jewellers Limited,Other,151.09,0.5,55.0,1303820500.0,0.0,741794250.0,3331208000.0,flat,0.0,https://www.chittorgarh.com/ipo/motisons-jewellers-ipo/1587/,flat,real_scraped,False,2021-06-02,30.71,2.23,0.09,-0.84
+Aimtron Electronics Limited,Other,87.02,0.5,161.0,128450400.0,155868000.0,71668800.0,355987200.0,flat,0.0,https://www.chittorgarh.com/ipo/aimtron-electronics-ipo/1734/,flat,real_scraped,False,2021-06-05,15.23,1.44,-0.01,2.56
+Radiant Cash Management Services Limited,Other,256.64,0.5,94.0,2815950.0,0.0,7934550.0,14627700.0,flat,0.0,https://www.chittorgarh.com/ipo/radiant-cash-management-ipo/1355/,flat,real_scraped,True,2021-06-11,13.78,1.01,-0.1,-0.99
+DCX Systems Limited,Other,500.0,0.5,207.0,156788424.0,0.0,688549896.0,1012754232.0,flat,0.0,https://www.chittorgarh.com/ipo/dcx-systems-ipo/1316/,flat,real_scraped,True,2021-06-25,29.03,1.57,0.07,4.93
+Tejas Cargo India Limited,Other,105.84,0.5,168.0,2268800.0,952800.0,1578400.0,4846400.0,flat,0.0,https://www.chittorgarh.com/ipo/tejas-cargo-ipo/1992/,flat,real_scraped,False,2021-06-28,31.76,1.41,-0.03,3.83
+Creative Graphics Solutions India Limited,Other,54.4,0.5,85.0,307766400.0,431235200.0,120132800.0,859134400.0,flat,0.0,https://www.chittorgarh.com/ipo/creative-graphics-solutions-india-ipo/1693/,flat,real_scraped,False,2021-07-06,10.29,1.97,-0.06,1.44
+Sahasra Electronics Solutions Limited,Other,186.16,0.5,283.0,163702000.0,244359000.0,125965600.0,534026600.0,flat,0.0,https://www.chittorgarh.com/ipo/sahasra-electronics-solutions-ipo/1872/,flat,real_scraped,False,2021-07-16,28.22,1.25,-0.05,4.17
+Grand Continent Hotels Limited,Other,74.46,0.5,113.0,2888400.0,1300800.0,3666000.0,7867200.0,flat,0.0,https://www.chittorgarh.com/ipo/grand-continent-hotels-ipo/2187/,flat,real_scraped,True,2021-07-27,13.0,0.55,0.02,-2.95
+Rikhav Securities Limited,Other,88.82,0.5,86.0,866684800.0,912302400.0,334184000.0,2113171200.0,flat,0.0,https://www.chittorgarh.com/ipo/rikhav-securities-ipo/1964/,flat,real_scraped,False,2021-08-05,30.08,1.31,-0.01,1.94
+Easy Trip Planners Limited,Other,510.0,0.5,187.0,193038240.0,0.0,637767440.0,2402782320.0,flat,0.0,https://www.chittorgarh.com/ipo/easemytrip-ipo/1089/,flat,real_scraped,True,2021-08-19,30.86,0.82,-0.06,-3.51
+Landmark Cars Limited,Other,552.0,0.5,506.0,2352364.0,0.0,19962817.0,24645882.0,flat,0.0,https://www.chittorgarh.com/ipo/landmark-cars-ipo/1338/,flat,real_scraped,True,2021-08-24,35.67,2.45,0.04,-2.25
+CLN Energy Limited,Other,72.3,0.5,250.0,6272400.0,3529200.0,587400.0,10389000.0,flat,0.0,https://www.chittorgarh.com/ipo/cln-energy-ipo/1972/,flat,real_scraped,False,2021-08-27,11.59,2.77,0.01,-4.39
+Music Broadcast Ltd,Other,488.53,0.5,333.0,51728400.0,0.0,118477260.0,415821285.0,flat,0.0,https://www.chittorgarh.com/ipo/music-broadcast-ipo/623/,flat,real_scraped,False,2021-09-04,10.07,2.37,0.04,5.99
+India Pesticides Limited,Other,800.0,0.5,296.0,109128600.0,0.0,236961400.0,560748250.0,flat,0.0,https://www.chittorgarh.com/ipo/india-pesticides-ipo/1119/,flat,real_scraped,False,2021-09-16,31.07,1.98,-0.06,-4.84
+Indian Phosphate Limited,Other,67.36,0.5,99.0,547089600.0,425486400.0,233589600.0,1206165600.0,flat,0.0,https://www.chittorgarh.com/ipo/indian-phosphate-ipo/1815/,flat,real_scraped,False,2021-09-30,30.71,1.39,-0.05,-4.78
+Capacit'e Infraprojects Limited,Infrastructure,400.0,0.5,250.0,100425660.0,0.0,428798880.0,2091789300.0,flat,0.0,https://www.chittorgarh.com/ipo/capacite-infra-ipo/711/,flat,real_scraped,True,2021-10-04,26.07,2.31,-0.03,-2.16
+Hariom Pipe Industries Limited,Other,130.05,0.5,153.0,36149848.0,0.0,4875598.0,67404596.0,flat,0.0,https://www.chittorgarh.com/ipo/hariom-pipe-industries-ipo/1240/,flat,real_scraped,False,2021-10-15,22.3,1.87,-0.02,2.83
+AGS Transact Technologies Ltd,Technology,680.0,0.5,175.0,44148575.0,0.0,21942750.0,223474265.0,flat,0.0,https://www.chittorgarh.com/ipo/ags-transact-ipo/1209/,flat,real_scraped,False,2021-10-24,18.02,1.02,0.02,2.55
+Wise Travel India Limited,Other,94.68,0.5,147.0,226649000.0,335748000.0,127065000.0,689462000.0,flat,0.0,https://www.chittorgarh.com/ipo/wti-cabs-ipo/1639/,flat,real_scraped,False,2021-10-27,17.27,2.41,0.07,-2.24
+Platinum Industries Limited,Other,235.32,0.5,171.0,245242038.0,0.0,415616400.0,953546622.0,flat,0.0,https://www.chittorgarh.com/ipo/platinum-industries-ipo/1638/,flat,real_scraped,False,2021-11-01,31.15,0.72,-0.07,0.47
+Gopal Snacks Limited,Other,650.0,0.5,401.0,23819379.0,0.0,59389588.0,108083438.0,flat,0.0,https://www.chittorgarh.com/ipo/gopal-namkeen-ipo/1667/,flat,real_scraped,False,2021-11-15,15.98,2.94,-0.07,-0.91
+Healthcare Tech 47,Healthcare,189.54,0.74,386.59,34.61,29.01,134.73,84.67,rising,74.22,https://ipowatch.in/healthcare-tech-47-ipo,high,synthetic_interpolated,False,2021-11-22,41.85,1.76,2.36,7.27
+Healthcare Corp 92,Healthcare,1273.4,0.23,576.51,2.12,38.17,90.46,46.29,rising,52.86,https://ipowatch.in/healthcare-corp-92-ipo,high,synthetic_interpolated,True,2021-12-04,36.62,1.74,0.34,1.66
+Healthcare Corp 18,Healthcare,1431.01,0.38,459.62,25.58,16.46,57.32,41.45,rising,111.22,https://ipowatch.in/healthcare-corp-18-ipo,high,synthetic_interpolated,False,2021-12-11,35.62,2.5,1.89,3.88
+Healthcare Ventures 48,Healthcare,622.78,0.21,433.9,20.3,29.06,54.0,37.15,rising,105.77,https://ipowatch.in/healthcare-ventures-48-ipo,high,synthetic_interpolated,True,2021-12-18,38.7,1.85,4.67,7.83
+Healthcare Ventures 39,Healthcare,1185.19,0.6,203.47,36.76,20.73,40.33,38.55,rising,106.97,https://ipowatch.in/healthcare-ventures-39-ipo,high,synthetic_interpolated,False,2021-12-23,21.74,2.94,0.2,0.59
+Healthcare Ventures 87,Healthcare,487.53,0.52,172.62,40.7,15.48,121.88,81.29,rising,68.6,https://ipowatch.in/healthcare-ventures-87-ipo,high,synthetic_interpolated,False,2022-01-02,38.16,2.64,3.17,-0.67
+Healthcare Corp 72,Healthcare,1242.68,0.85,645.64,44.82,16.58,100.02,72.42,rising,68.92,https://ipowatch.in/healthcare-corp-72-ipo,high,synthetic_interpolated,False,2022-01-13,12.75,1.86,2.4,-4.51
+FMCG Holdings 53,FMCG,675.85,0.49,114.7,17.05,35.2,17.83,17.44,rising,40.42,https://ipowatch.in/fmcg-holdings-53-ipo,high,synthetic_interpolated,False,2022-01-23,20.13,0.71,0.69,4.97
+FMCG Ventures 89,FMCG,916.58,0.61,725.78,19.2,29.6,43.24,31.22,rising,96.27,https://ipowatch.in/fmcg-ventures-89-ipo,high,synthetic_interpolated,True,2022-01-27,38.51,0.78,2.74,0.85
+FMCG Enterprises 80,FMCG,631.27,0.89,406.39,4.63,7.4,142.12,73.38,rising,98.18,https://ipowatch.in/fmcg-enterprises-80-ipo,high,synthetic_interpolated,False,2022-02-02,40.49,1.72,3.63,0.72
+FMCG Enterprises 35,FMCG,362.25,0.5,242.4,6.95,27.42,112.62,59.79,rising,86.2,https://ipowatch.in/fmcg-enterprises-35-ipo,high,synthetic_interpolated,False,2022-02-08,15.8,2.45,2.31,4.34
+FMCG Tech 78,FMCG,1480.53,0.23,460.87,16.18,9.31,128.67,72.42,rising,96.77,https://ipowatch.in/fmcg-tech-78-ipo,high,synthetic_interpolated,False,2022-02-20,33.21,1.0,4.58,7.29
+FMCG Enterprises 14,FMCG,813.6,0.19,361.79,41.34,39.73,86.59,63.97,flat,16.05,https://ipowatch.in/fmcg-enterprises-14-ipo,moderate,synthetic_interpolated,False,2022-02-27,33.06,1.17,0.04,6.25
+IT Tech 83,IT Services,1230.09,0.99,658.09,20.16,4.13,145.37,82.77,rising,67.57,https://ipowatch.in/it-tech-83-ipo,high,synthetic_interpolated,False,2022-03-04,22.26,1.33,3.07,3.47
+IT Tech 77,IT Services,327.77,0.68,187.92,39.46,0.61,11.38,25.42,rising,43.12,https://ipowatch.in/it-tech-77-ipo,high,synthetic_interpolated,False,2022-03-10,29.5,2.19,0.29,-4.91
+IT Tech 20,IT Services,957.36,0.69,332.05,10.81,4.81,25.0,17.91,rising,56.04,https://ipowatch.in/it-tech-20-ipo,high,synthetic_interpolated,False,2022-03-16,23.25,1.28,2.39,-0.51
+IT Corp 17,IT Services,496.72,0.29,185.84,23.44,36.34,95.62,59.53,rising,37.57,https://ipowatch.in/it-corp-17-ipo,moderate,synthetic_interpolated,False,2022-03-24,30.3,2.63,0.69,-2.3
+IT Enterprises 53,IT Services,96.02,0.84,365.64,2.1,48.08,32.52,17.31,rising,71.59,https://ipowatch.in/it-enterprises-53-ipo,high,synthetic_interpolated,False,2022-04-05,38.56,1.43,1.67,-4.54
+IT Enterprises 33,IT Services,1443.43,0.95,60.69,27.42,20.88,34.01,30.71,rising,67.33,https://ipowatch.in/it-enterprises-33-ipo,high,synthetic_interpolated,False,2022-04-14,39.34,2.09,3.62,-1.59
+Renewable Enterprises 88,Renewable Energy,682.83,0.51,521.99,34.78,43.97,132.47,83.62,rising,63.21,https://ipowatch.in/renewable-enterprises-88-ipo,high,synthetic_interpolated,True,2022-04-20,20.59,1.26,1.8,-2.29
+Renewable Enterprises 72,Renewable Energy,1223.48,0.93,751.22,27.17,24.31,40.68,33.92,rising,116.25,https://ipowatch.in/renewable-enterprises-72-ipo,high,synthetic_interpolated,False,2022-04-26,30.27,0.79,0.57,0.6
+Renewable Holdings 58,Renewable Energy,702.33,0.85,688.03,25.08,32.05,95.44,60.26,flat,18.17,https://ipowatch.in/renewable-holdings-58-ipo,moderate,synthetic_interpolated,True,2022-05-09,12.3,1.72,0.06,-2.08
+Renewable Holdings 90,Renewable Energy,1150.8,0.43,171.96,38.75,37.25,90.41,64.58,rising,105.58,https://ipowatch.in/renewable-holdings-90-ipo,high,synthetic_interpolated,False,2022-05-21,22.73,1.51,3.38,2.32
+Renewable Corp 30,Renewable Energy,920.18,0.85,163.36,46.01,34.92,76.27,61.14,rising,103.63,https://ipowatch.in/renewable-corp-30-ipo,high,synthetic_interpolated,True,2022-05-29,25.48,0.82,0.58,6.4
+Renewable Corp 89,Renewable Energy,579.8,0.37,393.24,40.42,28.58,145.02,92.72,rising,85.79,https://ipowatch.in/renewable-corp-89-ipo,high,synthetic_interpolated,True,2022-06-09,14.07,2.19,1.76,7.52
+Renewable Enterprises 72,Renewable Energy,1345.96,0.43,732.36,6.78,40.08,123.03,64.91,rising,98.91,https://ipowatch.in/renewable-enterprises-72-ipo,high,synthetic_interpolated,False,2022-06-14,12.94,0.76,3.1,2.08
+Renewable Holdings 38,Renewable Energy,1386.86,0.85,284.19,18.31,35.14,122.45,70.38,flat,14.09,https://ipowatch.in/renewable-holdings-38-ipo,flat,synthetic_interpolated,True,2022-06-19,31.29,0.8,0.01,-4.68
+Real Tech 52,Real Estate,1448.8,0.9,183.37,19.05,19.19,98.05,58.55,flat,18.25,https://ipowatch.in/real-tech-52-ipo,moderate,synthetic_interpolated,False,2022-06-29,22.3,1.97,0.01,5.81
+Real Corp 52,Real Estate,631.23,0.52,249.44,16.42,29.03,44.04,30.23,rising,25.27,https://ipowatch.in/real-corp-52-ipo,moderate,synthetic_interpolated,False,2022-07-06,10.82,0.55,1.36,1.66
+Real Tech 60,Real Estate,149.74,0.17,319.95,3.16,45.25,17.19,10.18,rising,55.05,https://ipowatch.in/real-tech-60-ipo,high,synthetic_interpolated,False,2022-07-20,22.32,2.17,2.01,1.66
+Real Holdings 96,Real Estate,330.25,0.68,442.66,12.69,4.71,5.08,8.88,rising,24.58,https://ipowatch.in/real-holdings-96-ipo,moderate,synthetic_interpolated,False,2022-07-28,43.19,1.6,2.3,-0.93
+Real Ventures 96,Real Estate,369.6,0.95,201.16,38.07,48.66,18.37,28.22,rising,114.76,https://ipowatch.in/real-ventures-96-ipo,high,synthetic_interpolated,True,2022-08-06,37.07,2.02,4.1,3.54
+Automotive Enterprises 58,Automotive,1014.18,0.95,637.63,10.23,16.48,103.53,56.88,rising,47.02,https://ipowatch.in/automotive-enterprises-58-ipo,high,synthetic_interpolated,False,2022-08-17,16.89,1.74,0.51,3.69
+Automotive Ventures 21,Automotive,205.28,0.38,680.42,49.96,4.82,83.81,66.89,rising,49.64,https://ipowatch.in/automotive-ventures-21-ipo,high,synthetic_interpolated,False,2022-08-28,43.77,0.71,1.58,0.38
+Automotive Corp 20,Automotive,889.67,0.94,793.43,10.32,7.98,27.95,19.13,rising,93.94,https://ipowatch.in/automotive-corp-20-ipo,high,synthetic_interpolated,False,2022-09-07,19.12,1.95,2.51,6.39
+Automotive Tech 90,Automotive,536.6,0.47,196.53,10.12,37.51,17.87,14.0,rising,76.64,https://ipowatch.in/automotive-tech-90-ipo,high,synthetic_interpolated,False,2022-09-18,30.34,1.61,4.67,-1.58
+Automotive Enterprises 74,Automotive,342.97,0.33,220.57,42.85,33.66,75.27,59.06,rising,62.74,https://ipowatch.in/automotive-enterprises-74-ipo,high,synthetic_interpolated,False,2022-09-24,40.39,1.06,3.92,0.85
+Automotive Ventures 64,Automotive,273.46,0.44,221.47,14.45,11.13,9.23,11.84,flat,18.26,https://ipowatch.in/automotive-ventures-64-ipo,moderate,synthetic_interpolated,True,2022-09-29,41.47,1.37,0.0,5.62
+Automotive Corp 21,Automotive,818.76,0.64,309.93,23.17,17.73,97.67,60.42,rising,94.66,https://ipowatch.in/automotive-corp-21-ipo,high,synthetic_interpolated,False,2022-10-07,16.41,0.77,4.45,-2.12
+Automotive Holdings 43,Automotive,1211.3,0.58,696.2,26.95,24.07,64.47,45.71,rising,81.33,https://ipowatch.in/automotive-holdings-43-ipo,high,synthetic_interpolated,False,2022-10-19,16.26,1.49,4.04,5.0
+Automotive Ventures 47,Automotive,542.59,0.35,208.3,10.07,5.95,44.06,27.07,flat,14.25,https://ipowatch.in/automotive-ventures-47-ipo,flat,synthetic_interpolated,False,2022-10-28,22.31,2.18,0.01,-1.42
+Retail Ventures 19,Retail,551.55,0.56,634.34,32.3,1.0,130.77,81.53,rising,86.11,https://ipowatch.in/retail-ventures-19-ipo,high,synthetic_interpolated,False,2022-11-01,37.27,0.81,1.07,4.17
+Retail Ventures 72,Retail,1197.34,0.51,525.69,16.22,13.37,47.82,32.02,rising,41.31,https://ipowatch.in/retail-ventures-72-ipo,high,synthetic_interpolated,False,2022-11-11,14.19,0.76,1.62,5.53
+Retail Corp 81,Retail,298.57,0.11,232.97,32.06,20.22,33.31,32.69,rising,119.32,https://ipowatch.in/retail-corp-81-ipo,high,synthetic_interpolated,False,2022-11-16,29.12,2.88,3.74,4.66
+Retail Tech 65,Retail,1135.9,0.48,482.16,16.32,12.67,12.95,14.63,rising,58.95,https://ipowatch.in/retail-tech-65-ipo,high,synthetic_interpolated,True,2022-11-21,28.02,2.83,3.24,-2.65
+Retail Holdings 17,Retail,1279.03,0.58,249.73,2.93,40.88,95.58,49.26,rising,45.98,https://ipowatch.in/retail-holdings-17-ipo,high,synthetic_interpolated,False,2022-12-04,18.04,1.04,4.46,1.95
+Retail Ventures 45,Retail,1360.9,0.69,613.5,22.75,13.75,46.64,34.7,rising,51.65,https://ipowatch.in/retail-ventures-45-ipo,high,synthetic_interpolated,False,2022-12-07,21.36,1.26,1.21,5.48
+Retail Tech 86,Retail,1275.38,0.48,336.86,44.13,37.22,45.51,44.82,rising,94.03,https://ipowatch.in/retail-tech-86-ipo,high,synthetic_interpolated,False,2022-12-21,31.95,1.21,4.18,-3.29
+Retail Corp 42,Retail,822.2,0.23,411.77,38.37,1.47,32.48,35.42,rising,74.07,https://ipowatch.in/retail-corp-42-ipo,high,synthetic_interpolated,False,2022-12-27,21.64,2.05,2.33,-1.44
+Retail Holdings 65,Retail,655.13,0.69,547.12,5.33,14.97,86.11,45.72,rising,77.38,https://ipowatch.in/retail-holdings-65-ipo,high,synthetic_interpolated,False,2022-12-30,32.88,1.01,2.81,1.71
+Logistics Corp 19,Logistics,1058.48,0.57,205.86,39.61,38.43,149.85,94.73,rising,48.09,https://ipowatch.in/logistics-corp-19-ipo,high,synthetic_interpolated,False,2023-01-04,34.68,1.94,2.33,-4.4
+Logistics Enterprises 19,Logistics,619.43,0.44,439.77,7.02,43.22,115.62,61.32,rising,109.68,https://ipowatch.in/logistics-enterprises-19-ipo,high,synthetic_interpolated,True,2023-01-17,41.14,2.19,4.27,4.34
+Logistics Tech 25,Logistics,292.88,0.37,644.39,11.61,3.62,97.97,54.79,rising,98.9,https://ipowatch.in/logistics-tech-25-ipo,high,synthetic_interpolated,False,2023-01-21,17.74,0.87,3.24,-3.73
+Logistics Corp 91,Logistics,529.85,0.39,116.41,42.55,11.54,148.09,95.32,rising,88.45,https://ipowatch.in/logistics-corp-91-ipo,high,synthetic_interpolated,True,2023-02-02,17.94,1.07,0.86,-3.75
+Logistics Enterprises 26,Logistics,619.46,0.95,798.2,48.58,7.18,9.66,29.12,rising,114.51,https://ipowatch.in/logistics-enterprises-26-ipo,high,synthetic_interpolated,False,2023-02-09,36.65,2.85,0.21,-2.09
+Logistics Ventures 10,Logistics,676.5,0.58,510.6,30.59,37.61,20.67,25.63,flat,17.26,https://ipowatch.in/logistics-ventures-10-ipo,moderate,synthetic_interpolated,False,2023-02-18,44.74,1.35,0.07,-2.73
+Logistics Tech 33,Logistics,321.67,0.83,326.3,41.48,28.05,44.7,43.09,rising,119.54,https://ipowatch.in/logistics-tech-33-ipo,high,synthetic_interpolated,False,2023-02-24,16.1,1.5,0.81,-1.67
+Logistics Corp 64,Logistics,666.41,0.6,669.28,25.78,17.58,134.0,79.89,rising,23.87,https://ipowatch.in/logistics-corp-64-ipo,moderate,synthetic_interpolated,True,2023-03-10,12.64,2.26,3.96,1.03
+Logistics Corp 36,Logistics,538.78,0.93,257.27,7.46,43.55,148.85,78.16,flat,16.93,https://ipowatch.in/logistics-corp-36-ipo,moderate,synthetic_interpolated,False,2023-03-16,14.24,1.65,-0.04,6.85
+Logistics Tech 83,Logistics,96.43,0.51,169.81,30.29,18.52,78.14,54.22,rising,47.0,https://ipowatch.in/logistics-tech-83-ipo,high,synthetic_interpolated,False,2023-03-20,33.88,1.28,0.31,2.59
+Banking Enterprises 22,Banking,747.47,0.82,618.02,45.61,28.91,8.6,27.11,rising,36.65,https://ipowatch.in/banking-enterprises-22-ipo,moderate,synthetic_interpolated,False,2023-03-28,31.87,2.66,3.97,6.76
+Banking Tech 69,Banking,537.9,0.68,72.69,13.76,8.71,51.81,32.79,flat,11.0,https://ipowatch.in/banking-tech-69-ipo,flat,synthetic_interpolated,True,2023-04-11,13.37,0.98,-0.0,-2.86
+Banking Tech 70,Banking,702.48,0.76,267.07,13.87,32.63,106.06,59.97,rising,103.11,https://ipowatch.in/banking-tech-70-ipo,high,synthetic_interpolated,False,2023-04-17,14.93,2.3,1.81,-0.73
+Banking Corp 70,Banking,852.36,0.49,721.25,44.01,19.5,103.29,73.65,rising,60.84,https://ipowatch.in/banking-corp-70-ipo,high,synthetic_interpolated,False,2023-04-28,14.24,0.69,4.94,7.36
+Banking Corp 40,Banking,1013.51,0.57,337.4,10.47,44.48,136.62,73.55,rising,78.27,https://ipowatch.in/banking-corp-40-ipo,high,synthetic_interpolated,False,2023-05-06,27.43,1.76,3.58,2.66
+Banking Holdings 28,Banking,781.03,0.98,170.06,41.76,5.86,148.2,94.98,rising,44.01,https://ipowatch.in/banking-holdings-28-ipo,high,synthetic_interpolated,False,2023-05-09,40.91,2.52,4.73,-2.72
+Banking Enterprises 20,Banking,436.21,0.4,565.55,7.17,9.09,26.82,17.0,rising,43.02,https://ipowatch.in/banking-enterprises-20-ipo,high,synthetic_interpolated,False,2023-05-21,14.3,2.72,2.98,-2.0
+Banking Holdings 86,Banking,1234.7,0.58,613.59,44.64,42.44,72.66,58.65,rising,43.97,https://ipowatch.in/banking-holdings-86-ipo,high,synthetic_interpolated,False,2023-05-24,33.13,2.83,1.5,5.92
+Chemicals Holdings 12,Chemicals,143.59,0.32,360.04,42.49,45.04,125.05,83.77,rising,113.05,https://ipowatch.in/chemicals-holdings-12-ipo,high,synthetic_interpolated,False,2023-06-02,10.18,1.87,0.76,-2.25
+Chemicals Corp 36,Chemicals,1139.36,0.42,423.53,1.2,21.78,148.19,74.69,rising,103.32,https://ipowatch.in/chemicals-corp-36-ipo,high,synthetic_interpolated,False,2023-06-13,24.87,2.93,1.52,5.29
+Chemicals Enterprises 34,Chemicals,98.93,0.32,782.49,21.13,37.84,75.92,48.52,rising,118.85,https://ipowatch.in/chemicals-enterprises-34-ipo,high,synthetic_interpolated,False,2023-06-21,13.88,1.03,3.71,-1.95
+Chemicals Enterprises 97,Chemicals,1099.64,0.32,156.77,11.46,3.28,135.7,73.58,rising,106.7,https://ipowatch.in/chemicals-enterprises-97-ipo,high,synthetic_interpolated,False,2023-06-30,20.21,1.41,3.34,3.48
+Chemicals Corp 71,Chemicals,298.42,0.73,553.93,47.92,23.97,147.99,97.96,rising,37.08,https://ipowatch.in/chemicals-corp-71-ipo,moderate,synthetic_interpolated,True,2023-07-06,37.69,2.63,4.04,4.11
+Chemicals Enterprises 95,Chemicals,870.24,0.86,693.37,32.34,4.8,117.61,74.97,rising,59.31,https://ipowatch.in/chemicals-enterprises-95-ipo,high,synthetic_interpolated,False,2023-07-19,23.41,2.1,2.87,0.29
+Chemicals Holdings 19,Chemicals,566.91,0.69,53.1,6.83,33.3,38.37,22.6,rising,90.53,https://ipowatch.in/chemicals-holdings-19-ipo,high,synthetic_interpolated,False,2023-08-02,40.14,1.38,3.54,3.36
+Infrastructure Enterprises 57,Infrastructure,431.76,0.47,479.2,16.05,30.78,69.08,42.56,rising,83.34,https://ipowatch.in/infrastructure-enterprises-57-ipo,high,synthetic_interpolated,False,2023-08-12,39.81,2.69,0.17,-0.07
+Infrastructure Enterprises 38,Infrastructure,1022.65,0.29,260.75,2.08,35.93,24.65,13.36,falling,-13.26,https://ipowatch.in/infrastructure-enterprises-38-ipo,loss,synthetic_interpolated,True,2023-08-20,32.85,2.24,-2.45,-1.53
+Infrastructure Enterprises 33,Infrastructure,759.18,0.17,71.13,14.25,26.0,10.75,12.5,rising,36.26,https://ipowatch.in/infrastructure-enterprises-33-ipo,moderate,synthetic_interpolated,False,2023-09-02,42.52,2.99,3.46,4.45
+Infrastructure Corp 60,Infrastructure,139.72,0.96,668.74,25.56,17.89,43.46,34.51,rising,102.99,https://ipowatch.in/infrastructure-corp-60-ipo,high,synthetic_interpolated,False,2023-09-09,20.86,2.84,0.47,2.24
+Infrastructure Holdings 76,Infrastructure,1491.41,0.72,565.31,44.02,12.25,40.64,42.33,rising,39.39,https://ipowatch.in/infrastructure-holdings-76-ipo,moderate,synthetic_interpolated,False,2023-09-22,25.79,2.1,4.54,6.77
+Infrastructure Ventures 67,Infrastructure,916.04,0.92,576.98,3.26,18.22,123.64,63.45,rising,40.9,https://ipowatch.in/infrastructure-ventures-67-ipo,high,synthetic_interpolated,False,2023-10-04,33.05,2.38,0.47,-4.18
+Infrastructure Holdings 49,Infrastructure,912.3,0.22,263.96,41.1,9.92,142.91,92.0,rising,96.85,https://ipowatch.in/infrastructure-holdings-49-ipo,high,synthetic_interpolated,True,2023-10-18,26.75,1.69,2.03,-0.85
+Infrastructure Holdings 40,Infrastructure,384.26,0.74,686.55,33.08,38.77,6.46,19.77,rising,22.87,https://ipowatch.in/infrastructure-holdings-40-ipo,moderate,synthetic_interpolated,False,2023-10-30,22.41,0.9,4.08,4.82
+Defense Corp 22,Defense,1389.81,0.39,756.99,44.8,6.09,100.81,72.81,rising,28.46,https://ipowatch.in/defense-corp-22-ipo,moderate,synthetic_interpolated,False,2023-11-08,35.09,1.88,1.98,4.52
+Defense Enterprises 38,Defense,941.79,0.26,396.99,37.05,11.53,27.39,32.22,rising,100.81,https://ipowatch.in/defense-enterprises-38-ipo,high,synthetic_interpolated,False,2023-11-17,16.75,0.61,2.65,5.17
+Defense Holdings 90,Defense,498.43,0.52,689.64,34.84,32.05,125.61,80.22,rising,81.05,https://ipowatch.in/defense-holdings-90-ipo,high,synthetic_interpolated,True,2023-11-28,21.26,1.2,1.97,-4.13
+Defense Tech 50,Defense,381.65,0.64,343.39,1.84,17.24,53.84,27.84,rising,29.38,https://ipowatch.in/defense-tech-50-ipo,moderate,synthetic_interpolated,False,2023-12-04,28.49,1.54,4.37,-4.29
+Defense Enterprises 65,Defense,633.0,0.76,119.67,30.56,42.85,146.24,88.4,rising,88.33,https://ipowatch.in/defense-enterprises-65-ipo,high,synthetic_interpolated,False,2023-12-17,12.08,0.68,3.03,-3.58
+Defense Holdings 26,Defense,955.82,0.3,683.99,22.77,19.5,114.93,68.85,rising,87.93,https://ipowatch.in/defense-holdings-26-ipo,high,synthetic_interpolated,True,2023-12-30,20.96,2.29,0.43,-2.48
+Defense Holdings 65,Defense,1343.34,0.94,581.85,17.07,19.77,110.66,63.86,flat,12.85,https://ipowatch.in/defense-holdings-65-ipo,flat,synthetic_interpolated,True,2024-01-06,28.0,2.34,0.05,-1.71
+Defense Ventures 69,Defense,400.82,0.67,277.06,36.84,23.1,101.44,69.14,flat,19.76,https://ipowatch.in/defense-ventures-69-ipo,moderate,synthetic_interpolated,False,2024-01-16,30.59,2.07,0.06,2.21
