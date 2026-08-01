@@ -88,11 +88,19 @@ def read_root():
 @app.post("/api/allotment-odds", response_model=AllotmentResponse)
 def get_allotment_odds(request: AllotmentRequest):
     try:
+        cat_upper = (request.category or "Retail").upper()
+
         # Case A: Detailed IPO Data dictionary provided
         if request.ipo_data is not None:
+            cat_name = "Retail"
+            if "SHNI" in cat_upper:
+                cat_name = "sHNI"
+            elif "BHNI" in cat_upper:
+                cat_name = "bHNI"
+
             result = calculate_sebi_allotment_odds(
                 pan=request.pan or "ABCDE1234F",
-                category=request.category or "Retail",
+                category=cat_name,
                 applied_amount=request.applied_amount or 15000.0,
                 ipo_data=request.ipo_data.model_dump()
             )
@@ -117,41 +125,111 @@ def get_allotment_odds(request: AllotmentRequest):
                 privacy_note=result["privacy_note"]
             )
 
-        # Case B: Interactive calculator parameters (sub_retail, num_pans, etc.)
-        sub_retail = request.sub_retail if request.sub_retail is not None else 3.07
-        n_pans = request.num_pans if request.num_pans is not None else 1
+        # Case B: Interactive calculator parameters (sub_retail, sub_nii, etc.)
+        lot_size = request.lot_size or 100
+        cutoff_price = request.cutoff_price or 100.0
 
-        if sub_retail <= 1.0:
-            p_single = 1.0
-            allotment_regime = "Full Allotment"
-            guardrail_msg = "Subscription is less than 1.0x — all valid applicants receive full allotment."
+        if "SHNI" in cat_upper:
+            sub_nii = request.sub_nii if request.sub_nii is not None else 8.4
+            if sub_nii <= 1.0:
+                p_single = 1.0
+                allotment_regime = "Full Allotment"
+                explain_text = f"With NII category subscribed {sub_nii:.2f}x, all valid sHNI applicants receive minimum allotment."
+            else:
+                p_single = min(1.0, 1.0 / sub_nii)
+                allotment_regime = "Lottery (sHNI pool)"
+                explain_text = f"With NII category subscribed {sub_nii:.2f}x, each sHNI application has a {round(p_single * 100, 1)}% probability of winning the minimum sHNI allotment."
+
+            prob_pct = round(p_single * 100.0, 2)
+            min_lots = 14
+            min_shares = min_lots * lot_size
+            min_val = min_shares * cutoff_price
+
+            return AllotmentResponse(
+                category="sHNI",
+                masked_pan="⁕⁕⁕⁕⁕⁕1234F",
+                probability_pct=prob_pct,
+                probability_at_least_one_lot=round(p_single, 4),
+                odds_per_pan=round(p_single, 4),
+                expected_lots=round(p_single * min_lots, 2),
+                allotment_regime=allotment_regime,
+                explain_text=explain_text,
+                guardrail="sHNI allotment works differently from retail — you're applying for a larger minimum lot size, and the lottery is within the sHNI pool only.",
+                privacy_note="PAN data lives strictly in volatile memory and is never written to persistent storage.",
+                min_allotment_lots=min_lots,
+                min_allotment_shares=min_shares,
+                min_allotment_value=min_val
+            )
+
+        elif "BHNI" in cat_upper:
+            sub_nii = request.sub_nii if request.sub_nii is not None else 8.4
+            applied_lots = request.applied_lots or 68
+
+            if sub_nii <= 1.0:
+                ratio = 1.0
+                allotment_regime = "Full Allotment"
+                expected_lots = float(applied_lots)
+            else:
+                ratio = 1.0 / sub_nii
+                allotment_regime = "Proportionate Allotment"
+                expected_lots = round(applied_lots * ratio, 2)
+
+            ratio_denom = round(sub_nii) if sub_nii >= 1.0 else 1
+            ratio_str = f"1 in every {ratio_denom} lots applied"
+            exp_val = expected_lots * lot_size * cutoff_price
+
+            explain_text = f"bHNI category is subscribed {sub_nii:.2f}x. Allocation is strictly proportionate — applying for {applied_lots} lots yields ~{expected_lots} lots allotted."
+
+            return AllotmentResponse(
+                category="bHNI",
+                masked_pan="⁕⁕⁕⁕⁕⁕1234F",
+                probability_pct=round(min(100.0, ratio * 100.0), 2),
+                probability_at_least_one_lot=1.0 if expected_lots >= 1.0 else round(expected_lots, 4),
+                odds_per_pan=round(ratio, 4),
+                expected_lots=expected_lots,
+                allotment_regime=allotment_regime,
+                explain_text=explain_text,
+                guardrail="bHNI uses proportionate allotment, not a lottery. You get a fraction of what you applied for, proportional to how oversubscribed the category is.",
+                privacy_note="PAN data lives strictly in volatile memory and is never written to persistent storage.",
+                allotment_ratio_str=ratio_str,
+                expected_allotment_value=exp_val
+            )
+
         else:
-            # SEBI lottery rule: 1 lot per PAN draw probability = 1 / sub_retail
-            p_single = min(1.0, 1.0 / sub_retail)
-            allotment_regime = "Proportionate Lottery"
-            guardrail_msg = "Applying for multiple lots on the same PAN does NOT increase your allotment probability. Submitting 1 lot per PAN across distinct family PANs is the optimal strategy."
+            # Default: Retail
+            sub_retail = request.sub_retail if request.sub_retail is not None else 3.07
+            n_pans = request.num_pans if request.num_pans is not None else 1
 
-        prob_pct = round(p_single * 100.0, 2)
-        p_at_least_one = round(1.0 - math.pow(1.0 - p_single, n_pans), 4) if p_single < 1.0 else 1.0
-        expected_lots = round(n_pans * p_single, 2)
+            if sub_retail <= 1.0:
+                p_single = 1.0
+                allotment_regime = "Full Allotment"
+                guardrail_msg = "Subscription is less than 1.0x — all valid applicants receive full allotment."
+            else:
+                p_single = min(1.0, 1.0 / sub_retail)
+                allotment_regime = "Proportionate Lottery"
+                guardrail_msg = "Applying for multiple lots on the same PAN does NOT increase your allotment probability. Submitting 1 lot per PAN across distinct family PANs is the optimal strategy."
 
-        explain_text = (
-            f"With Retail category subscribed {sub_retail:.2f}x, each PAN has a {prob_pct:.1f}% chance of allotment. "
-            f"Submitting across {n_pans} family PAN(s) gives a {round(p_at_least_one * 100, 1)}% probability of winning at least 1 lot."
-        )
+            prob_pct = round(p_single * 100.0, 2)
+            p_at_least_one = round(1.0 - math.pow(1.0 - p_single, n_pans), 4) if p_single < 1.0 else 1.0
+            expected_lots = round(n_pans * p_single, 2)
 
-        return AllotmentResponse(
-            category=request.category or "Retail",
-            masked_pan="⁕⁕⁕⁕⁕⁕1234F",
-            probability_pct=prob_pct,
-            probability_at_least_one_lot=p_at_least_one,
-            odds_per_pan=round(p_single, 4),
-            expected_lots=expected_lots,
-            allotment_regime=allotment_regime,
-            explain_text=explain_text,
-            guardrail=guardrail_msg,
-            privacy_note="PAN data lives strictly in volatile memory and is never written to persistent storage."
-        )
+            explain_text = (
+                f"With Retail category subscribed {sub_retail:.2f}x, each PAN has a {prob_pct:.1f}% chance of allotment. "
+                f"Submitting across {n_pans} family PAN(s) gives a {round(p_at_least_one * 100, 1)}% probability of winning at least 1 lot."
+            )
+
+            return AllotmentResponse(
+                category="Retail",
+                masked_pan="⁕⁕⁕⁕⁕⁕1234F",
+                probability_pct=prob_pct,
+                probability_at_least_one_lot=p_at_least_one,
+                odds_per_pan=round(p_single, 4),
+                expected_lots=expected_lots,
+                allotment_regime=allotment_regime,
+                explain_text=explain_text,
+                guardrail=guardrail_msg,
+                privacy_note="PAN data lives strictly in volatile memory and is never written to persistent storage."
+            )
 
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))

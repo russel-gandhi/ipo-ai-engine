@@ -23,12 +23,15 @@ class AllotmentRequest(BaseModel):
     applied_amount: Optional[float] = Field(15000.0, description="Total amount applied in Rs.")
     ipo_data: Optional[IpoData] = Field(None, description="IPO quota and subscription data")
 
-    # Direct calculator fields for interactive family PAN odds
+    # Direct calculator fields for interactive family PAN / sHNI / bHNI odds
     sub_retail: Optional[float] = Field(None, ge=0.0, description="Retail subscription multiple")
+    sub_nii: Optional[float] = Field(None, ge=0.0, description="NII subscription multiple")
     retail_quota_pct: Optional[float] = Field(0.35, ge=0.0, le=1.0)
+    nii_quota_pct: Optional[float] = Field(0.15, ge=0.0, le=1.0)
     issue_size_cr: Optional[float] = Field(None, gt=0)
     lot_size: Optional[int] = Field(None, gt=0)
     cutoff_price: Optional[float] = Field(None, gt=0)
+    applied_lots: Optional[int] = Field(1, ge=1)
     applied_lots_per_pan: Optional[int] = Field(1, ge=1)
     num_pans: Optional[int] = Field(1, ge=1, le=20)
 
@@ -43,6 +46,11 @@ class AllotmentResponse(BaseModel):
     explain_text: str = ""
     guardrail: str = ""
     privacy_note: str = ""
+    min_allotment_lots: Optional[int] = None
+    min_allotment_shares: Optional[int] = None
+    min_allotment_value: Optional[float] = None
+    allotment_ratio_str: Optional[str] = None
+    expected_allotment_value: Optional[float] = None
 
 
 # --- Verdict schemas ---

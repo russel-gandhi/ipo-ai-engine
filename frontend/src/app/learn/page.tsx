@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import AllotmentCalculator from "@/components/AllotmentCalculator";
 
 export default function LearnPage() {
   // ---------------------------------------------------------------------------
@@ -444,156 +445,17 @@ export default function LearnPage() {
       </section>
 
       {/* ==================================================================== */}
-      {/* 9.2 — ALLOTMENT SIMULATOR WITH VISUAL LOTTERY GRID                   */}
+      {/* 9.2 — ALLOTMENT SIMULATOR WITH CATEGORY SELECTOR                    */}
       {/* ==================================================================== */}
       <section className="bg-card-bg border border-card-border rounded-[14px] p-6 shadow-xs space-y-6">
         <div>
           <h2 className="text-[18px] font-bold text-primary-text">9.2 — Interactive SEBI Allotment Simulator</h2>
           <p className="text-[13px] text-secondary-text mt-1">
-            Simulate SEBI's 1-lot-per-PAN computerised lottery draw when retail demand is oversubscribed.
+            Simulate SEBI's allotment odds algorithms across Retail, sHNI, and bHNI investor categories.
           </p>
         </div>
 
-        {/* Input Controls */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-input-bg border border-input-border rounded-xl p-5">
-          <div>
-            <label className="block text-[11px] font-semibold uppercase text-muted-text tracking-wider mb-2">
-              Retail Subscription Multiple
-            </label>
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                step="0.1"
-                min="1"
-                max="50"
-                value={subMultiple}
-                onChange={(e) => setSubMultiple(Math.max(1, parseFloat(e.target.value) || 1))}
-                className="w-full bg-white border border-input-border rounded-lg px-3 py-2 text-[14px] font-semibold text-primary-text outline-none focus:border-accent-indigo font-mono"
-              />
-              <span className="text-[14px] font-mono text-muted-text font-bold">x</span>
-            </div>
-            <p className="text-[11px] text-secondary-text mt-1">
-              Example: 3.07x means 3.07 retail applications for every 1 available lot.
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-[11px] font-semibold uppercase text-muted-text tracking-wider mb-2">
-              Family PAN Count Comparison
-            </label>
-            <select
-              value={gridPanCount}
-              onChange={(e) => setGridPanCount(parseInt(e.target.value))}
-              className="w-full bg-white border border-input-border rounded-lg px-3 py-2 text-[14px] font-semibold text-primary-text outline-none focus:border-accent-indigo font-sans"
-            >
-              <option value={2}>Compare 1 PAN vs 2 Family PANs</option>
-              <option value={3}>Compare 1 PAN vs 3 Family PANs</option>
-              <option value={5}>Compare 1 PAN vs 5 Family PANs</option>
-            </select>
-            <p className="text-[11px] text-secondary-text mt-1">
-              Submitting 1 lot on separate family PANs creates independent raffle entries.
-            </p>
-          </div>
-        </div>
-
-        {/* Headline Stat Banner */}
-        <div className="bg-white border border-card-border rounded-xl p-5 text-center space-y-1 shadow-xs">
-          <div className="text-[11px] font-semibold text-muted-text uppercase tracking-wider">
-            Allotment Odds Breakdown
-          </div>
-          <div className="text-[24px] md:text-[28px] font-bold text-primary-text">
-            Roughly <span className="text-accent-indigo font-mono">1 in {chance1In}</span> applicants gets allotted
-          </div>
-          <div className="text-[13px] text-secondary-text font-mono">
-            Exact probability per PAN: <span className="font-semibold text-primary-text">{probPct}%</span>
-          </div>
-        </div>
-
-        {/* Side-by-Side Visual Grid Comparison */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Left: 1 PAN Grid */}
-          <div className="bg-white border border-card-border rounded-xl p-5 space-y-3">
-            <div className="flex items-center justify-between border-b border-card-border pb-2">
-              <span className="text-[13px] font-bold text-primary-text">1 Single PAN</span>
-              <span className="text-[11px] font-mono text-secondary-text">1 in {chance1In} chance</span>
-            </div>
-            <div className="grid grid-cols-10 gap-1.5 py-2">
-              {Array.from({ length: 50 }).map((_, i) => {
-                const isWinner = i < winningCirclesCount;
-                return (
-                  <div
-                    key={i}
-                    style={{ animationDelay: isGridAnimated ? `${i * 15}ms` : "0ms" }}
-                    className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all ${
-                      isGridAnimated ? "circle-pop" : ""
-                    } ${
-                      isWinner
-                        ? "bg-accent-indigo border-accent-indigo shadow-xs"
-                        : "bg-[#f3f4f6] border-[#e5e7eb]"
-                    }`}
-                  >
-                    {isWinner && <div className="w-1.5 h-1.5 rounded-full bg-white"></div>}
-                  </div>
-                );
-              })}
-            </div>
-            <div className="text-[11px] text-secondary-text flex items-center justify-between">
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-accent-indigo inline-block"></span>
-                {winningCirclesCount} Winning Slots
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#e5e7eb] inline-block"></span>
-                {50 - winningCirclesCount} Unallotted
-              </span>
-            </div>
-          </div>
-
-          {/* Right: Multi-PAN Grid */}
-          <div className="bg-white border border-card-border rounded-xl p-5 space-y-3">
-            <div className="flex items-center justify-between border-b border-card-border pb-2">
-              <span className="text-[13px] font-bold text-accent-indigo">
-                {gridPanCount} Family PANs ({gridPanCount} Independent Entries)
-              </span>
-              <span className="text-[11px] font-mono text-secondary-text">
-                {gridPanCount}x Lottery Shots
-              </span>
-            </div>
-            <div className="grid grid-cols-10 gap-1.5 py-2">
-              {Array.from({ length: 50 }).map((_, i) => {
-                const isWinner = i < winningCirclesCount;
-                return (
-                  <div
-                    key={i}
-                    style={{ animationDelay: isGridAnimated ? `${i * 15}ms` : "0ms" }}
-                    className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all ${
-                      isGridAnimated ? "circle-pop" : ""
-                    } ${
-                      isWinner
-                        ? "bg-accent-indigo border-accent-indigo shadow-xs"
-                        : "bg-[#f3f4f6] border-[#e5e7eb]"
-                    }`}
-                  >
-                    {isWinner && <div className="w-1.5 h-1.5 rounded-full bg-white"></div>}
-                  </div>
-                );
-              })}
-            </div>
-            <div className="text-[11px] text-secondary-text flex items-center justify-between">
-              <span className="font-semibold text-accent-indigo">
-                Combined Odds: {( (1 - Math.pow(1 - oddsPerPan, gridPanCount)) * 100 ).toFixed(1)}%
-              </span>
-              <span className="font-mono text-muted-text">
-                Still {probPct}% per PAN
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Multi-PAN Callout */}
-        <div className="bg-indigo-50/60 border border-indigo-100 rounded-xl p-4 text-[12px] text-indigo-900 leading-relaxed">
-          <span className="font-bold">SEBI Allotment Key Insight:</span> Each PAN is an independent lottery entry. Submitting 1 lot on {gridPanCount} separate family PANs gives you {gridPanCount} independent raffle tickets, whereas submitting {gridPanCount} lots on a single PAN gives you only 1 single raffle ticket.
-        </div>
+        <AllotmentCalculator showVisuals={true} />
       </section>
 
       {/* ==================================================================== */}

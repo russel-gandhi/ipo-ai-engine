@@ -5,6 +5,7 @@ import Link from "next/link";
 import { fetchLiveIPOs, fetchVerdict, fetchPeers, calculateAllotment } from "@/lib/api";
 import { toSlug, getInitials, getSectorBadge, getStatusBadge } from "@/lib/helpers";
 import Tooltip from "@/components/Tooltip";
+import AllotmentCalculator from "@/components/AllotmentCalculator";
 
 export default function IpoDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
@@ -360,77 +361,15 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
       )}
 
       {/* SECTION 5: SEBI Allotment Calculator */}
-      <section className="bg-card-bg border border-card-border rounded-[14px] p-6 shadow-xs">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h2 className="text-[18px] font-bold text-primary-text">SEBI Allotment Calculator</h2>
-            <p className="text-[12px] text-secondary-text">Proportionate lottery odds math per SEBI rule (max 1 lot per PAN)</p>
-          </div>
+      <section className="bg-card-bg border border-card-border rounded-[14px] p-6 shadow-xs space-y-4">
+        <div>
+          <h2 className="text-[18px] font-bold text-primary-text">SEBI Allotment Calculator</h2>
+          <p className="text-[12px] text-secondary-text">
+            Proportionate lottery and quota allotment odds math per SEBI guidelines for Retail, sHNI, and bHNI categories.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          {/* Controls */}
-          <div className="bg-input-bg border border-input-border rounded-xl p-5 space-y-4">
-            <div>
-              <label className="block text-[11px] font-semibold uppercase text-muted-text tracking-wider mb-2">
-                Number of PAN Applications
-              </label>
-              <div className="flex items-center gap-3">
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={pans}
-                  onChange={(e) => handlePanChange(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="w-full bg-white border border-input-border rounded-lg px-3 py-2 text-[14px] font-semibold text-primary-text outline-none focus:border-accent-indigo"
-                />
-              </div>
-              <p className="text-[11px] text-secondary-text mt-1.5">
-                Each family member's PAN counts as 1 separate lottery ticket.
-              </p>
-            </div>
-
-            {/* SEBI Callout */}
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-[12px] text-amber-800 leading-relaxed">
-              <span className="font-semibold">SEBI Lottery Rule:</span> Applying for multiple lots on the same PAN does NOT increase your allotment probability. Submitting 1 lot per PAN across distinct family PANs is the optimal strategy.
-            </div>
-          </div>
-
-          {/* Results Display */}
-          <div className="bg-white border border-card-border rounded-xl p-5 shadow-xs space-y-4">
-            {calcLoading ? (
-              <div className="py-8 text-center text-[13px] text-muted-text">Calculating probability...</div>
-            ) : allotmentResult ? (
-              <>
-                <div className="flex items-baseline justify-between border-b border-card-border pb-3">
-                  <span className="text-[13px] font-medium text-secondary-text">Probability of Allotment:</span>
-                  <span className="text-[26px] font-bold text-accent-indigo font-mono">
-                    {(allotmentResult.probability_at_least_one_lot * 100).toFixed(1)}%
-                  </span>
-                </div>
-                <div className="space-y-2 text-[12px]">
-                  <div className="flex justify-between">
-                    <span className="text-secondary-text">Probability per PAN:</span>
-                    <span className="font-mono font-medium">{(allotmentResult.odds_per_pan * 100).toFixed(1)}%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary-text">Expected Lots Allotted:</span>
-                    <span className="font-mono font-medium">{allotmentResult.expected_lots}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary-text">Regime Type:</span>
-                    <span className="font-semibold capitalize">{allotmentResult.allotment_regime}</span>
-                  </div>
-                </div>
-                {allotmentResult.explain_text && (
-                  <div className="bg-input-bg border border-input-border rounded-lg p-3 text-[11px] text-secondary-text leading-relaxed">
-                    {allotmentResult.explain_text}
-                  </div>
-                )}
-              </>
-            ) : null}
-          </div>
-        </div>
+        <AllotmentCalculator ipo={ipo} showVisuals={true} />
       </section>
 
       {/* SECTION 6: Company Profile & Financials */}
