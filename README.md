@@ -23,11 +23,25 @@ The following endpoints are active via the FastAPI instance:
 - `GET /api/live-ipos` - Yields the live background-cached scraping data.
 
 ## Getting Started
-To spin up the local backend API server:
+
+### Backend
 ```bash
+pip install -r backend/requirements.txt
 python -m uvicorn backend.src.main:app --port 8000
 ```
-This will automatically launch the asynchronous background scrapers and start serving ML inferences.
+This automatically launches background scrapers and serves ML inferences.
+
+### Frontend
+```bash
+cd frontend
+cp .env.example .env.local
+npm install
+npm run dev
+```
+Open http://localhost:3000 — the dashboard connects to the API at http://localhost:8000.
+
+## Deployment
+See [DEPLOYMENT.md](DEPLOYMENT.md) for Render/Vercel setup. A `render.yaml` blueprint is included at the repo root.
 
 ---
-*Note: Phase 2 (The Next.js Frontend Dashboard) is currently under active development.*
+*Phase 2 (Next.js Frontend Dashboard) is complete. Deploy via Render Blueprint or Vercel.*

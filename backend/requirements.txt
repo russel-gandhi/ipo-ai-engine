@@ -1,7 +1,11 @@
 fastapi
-uvicorn
+uvicorn[standard]
 scikit-learn
 pandas
+numpy
 requests
 beautifulsoup4
 pytest
+xgboost
+joblib
+pydantic

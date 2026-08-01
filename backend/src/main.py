@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import math
+from datetime import datetime, timezone
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from backend.src.api.schemas import (
@@ -35,13 +36,35 @@ async def periodic_scraper():
         await asyncio.to_thread(scrape_ipo_watch)
         await asyncio.sleep(900) # 15 minutes
 
+def _maybe_refresh_stale_data():
+    """Lazy refresh: re-scrape if cached data is older than 15 minutes."""
+    live_file = os.path.join(os.path.dirname(__file__), 'data', 'live_ipos.json')
+    if not os.path.exists(live_file):
+        scrape_ipo_watch()
+        return
+    try:
+        with open(live_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        last_updated = data.get("last_updated")
+        if not last_updated:
+            scrape_ipo_watch()
+            return
+        updated_at = datetime.fromisoformat(last_updated.replace("Z", "+00:00"))
+        age_minutes = (datetime.now(timezone.utc) - updated_at).total_seconds() / 60
+        if age_minutes > 15:
+            scrape_ipo_watch()
+    except Exception:
+        pass
+
 @app.on_event("startup")
 async def startup_event():
-    asyncio.create_task(periodic_scraper())
+    if os.getenv("ENABLE_BACKGROUND_SCRAPER", "true").lower() == "true":
+        asyncio.create_task(periodic_scraper())
 
 @app.get("/api/live-ipos")
 def get_live_ipos(name: str = None):
     try:
+        _maybe_refresh_stale_data()
         live_file = os.path.join(os.path.dirname(__file__), 'data', 'live_ipos.json')
         if not os.path.exists(live_file):
             return {"last_updated": None, "ipos": []}

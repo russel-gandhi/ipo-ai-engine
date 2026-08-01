@@ -1,18 +1,3 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+"""Render/production entry point — re-exports the full FastAPI app."""
+from backend.src.main import app  # noqa: F401
 
-app = FastAPI(title="IPO Insight API", description="Backend for IPO Insight app")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://ipo-insight-frontend.onrender.com",
-    ],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello World from IPO Insight API"}

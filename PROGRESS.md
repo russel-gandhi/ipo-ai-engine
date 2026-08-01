@@ -62,4 +62,11 @@ Then check: does Fusion Klassroom show its own about text (not Q-Line Biotech)?
 **Status:** Completed
 
 ## Stage 7+ - Frontend
-**Status:** NOT STARTED — blocked on Stage 5B live verification gate.
+- [x] Next.js 16 app with landing page, IPO detail, and learn page
+- [x] Search autocomplete, IPO cards, subscription dashboard, allotment calculator
+- [x] Pattern match panel with peer comparison table
+- [x] Fixed missing `@/lib/api`, `@/lib/helpers`, `@/lib/utils` (build blocker)
+- [x] Frontend builds successfully (`npm run build`)
+- [x] Deployment configs: `render.yaml`, `frontend/.env.example`, updated `DEPLOYMENT.md`
+
+**Status:** Completed. Ready for Render/Vercel deploy.
