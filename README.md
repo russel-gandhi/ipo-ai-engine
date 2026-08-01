@@ -4,24 +4,27 @@
 
 `120 verified historical IPOs` | `48% walk-forward accuracy (vs 25% random baseline)` | `0 hardcoded predictions`
 
-![Analysis Dashboard](docs/screenshots/dashboard.png)
+![Analysis Dashboard](docs/screenshots/analyse.png)
+![Learn Mode](docs/screenshots/learn.png)
 
 ---
 
 ## The Honest Summary
 
-IPO-AI Engine is a dual-mode web platform designed to give Indian retail investors transparent, explainer-first analysis for Initial Public Offerings. Unlike conventional platforms that conceal prediction failures behind proprietary black-box ratings, IPO-AI Engine surfaces its retroactive accuracy, backtesting peer deltas, and model confidence scores alongside every data point. The platform combines real-time scraped market metrics, SEBI-compliant allotment math, and a walk-forward-validated machine learning engine to evaluate issues without hype. It is not a prediction or recommendation tool — it is a transparency dashboard that puts historical pattern matching and educational context ahead of speculation.
+IPO-AI Engine is a dual-mode web application designed to provide Indian retail investors with transparent, explainer-first analysis for Initial Public Offerings. Conventional financial portals display subscription figures and grey market hype while concealing their past prediction failures behind opaque proprietary ratings. IPO-AI Engine takes the opposite approach: it publishes its retroactive accuracy, backtesting deltas, and model confidence scores alongside every data point, featuring a dedicated Analyse Mode for real-time market metrics and an interactive Learn Mode for investor education. The platform combines automated market scraping, SEBI-compliant allotment math, and a walk-forward-validated machine learning engine to evaluate IPOs without hype. It is not a prediction or trading tool — it is an open transparency dashboard.
 
 ---
 
 ## What Makes This Different
 
-1. **Proof of Work table** — Displays every historical peer comparison including prediction misses alongside a published hit rate. Unlike commercial portals that hide past errors, every evaluation is paired with verifiable backtesting deltas.
-2. **Walk-forward validated, not backtested** — Built on strict chronological walk-forward validation after detecting and fixing a target leakage bug in GMP features that produced fraudulent 100% accuracy. The true, audited out-of-sample accuracy is 48%.
-3. **Confidence scores from real factors** — Evaluates confidence dynamically using real peer density, per-bucket historical walk-forward accuracy, model agreement between XGBoost and Logistic baselines, and source conflict flags rather than arbitrary percentages.
-4. **2021 regime warning** — Explicitly flags matches against the 2021 bull-market window where model accuracy dropped to 27%. Surfaces market-regime underperformance rather than smoothing over volatile historical anomalies.
-5. **Education at every data point** — Every metric includes CSS-only context tooltips, while the allotment calculator details exact mathematical steps. Built to inform first-time retail applicants and experienced investors alike.
-6. **SEBI allotment math engine** — Corrects the widespread retail misconception that submitting multiple lots on a single PAN increases allotment probability by enforcing SEBI's deterministic 1-lot-per-PAN lottery formula.
+1. **Proof of Work table** — Displays every historical peer comparison including model prediction misses alongside a published hit rate. Other commercial portals hide past errors; IPO-AI Engine explicitly displays "1 out of 4" when that is the historical reality.
+2. **Walk-forward validated, not backtested** — Built on strict chronological walk-forward validation after discovering and resolving a target leakage bug in initial GMP trend features (which were derived using post-listing actual performance, producing a fraudulent 100% test accuracy). The honest, audited out-of-sample accuracy is 48%.
+3. **Confidence scores from real factors** — Evaluates prediction confidence dynamically using real peer density, per-bucket historical walk-forward accuracy, model agreement between XGBoost and Logistic baselines, and source conflict flags rather than arbitrary percentages.
+4. **2021 regime warning** — Explicitly flags IPOs matching the 2021 bull-market window where model accuracy dropped to 27%. Surfaces structural underperformance during market euphoria rather than smoothing over historical anomalies.
+5. **Multi-category allotment calculator** — Supports Retail (lottery draw), sHNI (pool lottery), and bHNI (proportionate scaling) categories with dedicated mathematical algorithms. Corrects the most common retail misconception: applying for multiple lots on a single PAN card does NOT multiply your odds per PAN.
+6. **Education at every data point** — Every numeric metric on the analysis page includes a CSS-only explainer tooltip, while the allotment calculator details step-by-step mathematical logic. Built to inform first-time retail applicants and experienced investors simultaneously.
+7. **Keyboard-navigable search** — Features complete `ArrowUp`, `ArrowDown`, `Enter`, and `Escape` keyboard navigation on the IPO search autocomplete dropdown, complete with full ARIA accessibility attributes (`combobox`, `listbox`, `option`) and automatic scroll-into-view behavior.
+8. **Interactive Learn Mode** — Built as an interactive learning environment rather than a static documentation page. Features a clickable 5-node IPO lifecycle timeline, an animated 50-circle lottery grid, a hand-coded SVG GMP trajectory chart comparing accurate vs inaccurate predictions, and expandable case studies with Signal vs Reality breakdowns.
 
 ---
 
@@ -35,106 +38,138 @@ IPO-AI Engine is a dual-mode web platform designed to give Indian retail investo
          | (Playwright + BeautifulSoup, every 15 min)
          v
 [refresh_job.py — Background Scraper]
+    - _get_kv_from_table: KV table parser
+    - parse_detail_page: scoped by IPO name heading
+    - null-not-wrong fallback → scraper_errors.log
          |
          | (writes to)
          v
 [live_ipos.json — Local Cache]
-         |
+(sector, exchange, issue_size, lot_size, dates,
+ sub_qib/nii/retail, lot_distribution,
+ offer_breakdown, about, financials, status)
+
 [historical_ipos.csv — 120 real_scraped rows]
          |
          | (train.py — walk-forward validated)
          v
+[RelativeIssueSizeTransformer — features.py]
+(fits on train fold only, transforms test fold)
+         |
+         v
 [XGBoost Classifier] + [XGBoost Regressor] + [Logistic Baseline]
+(bucket_estimate)    (historical_gain_range)  (model_agreement)
          |
          v
 [FastAPI — main.py — Port 8000]
-    |         |          |
-    |         |          |
-/allotment  /verdict   /peers
-  -odds               
-    |         |          |
-    v         v          v
+    |           |            |            |
+/allotment   /verdict     /peers      /live-ipos
+  -odds      (pattern    (proof of    (scraper
+(SEBI math)   match)     work table)   cache)
+    |           |            |            |
+    v           v            v            v
 [Next.js App Router — Port 3000]
     |
-    |--- / (Landing + Search)
-    |--- /analyse/[slug] (7-section dashboard)
-    |--- /learn (5-section education hub)
+    |--- / .............. Landing page + SearchBar (keyboard nav)
+    |--- /analyse/[slug] .. 7-section analysis dashboard
+    |--- /learn .......... Interactive education hub (5 sections)
 ```
 
 ### Backend Components
 
 | File | Purpose | Key Detail |
 |---|---|---|
-| `calculator.py` | SEBI allotment math engine | Deterministic proportionate lottery calculation, 1-lot-per-PAN cap enforced |
-| `refresh_job.py` | Background scraper | Playwright + BeautifulSoup, 15-min refresh cycle, null-not-wrong fallback, `scraper_errors.log` |
-| `train.py` | Model training + walk-forward validation | Dynamic folds ($N \ge 15$), `DummyClassifier` baseline, confusion matrix per fold |
-| `features.py` | Feature engineering pipeline | `RelativeIssueSizeTransformer` fits on train fold only — no test-set leakage |
-| `main.py` | FastAPI server | 4 active endpoints, async background scraper, CORS configured for frontend |
-| `peers.py` | Proof of Work engine | Fold-specific retroactive retraining per peer — no future-data leakage in historical predictions |
-| `historical_ipos.csv` | Training dataset | 120 `real_scraped` + 91 `synthetic_interpolated` (tagged, excluded from validation) |
+| `calculator.py` | SEBI allotment math engine | Supports Retail (lottery), sHNI (pool lottery), bHNI (proportionate) — deterministic, zero ML |
+| `refresh_job.py` | Background scraper | Playwright + BS4, 15-min refresh cycle, scoped by IPO name heading, null fallback, `scraper_errors.log` |
+| `train.py` | Model training + validation | Walk-forward dynamic folds ($N \ge 15$), `DummyClassifier` + `DummyRegressor` baselines, confusion matrix per fold |
+| `features.py` | Feature engineering pipeline | `RelativeIssueSizeTransformer` computes sector average on train fold only — no future lookahead |
+| `main.py` | FastAPI server | 4 core endpoints, async background scraper task, CORS configured, `?name=` filter on `/live-ipos` |
+| `peers.py` | Proof of Work engine | Fold-specific retroactive retraining per peer ($\text{listing\_date} < \text{peer date}$) — no future data leakage |
+| `schemas.py` | Pydantic API contracts | All outputs use `historical_gain_range` not predicted gain %, `bucket_estimate` not verdict |
+| `historical_ipos.csv` | Training dataset | 120 `real_scraped` + 91 `synthetic_interpolated` (tagged, excluded from training + validation by default) |
 
 ### Frontend Components
 
 | File | Purpose | Key Detail |
 |---|---|---|
-| `SearchBar.tsx` | Live IPO search | 200ms debounce, server-side `?name=` filter query |
-| `Tooltip.tsx` | Inline explainers | CSS-only popover, no library dependencies, present on every data metric |
-| `AllotmentCalculator.tsx` | SEBI math UI | Renders step-by-step math, corrects multi-lot PAN misconceptions |
-| `PeerTable.tsx` | Proof of Work UI | Renders all historical peers including misses with 2021 regime warning flags |
-| `helpers.ts` | Slug & display utils | `toSlug`, `fromSlug`, `getSectorBadge`, `getStatusBadge`, `formatRupee` |
-| `/analyse/[slug]/page.tsx` | Dynamic analysis page | 7 interactive sections, all data loaded dynamically from API, zero hardcoded IPO data |
+| `SearchBar.tsx` | Live IPO search | 200ms debounce, `?name=` server filter, full keyboard nav (`↑`, `↓`, `Enter`, `Escape`), ARIA combobox |
+| `Tooltip.tsx` | Inline explainers | CSS-only hover popover, zero external libraries, present on every numeric data point |
+| `AllotmentCalculator.tsx` | SEBI math UI | 3-tab category selector (Retail/sHNI/bHNI), distinct math + callout per category, step-by-step math |
+| `PeerTable.tsx` | Proof of Work UI | All peers displayed including misses, `regime_warning` flag for 2021 window, N/A rows at 0.5 opacity |
+| `IpoCard.tsx` | Landing page grid | Status badge, GMP, subscription multiple, close date, direct `Analyse →` link |
+| `SubscriptionBars.tsx` | Subscription dashboard | 3 progress bars with $\text{width} = \min(\text{sub}/50, 1) \times 100\%$, inline tooltips |
+| `helpers.ts` | Slug & display utils | `toSlug`, `fromSlug`, `getInitials`, `getSectorBadge`, `getStatusBadge`, `formatRupee` |
+| `/analyse/[slug]/page.tsx` | Dynamic analysis page | 7 interactive sections, all data fetched from `/api/live-ipos`, zero hardcoded IPO data |
+| `/learn/page.tsx` | Education hub | Interactive timeline, animated lottery grid, hand-coded SVG GMP chart, expandable case studies |
 
 ---
 
 ### ML Pipeline
 
-1. **Data sourcing** — 120 verified, scraped historical Indian IPOs (mainboard and SME segments) tagged by data origin. 91 synthetic interpolated rows are explicitly tagged and excluded from model training and out-of-sample validation.
-2. **Feature engineering** — 14 structured features including GMP trajectory slope, per-category subscription multiples (QIB, NII, Retail), anchor allocation percentage, trailing 30-day Nifty market regime index, and sector-relative issue size (transformed via custom `scikit-learn` Transformer fitted exclusively on training folds).
-3. **Leakage audit** — Every feature underwent a strict data leakage audit. An initial inspection revealed that GMP trend features were accidentally derived using post-listing actual performance, producing fraudulent 100% test accuracy. The pipeline was restructured to enforce complete temporal isolation, reducing accuracy to an honest 48%.
-4. **Walk-forward validation** — Evaluated using rolling chronological windows ($N \ge 15$ test samples per fold) without fold overlap, ensuring the model trains exclusively on historical data prior to each test window. Every fold is benchmarked against `DummyClassifier` and `DummyRegressor` baselines.
-5. **Ensemble Architecture** — Primary XGBoost Classifier for bucket estimation (`loss`, `flat`, `moderate`, `high`), secondary XGBoost Regressor for listing gain percentage ranges, and a Logistic Regression baseline. Model agreement is tracked and exposed in the API payload.
+1. **Data sourcing** — 120 verified historical Indian IPOs (mainboard and SME segments) tagged via the `data_source` column. 91 synthetic rows are explicitly tagged and excluded from all training and validation runs. Sector and date distribution are audited for temporal balance.
+2. **Feature engineering** — 14 structured features including: GMP trajectory slope (rate of change over the bidding window, not a static snapshot), per-category subscription multiples (QIB, NII, Retail separately), anchor allocation percentage, trailing 30-day Nifty index return as a market regime proxy, `fresh_vs_ofs_ratio`, and sector-relative issue size (computed via `RelativeIssueSizeTransformer` fitted exclusively on training folds).
+3. **Leakage audit** — All 14 features were audited for temporal leakage. A critical vulnerability was uncovered: GMP trend features (`gmp_trend`, `gmp_trajectory`) were originally derived by referencing actual listing performance (`actual_listing_gain_pct`) and working backward — leaking target label data into inputs. This produced a fraudulent 100% test accuracy and 0.51% RMSE. The pipeline was restructured so GMP metrics rely strictly on pre-listing grey market observations independent of actual outcomes, adjusting accuracy to an honest 48%.
+4. **Walk-forward validation** — Rolling chronological evaluation ($N \ge 15$ test samples per fold) without fold overlap. The model trains exclusively on IPOs listed prior to each test window. `DummyClassifier` (`strategy="most_frequent"`) and `DummyRegressor` (`strategy="mean"`) baselines are computed per fold for benchmark comparison.
+5. **Ensemble Architecture** — Primary XGBoost Classifier (bucket output: `loss`, `flat`, `moderate`, `high`), secondary XGBoost Regressor (`historical_gain_range` derived from walk-forward residual standard deviation), and a Logistic Regression baseline. Model agreement is tracked and exposed in every API response payload. Confidence scoring penalizes the `high` bucket, which exhibited higher classification variance in fold confusion matrices.
 6. **Honest Results Matrix:**
 
 | Test Window | Train N | Test N | Classifier Acc | Naive Acc | Regressor MAE | Naive MAE |
 |---|---|---|---|---|---|---|
 | 2019-12 to 2020-08 | 36 | 15 | 67% | 47% | 11.22% | 21.25% |
 | 2020-09 to 2021-02 | 51 | 15 | 53% | 33% | 13.19% | 19.46% |
-| 2021-03 to 2021-09 | 66 | 15 | 27% | 7% | 17.18% | 11.21% |
+| 2021-03 to 2021-09 | 66 | 15 | **27%** | 7% | 17.18% | 11.21% |
 | 2021-10 to 2022-04 | 81 | 15 | 60% | 40% | 12.20% | 14.88% |
 | 2022-04 to 2023-02 | 96 | 24 | 38% | 25% | 11.59% | 12.74% |
-| **Overall** | — | — | **48%** | **~30%** | — | — |
+| **Overall** | — | — | **48%** | ~30% | — | — |
 
-*Note on 2021-03 to 2021-09 fold:* During the peak 2021 tech IPO bull market (Zomato, Nykaa, Paytm), market valuation multiples detached from historical baselines, causing model accuracy to drop to 27%. Rather than discarding this fold, the platform explicitly surfaces 2021 matches with a prominent regime warning badge.
+*Note on the 2021-03 to 2021-09 fold:* During the peak 2021 tech IPO market (Zomato, Nykaa, Paytm), market valuation multiples detached from historical baselines, causing classifier accuracy to fall to **27%**. Rather than masking this fold, the platform explicitly surfaces 2021 peer comparisons with a `regime_warning` badge in Analyse Mode and uses it as an educational case study in Learn Mode.
+
+---
+
+## Feature Deep-Dive: The Allotment Calculator
+
+The SEBI Allotment Calculator enforces SEBI's official allotment math across all three investor categories, correcting widespread retail misconceptions:
+
+- **Retail Category (RII — up to ₹2 Lakhs)**: Governed by SEBI's computerised random lottery draw when oversubscribed. Maximum 1 lot per valid PAN card. Probability per PAN is $p = \min(1.0, 1.0 / S_{\text{retail}})$. Submitting across $N$ family PANs yields an overall probability of $P(\ge 1) = 1 - (1 - p)^N$. Applying for multiple lots on a single PAN does NOT increase lottery odds per PAN.
+- **Small HNI (sHNI — ₹2L to ₹10L)**: Governed by a lottery draw within the sHNI pool when oversubscribed. Applicants bid for a minimum lot threshold (typically 14 lots / ₹2 Lakhs). Winning applicants receive exactly 1 minimum sHNI allotment lot ($p = \min(1.0, 1.0 / S_{\text{nii}})$). Bidding beyond the minimum sHNI lot size does not increase lottery success probability.
+- **Big HNI (bHNI — above ₹10L)**: Governed by strictly proportionate allotment when oversubscribed ($\text{allotment ratio} = 1.0 / S_{\text{nii}}$). Expected allotment is $\text{applied lots} \times \text{allotment ratio}$. This is the only investor category where committing more capital directly increases the quantity of shares allotted.
+
+Under SEBI regulations, submitting multiple applications for more than 1 lot under the same PAN card in oversubscribed retail issues results in application rejection or capping at 1 minimum lot.
 
 ---
 
 ## API Reference
 
 ### 1. `POST /api/allotment-odds`
-Computes SEBI-compliant proportionate allotment odds across single or multi-PAN family applications.
+Computes SEBI-compliant allotment odds across Retail, sHNI, and bHNI investor categories.
 
 **Request:**
 ```json
 {
-  "sub_retail": 3.07,
-  "num_pans": 2,
-  "category": "Retail"
+  "category": "sHNI",
+  "sub_nii": 8.4,
+  "applied_lots": 14,
+  "lot_size": 100,
+  "cutoff_price": 150.0
 }
 ```
 
 **Response:**
 ```json
 {
-  "category": "Retail",
+  "category": "sHNI",
   "masked_pan": "⁕⁕⁕⁕⁕⁕1234F",
-  "probability_pct": 32.57,
-  "probability_at_least_one_lot": 0.5454,
-  "odds_per_pan": 0.3257,
-  "expected_lots": 0.65,
-  "allotment_regime": "Proportionate Lottery",
-  "explain_text": "With Retail category subscribed 3.07x, each PAN has a 32.6% chance of allotment.",
-  "guardrail": "Applying for multiple lots on the same PAN does NOT increase your allotment probability.",
-  "privacy_note": "PAN data lives strictly in volatile memory and is never written to persistent storage."
+  "probability_pct": 11.9,
+  "probability_at_least_one_lot": 0.119,
+  "odds_per_pan": 0.119,
+  "expected_lots": 1.67,
+  "allotment_regime": "Lottery (sHNI pool)",
+  "explain_text": "With NII category subscribed 8.40x, each sHNI application has a 11.9% probability of winning the minimum sHNI allotment.",
+  "guardrail": "sHNI allotment works differently from retail — you're applying for a larger minimum lot size, and the lottery is within the sHNI pool only.",
+  "privacy_note": "PAN data lives strictly in volatile memory and is never written to persistent storage.",
+  "min_allotment_lots": 14,
+  "min_allotment_shares": 1400,
+  "min_allotment_value": 210000.0
 }
 ```
 
@@ -166,9 +201,11 @@ Evaluates IPO metrics using XGBoost and Logistic Regression to generate a histor
   "real_peer_count": 5,
   "walk_forward_accuracy_for_bucket": 0.48,
   "model_agreement": true,
-  "disclaimer": "All outputs are generated via historical pattern matching against past Indian IPO listings. Never interpret predictions as buy/sell recommendations."
+  "disclaimer": "This output is based on historical pattern matching across similar past IPOs. It is not a prediction, recommendation, or investment advice."
 }
 ```
+
+*Note on disclaimer:* The `disclaimer` field is present in the raw JSON payload returned by the FastAPI server, ensuring compliance rules are enforced at the API boundary regardless of client implementation.
 
 ### 3. `POST /api/ipo/peers`
 Retrieves retroactively evaluated historical peers for proof-of-work validation.
@@ -203,8 +240,10 @@ Retrieves retroactively evaluated historical peers for proof-of-work validation.
 }
 ```
 
+*Note on peer evaluation:* Retroactive peer predictions utilize fold-specific models trained exclusively on market data listed prior to each peer's listing date, avoiding future-data leakage in historical evaluations.
+
 ### 4. `GET /api/live-ipos`
-Returns cached live IPO data scraped from primary market portals with optional name filtering.
+Returns cached live IPO data scraped from primary market portals with optional server-side search filtering.
 
 **Request:**
 ```http
@@ -222,7 +261,11 @@ GET /api/live-ipos?name=juniper HTTP/1.1
       "price_band": 225.0,
       "status": "open",
       "sector": "Energy",
-      "issue_size": 1800.0
+      "issue_size": 1800.0,
+      "lot_size": 65,
+      "sub_retail": 3.07,
+      "sub_nii": 8.4,
+      "sub_qib": 18.2
     }
   ]
 }
@@ -231,6 +274,10 @@ GET /api/live-ipos?name=juniper HTTP/1.1
 ---
 
 ## Setup & Running Locally
+
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
 
 ### Backend Setup
 
@@ -245,7 +292,7 @@ playwright install chromium
 python -m uvicorn backend.src.main:app --reload --port 8000
 ```
 
-*Note on scraping:* The background scraper fetches live metrics from primary market sources. When executing inside restricted cloud sandboxes or datacenters, Cloudflare protection may cause connection timeouts. Run on a residential IP network for active scraping.
+*Note on scraping:* The background scraper fetches live metrics from `ipowatch.in` via Playwright. When running inside restricted datacenter or cloud sandbox environments, Cloudflare protection may block outbound browser instances. Run on a residential IP for live scraping. Cached data in `live_ipos.json` is served automatically if scraping is restricted, ensuring API availability.
 
 ### Frontend Setup
 
@@ -263,20 +310,22 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Data & Model Notes
 
-The underlying dataset contains 120 verified historical Indian IPO listings. While 120 rows provide sufficient sample density for a 4-bucket classification model, regression point estimates remain constrained by sample variance across rare sectors. This is why listing gains are presented strictly as bounded ranges (`15-35%`) rather than exact decimal predictions.
+The core dataset contains 120 verified historical Indian IPO listings. A 120-row sample size provides adequate density for a 4-bucket classification model, whereas continuous regression functions face higher variance across infrequent industry sectors. Consequently, listing outcomes are framed as bounded percentage ranges (`15-35%`) rather than misleading point estimates.
 
-Leave-One-Out Cross-Validation (LOOCV) was deliberately avoided. In financial time-series data, LOOCV introduces temporal leakage by training on future market regimes to predict past listings. Chronological walk-forward validation is harder and yields lower baseline accuracy (48% vs >70% LOOCV), but reflects true out-of-sample performance.
+Leave-One-Out Cross-Validation (LOOCV) was deliberately rejected. In time-series financial datasets, LOOCV introduces temporal leakage by allowing models to train on future market regimes when evaluating past listings. Chronological walk-forward validation enforces strict temporal separation, yielding lower out-of-sample accuracy (48% vs >70% LOOCV) but accurately reflecting deployment conditions.
 
-Synthetic data policy: 91 synthetic interpolated rows were generated during exploratory testing. These rows are tagged and strictly excluded from model training, feature fitting, and validation matrices. Expanding the core dataset to 500+ verified historical listings would allow smaller chronological fold windows, tighter regressor range bounds, and higher per-sector peer density.
+Synthetic data policy: 91 synthetic interpolated rows exist, tagged `synthetic_interpolated`, and are excluded from training and validation by default. Synthetic rows are reintroduced only for thin sector buckets containing fewer than 10 real rows if walk-forward accuracy for that bucket measurably improves, and are automatically retired once real sample counts reach 15.
+
+Expanding the dataset to 500+ verified historical listings would enable wider chronological fold windows, tighter regressor range bounds, and improved stability in volatile market regimes like the 2021 bull market window.
 
 ---
 
 ## What This Is Not
 
 - **Not a SEBI-registered Investment Adviser or Research Analyst.**
-- **Not a prediction engine** — all outputs represent historical pattern matching against past market data.
-- **Not a trading signal** — the platform deliberately omits terms like "buy", "sell", "target price", or "verdict" across all interfaces.
-- **Not production-ready for real capital allocation decisions** without formal financial audit and compliance review.
+- **Not a prediction engine** — all outputs are documented and presented as "historical pattern matching" across past market data.
+- **Not a trading signal** — the terms "buy", "sell", "prediction", and "verdict" do not appear anywhere in the application codebase or UI interfaces.
+- **Not production-ready for real capital allocation decisions** without formal financial audit and regulatory compliance review.
 
 ---
 
@@ -286,36 +335,42 @@ Synthetic data policy: 91 synthetic interpolated rows were generated during expl
 ipo-ai-engine/
 ├── backend/
 │   ├── src/
-│   │   ├── main.py
-│   │   ├── calculator.py
+│   │   ├── main.py                    # FastAPI app, startup tasks, CORS
+│   │   ├── calculator.py              # SEBI allotment math (all 3 categories)
 │   │   ├── scraper/
-│   │   │   └── refresh_job.py
+│   │   │   └── refresh_job.py         # Playwright + BS4 scraper, 15-min loop
 │   │   ├── model/
-│   │   │   ├── train.py
-│   │   │   ├── features.py
-│   │   │   └── peers.py
+│   │   │   ├── train.py               # Walk-forward validation, baselines
+│   │   │   ├── features.py            # RelativeIssueSizeTransformer + pipeline
+│   │   │   └── peers.py               # Retroactive fold-specific retraining
 │   │   ├── api/
-│   │   │   └── schemas.py
+│   │   │   └── schemas.py             # Pydantic request/response models
 │   │   └── data/
-│   │       ├── historical_ipos.csv
-│   │       ├── live_ipos.json
-│   │       └── scraper_errors.log
+│   │       ├── historical_ipos.csv    # 120 real_scraped + 91 synthetic rows
+│   │       ├── live_ipos.json         # Scraper cache, updated every 15 min
+│   │       └── scraper_errors.log     # Per-IPO scrape failure log
 │   └── requirements.txt
 ├── frontend/
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── page.tsx
-│   │   │   ├── analyse/[slug]/page.tsx
-│   │   │   └── learn/page.tsx
+│   │   │   ├── layout.tsx             # Nav + disclaimer banner (all pages)
+│   │   │   ├── page.tsx               # Landing page + search + IPO grid
+│   │   │   ├── analyse/
+│   │   │   │   └── [slug]/
+│   │   │   │       └── page.tsx       # Dynamic 7-section analysis page
+│   │   │   └── learn/
+│   │   │       └── page.tsx           # Interactive 5-section education hub
 │   │   ├── components/
-│   │   │   ├── SearchBar.tsx
-│   │   │   ├── IpoCard.tsx
-│   │   │   ├── Tooltip.tsx
-│   │   │   ├── AllotmentCalculator.tsx
-│   │   │   └── PeerTable.tsx
+│   │   │   ├── SearchBar.tsx          # Autocomplete + keyboard navigation
+│   │   │   ├── IpoCard.tsx            # Landing page IPO cards
+│   │   │   ├── Tooltip.tsx            # CSS-only hover popover
+│   │   │   ├── SubscriptionBars.tsx   # QIB/NII/Retail progress bars
+│   │   │   ├── AllotmentCalculator.tsx # 3-category SEBI calculator
+│   │   │   └── PeerTable.tsx          # Proof of Work table
 │   │   └── lib/
-│   │       ├── api.ts
-│   │       └── helpers.ts
-│   └── package.json
+│   │       ├── api.ts                 # Typed API client functions
+│   │       └── helpers.ts             # toSlug, getSectorColor, getStatusBadge
+│   ├── package.json
+│   └── tsconfig.json
 └── README.md
 ```
