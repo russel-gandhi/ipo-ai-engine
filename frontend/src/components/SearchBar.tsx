@@ -10,10 +10,13 @@ export default function SearchBar() {
   const [results, setResults] = useState<any[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
+
   const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setHighlightedIndex(-1);
     const timer = setTimeout(() => {
       if (query.trim().length > 0) {
         setLoading(true);
@@ -35,11 +38,20 @@ export default function SearchBar() {
     return () => clearTimeout(timer);
   }, [query]);
 
+  // Scroll highlighted item into view automatically
+  useEffect(() => {
+    if (highlightedIndex >= 0) {
+      document.getElementById(`result-${highlightedIndex}`)
+        ?.scrollIntoView({ block: "nearest" });
+    }
+  }, [highlightedIndex]);
+
   // Close dropdown on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
+        setHighlightedIndex(-1);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -50,7 +62,55 @@ export default function SearchBar() {
     const slug = toSlug(name);
     setQuery("");
     setIsOpen(false);
+    setHighlightedIndex(-1);
     router.push(`/analyse/${slug}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Tab") {
+      setIsOpen(false);
+      setHighlightedIndex(-1);
+      return;
+    }
+
+    if (e.key === "Escape") {
+      setIsOpen(false);
+      setHighlightedIndex(-1);
+      return;
+    }
+
+    if (!isOpen || results.length === 0) {
+      return;
+    }
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setHighlightedIndex((prev) => {
+        if (prev === -1 || prev >= results.length - 1) {
+          return 0;
+        }
+        return prev + 1;
+      });
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setHighlightedIndex((prev) => {
+        if (prev <= 0) {
+          return results.length - 1;
+        }
+        return prev - 1;
+      });
+    } else if (e.key === "Enter") {
+      if (highlightedIndex >= 0 && highlightedIndex < results.length) {
+        e.preventDefault();
+        handleSelect(results[highlightedIndex].name);
+      } else if (highlightedIndex === -1 && results.length === 1) {
+        e.preventDefault();
+        handleSelect(results[0].name);
+      }
+    } else {
+      // Reset keyboard highlight on typing alphanumeric/keystrokes
+      setHighlightedIndex(-1);
+    }
   };
 
   return (
@@ -58,8 +118,12 @@ export default function SearchBar() {
       <div className="relative flex items-center">
         <input
           type="text"
+          role="combobox"
+          aria-expanded={isOpen}
+          aria-activedescendant={highlightedIndex >= 0 ? `result-${highlightedIndex}` : undefined}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
           onFocus={() => query.trim().length > 0 && setIsOpen(true)}
           placeholder="Search any open or upcoming IPO by name..."
           className="w-full bg-card-bg border border-card-border rounded-xl px-4 py-3.5 pl-11 text-[14px] text-primary-text placeholder:text-muted-text shadow-sm outline-none focus:border-accent-indigo focus:ring-2 focus:ring-accent-indigo/10 transition-all font-sans"
@@ -79,16 +143,28 @@ export default function SearchBar() {
 
       {/* Autocomplete Dropdown */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-card-bg border border-card-border rounded-xl shadow-xl overflow-hidden z-50 divide-y divide-card-border max-h-[360px] overflow-y-auto">
+        <div
+          role="listbox"
+          className="absolute top-full left-0 right-0 mt-2 bg-card-bg border border-card-border rounded-xl shadow-xl overflow-hidden z-50 divide-y divide-card-border max-h-[360px] overflow-y-auto"
+        >
           {results.length > 0 ? (
-            results.map((ipo) => {
+            results.map((ipo, index) => {
               const statusBadge = getStatusBadge(ipo);
               const initials = getInitials(ipo.name);
+              const isHighlighted = index === highlightedIndex;
+
               return (
                 <div
                   key={ipo.name}
+                  id={`result-${index}`}
+                  role="option"
+                  aria-selected={isHighlighted}
                   onClick={() => handleSelect(ipo.name)}
-                  className="p-3 hover:bg-input-bg cursor-pointer flex items-center justify-between transition-colors"
+                  className={`p-3 cursor-pointer flex items-center justify-between transition-colors hover:bg-input-bg border-l-2 ${
+                    isHighlighted
+                      ? "bg-[#f5f3ff] border-[#6366f1]"
+                      : "border-transparent"
+                  }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-input-bg border border-input-border flex items-center justify-center text-[11px] font-bold font-mono">
