@@ -34,44 +34,44 @@ IPO-AI Engine is a dual-mode web application designed to provide Indian retail i
 
 ```mermaid
 flowchart TD
-    subgraph SOURCES["🌐 External Data Sources"]
+    subgraph SOURCES["External Data Sources"]
         SCRAPE["ipowatch.in / chittorgarh.com"]
     end
 
-    subgraph INGESTION["⚡ Scraper Engine"]
+    subgraph INGESTION["Scraper Engine"]
         JOB["refresh_job.py — Background Scraper<br/>(Playwright + BS4 every 15 min)"]
         LOG["scraper_errors.log"]
     end
 
-    subgraph STORAGE["📦 Data Storage"]
+    subgraph STORAGE["Data Storage"]
         CACHE[("live_ipos.json — Local Cache")]
         HIST[("historical_ipos.csv — 120 Real Rows")]
     end
 
-    subgraph ML["🧠 Machine Learning Pipeline"]
-        FEAT["features.py<br/>(RelativeIssueSizeTransformer)"]
+    subgraph ML["Machine Learning Pipeline"]
+        FEAT["features.py — RelativeIssueSizeTransformer<br/>(Fitted on Train Fold Only)"]
         ENSEMBLE["XGBoost Classifier + Regressor<br/>& Logistic Baseline"]
     end
 
-    subgraph API["🚀 FastAPI Backend Server (Port 8000)"]
-        FASTAPI["main.py — FastAPI"]
-        EP1["/api/allotment-odds<br/>(SEBI Allotment Math)"]
-        EP2["/api/ipo/verdict<br/>(Pattern Match Engine)"]
-        EP3["/api/ipo/peers<br/>(Proof of Work Table)"]
-        EP4["/api/live-ipos<br/>(Scraped Live Cache)"]
+    subgraph API["FastAPI Backend Server (Port 8000)"]
+        FASTAPI["main.py — FastAPI Server"]
+        EP1["/api/allotment-odds — SEBI Math"]
+        EP2["/api/ipo/verdict — Pattern Match"]
+        EP3["/api/ipo/peers — Proof of Work"]
+        EP4["/api/live-ipos — Scraper Cache"]
     end
 
-    subgraph FRONTEND["💻 Next.js App Router (Port 3000)"]
+    subgraph FRONTEND["Next.js App Router (Port 3000)"]
         P1["/ — Landing Page & SearchBar"]
         P2["/analyse/[slug] — Analysis Dashboard"]
         P3["/learn — Interactive Learn Hub"]
     end
 
-    SCRAPE -->|Automated Fetch| JOB
-    JOB -->|Write Clean Json| CACHE
-    JOB -.->|Log Failures| LOG
+    SCRAPE --> JOB
+    JOB --> CACHE
+    JOB -.-> LOG
 
-    HIST -->|train.py (Walk-Forward)| FEAT
+    HIST --> FEAT
     FEAT --> ENSEMBLE
 
     CACHE --> FASTAPI
@@ -108,9 +108,10 @@ flowchart TD
 | `train.py` | Model training + validation | Walk-forward dynamic folds ($N \ge 15$), `DummyClassifier` + `DummyRegressor` baselines, confusion matrix per fold |
 | `features.py` | Feature engineering pipeline | `RelativeIssueSizeTransformer` computes sector average on train fold only — no future lookahead |
 | `main.py` | FastAPI server | 4 core endpoints, async background scraper task, CORS configured, `?name=` filter on `/live-ipos` |
-| `peers.py` | Proof of Work engine | Fold-specific retroactive retraining per peer ($\text{listing\_date} < \text{peer date}$) — no future data leakage |
+| `peers.py` | Proof of Work engine | Fold-specific retroactive retraining per peer (`listing_date < peer_date`) — no future data leakage |
 | `schemas.py` | Pydantic API contracts | All outputs use `historical_gain_range` not predicted gain %, `bucket_estimate` not verdict |
 | `historical_ipos.csv` | Training dataset | 120 `real_scraped` + 91 `synthetic_interpolated` (tagged, excluded from training + validation by default) |
+
 
 ### Frontend Components
 
