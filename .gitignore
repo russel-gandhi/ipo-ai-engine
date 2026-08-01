@@ -47,3 +47,7 @@ dist-ssr/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Scraper Cache & Logs
+backend/src/scraper/.cache/
+backend/src/data/scraper_errors.log

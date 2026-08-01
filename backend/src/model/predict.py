@@ -36,7 +36,7 @@ def _load_models():
 
 def predict_listing_gain(features: dict) -> dict:
     """
-    Predicts the listing gain bucket and exact percentage.
+    Outputs historical pattern matching for the requested IPO.
     `features` should match the VerdictRequest schema keys.
     """
     _load_models()
@@ -52,37 +52,154 @@ def predict_listing_gain(features: dict) -> dict:
     
     # Peer extraction
     sector_peers = _df_historical[_df_historical['sector'].str.lower() == sector.lower()]
-    total_peer_count = len(sector_peers)
     real_peer_count = len(sector_peers[sector_peers['data_source'] == 'real_scraped']) if 'data_source' in sector_peers.columns else 0
     
-    # Base confidence score (probability of the predicted class)
-    probabilities = _classifier.predict_proba(df_features)[0]
-    classes = _classifier.classes_
-    class_index = list(classes).index(predicted_bucket)
-    base_confidence = float(probabilities[class_index])
+    # Hardcoded empirical walk-forward accuracy per bucket (from Section 1 evidence)
+    wf_accuracy = {
+        "loss": 0.60,
+        "flat": 0.45,
+        "moderate": 0.15,
+        "high": 0.25
+    }
     
-    # Adjust confidence based on agreement with baseline
-    if predicted_bucket != baseline_bucket:
-        base_confidence *= 0.7 # Penalty for disagreement
-        
-    # Adjust confidence based on real peer availability
+    bucket_acc = wf_accuracy.get(predicted_bucket, 0.48)
+    
+    # Compute confidence score
+    score_val = bucket_acc
+    model_agreement = (predicted_bucket == baseline_bucket)
+    if not model_agreement:
+        score_val -= 0.15
     if real_peer_count < 5:
-        base_confidence *= 0.5
+        score_val -= 0.20
     elif real_peer_count < 10:
-        base_confidence *= 0.8
+        score_val -= 0.10
+        
+    if score_val >= 0.5:
+        confidence_str = "High"
+    elif score_val >= 0.3:
+        confidence_str = "Moderate"
+    else:
+        confidence_str = f"Low (Historically poor accuracy for '{predicted_bucket}' estimates)"
+        
+    if not model_agreement:
+        confidence_str += " — Low model agreement, treat with caution"
         
     # Regression
     predicted_gain_pct = float(_regressor.predict(df_features)[0])
     
     # Walk-forward confidence interval using residual std dev
-    lower_bound = predicted_gain_pct - _residual_std
-    upper_bound = predicted_gain_pct + _residual_std
+    lower_bound = round(predicted_gain_pct - _residual_std, 1)
+    upper_bound = round(predicted_gain_pct + _residual_std, 1)
+    
+    gain_range_str = f"{lower_bound}% to {upper_bound}%"
     
     return {
         "bucket_estimate": str(predicted_bucket),
-        "historical_gain_range": (round(lower_bound, 2), round(upper_bound, 2)),
-        "confidence_score": round(base_confidence, 2),
+        "historical_gain_range": gain_range_str,
+        "confidence_score": confidence_str,
         "real_peer_count": real_peer_count,
-        "total_peer_count": total_peer_count,
-        "disclaimer": "This prediction incorporates a walk-forward confidence interval. The model's baseline LOOCV accuracy was 0.88, but true out-of-sample performance in volatile markets may be lower."
+        "walk_forward_accuracy_for_bucket": bucket_acc,
+        "model_agreement": model_agreement,
+        "disclaimer": "This output is based on historical pattern matching across similar past IPOs. It is not a prediction, recommendation, or investment advice."
+    }
+
+def predict_retroactive(features: dict, cutoff_date: str) -> dict:
+    """
+    Computes retroactive predictions using only data available prior to cutoff_date.
+    """
+    from backend.src.model.features import get_feature_pipeline, RelativeIssueSizeTransformer
+    from sklearn.pipeline import Pipeline
+    from sklearn.ensemble import GradientBoostingClassifier, GradientBoostingRegressor
+    from sklearn.linear_model import LogisticRegression
+    import numpy as np
+
+    _load_models()
+    
+    # Filter dataset
+    df = _df_historical.copy()
+    if 'source_conflict_flag' in df.columns:
+        df_real = df[(df['data_source'] == 'real_scraped') & (df['source_conflict_flag'] != True)].copy()
+    else:
+        df_real = df[df['data_source'] == 'real_scraped'].copy()
+        
+    df_real['listing_date'] = pd.to_datetime(df_real['listing_date'])
+    cutoff_dt = pd.to_datetime(cutoff_date)
+    
+    train_df = df_real[df_real['listing_date'] < cutoff_dt].copy()
+    
+    if len(train_df) < 15:
+        return {
+            "bucket_estimate": "N/A",
+            "historical_gain_range": "N/A",
+            "confidence_score": "N/A (Insufficient prior data)"
+        }
+        
+    feature_cols = [
+        'issue_size', 'sub_retail', 'sub_nii', 'sub_qib', 'sub_overall', 
+        'price_band', 'fresh_vs_ofs_ratio', 'sector', 'gmp_trend',
+        'anchor_allocation_pct', 'gmp_trajectory', 
+        'market_regime_nifty_30d', 'is_sme'
+    ]
+    
+    X_train = train_df[feature_cols]
+    y_train_c = train_df['listing_gain_bucket']
+    y_train_r = train_df['actual_listing_gain_pct']
+    
+    clf = Pipeline([
+        ('relative_size', RelativeIssueSizeTransformer()),
+        ('preprocessor', get_feature_pipeline()),
+        ('classifier', GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42))
+    ])
+    
+    reg = Pipeline([
+        ('relative_size', RelativeIssueSizeTransformer()),
+        ('preprocessor', get_feature_pipeline()),
+        ('regressor', GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42))
+    ])
+    
+    baseline = Pipeline([
+        ('relative_size', RelativeIssueSizeTransformer()),
+        ('preprocessor', get_feature_pipeline()),
+        ('classifier', LogisticRegression(max_iter=1000, random_state=42))
+    ])
+    
+    clf.fit(X_train, y_train_c)
+    reg.fit(X_train, y_train_r)
+    baseline.fit(X_train, y_train_c)
+    
+    train_preds_r = reg.predict(X_train)
+    residual_std = np.std(y_train_r - train_preds_r)
+    
+    df_f = pd.DataFrame([features])
+    
+    predicted_bucket = clf.predict(df_f)[0]
+    baseline_bucket = baseline.predict(df_f)[0]
+    
+    wf_accuracy = {"loss": 0.60, "flat": 0.45, "moderate": 0.15, "high": 0.25}
+    bucket_acc = wf_accuracy.get(predicted_bucket, 0.48)
+    
+    score_val = bucket_acc
+    model_agreement = (predicted_bucket == baseline_bucket)
+    if not model_agreement:
+        score_val -= 0.15
+        
+    if score_val >= 0.5:
+        confidence_str = "High"
+    elif score_val >= 0.3:
+        confidence_str = "Moderate"
+    else:
+        confidence_str = f"Low (Historically poor accuracy for '{predicted_bucket}')"
+        
+    if not model_agreement:
+        confidence_str += " — Low model agreement"
+        
+    pred_gain = float(reg.predict(df_f)[0])
+    lower_bound = round(pred_gain - residual_std, 1)
+    upper_bound = round(pred_gain + residual_std, 1)
+    
+    return {
+        "bucket_estimate": str(predicted_bucket),
+        "historical_gain_range": f"{lower_bound}% to {upper_bound}%",
+        "confidence_score": confidence_str,
+        "predicted_midpoint": pred_gain
     }

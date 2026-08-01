@@ -38,7 +38,7 @@ def test_retail_oversubscribed_with_spillover():
     assert "Applying for multiple lots" in res["guardrail"]
     assert "volatile memory" in res["privacy_note"]
     
-    print("Test Retail Oversubscribed with Spillover Passed:", res)
+    print("Test Retail Oversubscribed with Spillover Passed:", res["probability_pct"])
 
 def test_qib_always_100_percent():
     res = calculate_sebi_allotment_odds("QWERT9876A", "QIB", 5000000, {})
