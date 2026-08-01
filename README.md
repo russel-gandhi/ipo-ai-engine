@@ -32,48 +32,72 @@ IPO-AI Engine is a dual-mode web application designed to provide Indian retail i
 
 ### System Architecture Diagram
 
-```
-[ipowatch.in / chittorgarh.com]
-         |
-         | (Playwright + BeautifulSoup, every 15 min)
-         v
-[refresh_job.py — Background Scraper]
-    - _get_kv_from_table: KV table parser
-    - parse_detail_page: scoped by IPO name heading
-    - null-not-wrong fallback → scraper_errors.log
-         |
-         | (writes to)
-         v
-[live_ipos.json — Local Cache]
-(sector, exchange, issue_size, lot_size, dates,
- sub_qib/nii/retail, lot_distribution,
- offer_breakdown, about, financials, status)
+```mermaid
+flowchart TD
+    subgraph SOURCES["🌐 External Data Sources"]
+        SCRAPE["ipowatch.in / chittorgarh.com"]
+    end
 
-[historical_ipos.csv — 120 real_scraped rows]
-         |
-         | (train.py — walk-forward validated)
-         v
-[RelativeIssueSizeTransformer — features.py]
-(fits on train fold only, transforms test fold)
-         |
-         v
-[XGBoost Classifier] + [XGBoost Regressor] + [Logistic Baseline]
-(bucket_estimate)    (historical_gain_range)  (model_agreement)
-         |
-         v
-[FastAPI — main.py — Port 8000]
-    |           |            |            |
-/allotment   /verdict     /peers      /live-ipos
-  -odds      (pattern    (proof of    (scraper
-(SEBI math)   match)     work table)   cache)
-    |           |            |            |
-    v           v            v            v
-[Next.js App Router — Port 3000]
-    |
-    |--- / .............. Landing page + SearchBar (keyboard nav)
-    |--- /analyse/[slug] .. 7-section analysis dashboard
-    |--- /learn .......... Interactive education hub (5 sections)
+    subgraph INGESTION["⚡ Scraper Engine"]
+        JOB["refresh_job.py — Background Scraper<br/>(Playwright + BS4 every 15 min)"]
+        LOG["scraper_errors.log"]
+    end
+
+    subgraph STORAGE["📦 Data Storage"]
+        CACHE[("live_ipos.json — Local Cache")]
+        HIST[("historical_ipos.csv — 120 Real Rows")]
+    end
+
+    subgraph ML["🧠 Machine Learning Pipeline"]
+        FEAT["features.py<br/>(RelativeIssueSizeTransformer)"]
+        ENSEMBLE["XGBoost Classifier + Regressor<br/>& Logistic Baseline"]
+    end
+
+    subgraph API["🚀 FastAPI Backend Server (Port 8000)"]
+        FASTAPI["main.py — FastAPI"]
+        EP1["/api/allotment-odds<br/>(SEBI Allotment Math)"]
+        EP2["/api/ipo/verdict<br/>(Pattern Match Engine)"]
+        EP3["/api/ipo/peers<br/>(Proof of Work Table)"]
+        EP4["/api/live-ipos<br/>(Scraped Live Cache)"]
+    end
+
+    subgraph FRONTEND["💻 Next.js App Router (Port 3000)"]
+        P1["/ — Landing Page & SearchBar"]
+        P2["/analyse/[slug] — Analysis Dashboard"]
+        P3["/learn — Interactive Learn Hub"]
+    end
+
+    SCRAPE -->|Automated Fetch| JOB
+    JOB -->|Write Clean Json| CACHE
+    JOB -.->|Log Failures| LOG
+
+    HIST -->|train.py (Walk-Forward)| FEAT
+    FEAT --> ENSEMBLE
+
+    CACHE --> FASTAPI
+    ENSEMBLE --> FASTAPI
+
+    FASTAPI --> EP1
+    FASTAPI --> EP2
+    FASTAPI --> EP3
+    FASTAPI --> EP4
+
+    EP1 --> FRONTEND
+    EP2 --> FRONTEND
+    EP3 --> FRONTEND
+    EP4 --> FRONTEND
+
+    FRONTEND --> P1
+    FRONTEND --> P2
+    FRONTEND --> P3
+
+    style FASTAPI fill:#6366f1,stroke:#4338ca,color:#fff
+    style ENSEMBLE fill:#059669,stroke:#047857,color:#fff
+    style CACHE fill:#d97706,stroke:#b45309,color:#fff
+    style HIST fill:#d97706,stroke:#b45309,color:#fff
+    style FRONTEND fill:#0f172a,stroke:#334155,color:#fff
 ```
+
 
 ### Backend Components
 
