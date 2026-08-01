@@ -2,10 +2,8 @@
 
 > "India's first IPO analysis platform that publishes its own miss rate."
 
-`120 verified historical IPOs` | `48% walk-forward accuracy (vs 25% random baseline)` | `0 hardcoded predictions`
+`120 verified historical IPOs` | `48% walk-forward accuracy (vs 25% random baseline)` 
 
-![Analysis Dashboard](docs/screenshots/analyse.png)
-![Learn Mode](docs/screenshots/learn.png)
 
 ---
 
