@@ -117,7 +117,7 @@ flowchart TD
 ### Feature Engineering (14 Model Features)
 The model processes 14 engineered features grouped into 4 categories:
 
-1. **Company Fundamentals**: `sector` classification and `relative_issue_size` ($\frac{\text{issue\_size}}{\mu_{\text{sector}}}$).
+1. **Company Fundamentals**: `sector` classification and `relative_issue_size`.
 2. **Issue Characteristics**: `issue_size` (₹ Cr.), `price_band` (₹), `fresh_vs_ofs_ratio` ($\frac{\text{Fresh}}{\text{Total}}$), and `is_sme` (SME vs Mainboard indicator).
 3. **Subscription Signals**: Category-wise demand multiples (`sub_retail`, `sub_nii`, `sub_qib`, `sub_overall`) and `anchor_allocation_pct`.
 4. **Market & Sentiment Context**: `gmp_trend` direction (`rising`, `flat`, `falling`), `gmp_trajectory` (pre-listing momentum slope), and `market_regime_nifty_30d` (trailing 30-day Nifty 50 return).
@@ -187,7 +187,7 @@ The classifier performs poorly on the **High** gain tier ($\ge 30\%$), achieving
 
 - **Empirical Residual Bounds**: Rather than asserting theoretical Gaussian confidence intervals, continuous gain ranges are constructed from out-of-time regressor residual standard deviation ($\hat{y}_r \pm \sigma_{\text{residual}}$).
 - **Dynamic Confidence Scoring**: Confidence strings (`High`, `Moderate`, `Low`) dynamically factor in bucket-level historical walk-forward reliability, peer density, and ensemble agreement between `GradientBoostingClassifier` and `LogisticRegression`.
-- **Historical Peer Evidence (`peers.py`)**: Features a similarity engine matching peers by `sector` and `issue_size`. The backend fits retroactive model snapshots trained exclusively on data prior to each peer's listing date ($\text{listing\_date} < t_{\text{peer}}$), displaying predicted vs actual outcomes transparently alongside model hit rates ($\pm 15\%$).
+- **Historical Peer Evidence (`peers.py`)**: Features a similarity engine matching peers by `sector` and `issue_size`. The backend fits retroactive model snapshots trained exclusively on data prior to each peer's listing date, displaying predicted vs actual outcomes transparently alongside model hit rates ($\pm 15\%$).
 
 ---
 
