@@ -170,7 +170,7 @@ Total Model Features: 14
 | Category | Feature Name | Type | Theoretical Rationale / Signal |
 | :--- | :--- | :--- | :--- |
 | **Company Fundamentals** | `sector` | Categorical | Industry sector classification (e.g. Technology, Healthcare, Energy, Manufacturing) capturing sector-specific valuation multiples. |
-| **Company Fundamentals** | `relative_issue_size` | Numeric | Ratio of issue size to the training fold's sector mean ($\frac{\text{issue\_size}}{\mu_{\text{sector}}}$), measuring relative market absorption demand. |
+| **Company Fundamentals** | `relative_issue_size` | Numeric | Ratio of issue size to the training fold's sector mean, measuring relative market absorption demand. |
 | **Issue Characteristics** | `issue_size` | Numeric | Total issue size in ₹ Crore, representing overall market liquidity requirement. |
 | **Issue Characteristics** | `price_band` | Numeric | Upper price band per share in ₹, capturing absolute share pricing tier. |
 | **Issue Characteristics** | `fresh_vs_ofs_ratio` | Numeric | Proportion of fresh issue capital relative to Offer For Sale ($\frac{\text{Fresh}}{\text{Total}}$), signaling capital growth vs promoter exit. |
