@@ -26,7 +26,12 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
     fetchLiveIPOs()
       .then((data) => {
         if (data && data.ipos) {
-          const matched = data.ipos.find((item: any) => toSlug(item.name) === slug);
+          const matched = data.ipos.find(
+            (item: any) =>
+              item.slug === slug ||
+              toSlug(item.name) === slug ||
+              toSlug(item.slug || "") === toSlug(slug)
+          );
           if (matched) {
             setIpo(matched);
             loadPatternMatch(matched);
