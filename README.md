@@ -59,7 +59,7 @@ flowchart TD
 
     subgraph ML["Machine Learning Pipeline"]
         FEAT["features.py — RelativeIssueSizeTransformer"]
-        ENSEMBLE["XGBoost Classifier + Regressor & Logistic Baseline"]
+        ENSEMBLE["Gradient Boosting Classifier + Regressor<br/>& Logistic Baseline"]
     end
 
     subgraph API["FastAPI Backend Server (Port 8000)"]
@@ -187,7 +187,7 @@ Computes regulatory category classification, allotment framework details, and od
 ```
 
 ### 2. `POST /api/ipo/verdict`
-Evaluates IPO metrics using XGBoost and Logistic Regression to generate a historical pattern match.
+Evaluates IPO metrics using Scikit-Learn Gradient Boosting (`GradientBoostingClassifier` & `GradientBoostingRegressor`) and Logistic Regression to generate a historical pattern match.
 
 ### 3. `GET /api/live-ipos`
 Returns cached live and historical IPO data with optional `?name=` search filter.

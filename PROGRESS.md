@@ -24,7 +24,7 @@
 **Status:** Completed
 
 ## Stage 3 - Model Training + Validation Hardening
-- [x] XGBoost Classifier + Regressor + Logistic baseline trained and saved via joblib.
+- [x] GradientBoosting Classifier + Regressor + Logistic baseline trained and saved via joblib.
 - [x] Walk-forward validation: 48% overall accuracy vs ~30% naive baseline (honest, verified).
 - [x] 2021 bubble fold explicitly documented (27% — feature, not bug).
 - [x] Full feature leakage audit clean.

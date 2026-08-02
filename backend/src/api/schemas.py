@@ -78,7 +78,7 @@ class VerdictResponse(BaseModel):
     confidence_score: str = Field(..., description="Reliability indicator based on peer availability, walk-forward accuracy, and model agreement")
     real_peer_count: int = Field(0, description="Number of real scraped peers in this sector/size")
     walk_forward_accuracy_for_bucket: float = Field(0.0, description="The historical walk-forward accuracy for this specific bucket")
-    model_agreement: bool = Field(True, description="True if XGBoost and Logistic baseline agree")
+    model_agreement: bool = Field(True, description="True if Gradient Boosting and Logistic baseline agree")
     disclaimer: str = Field("This output is based on historical pattern matching across similar past IPOs. It is not a prediction, recommendation, or investment advice.", description="Mandatory disclaimer")
 
 # --- Peer Comparison schemas ---

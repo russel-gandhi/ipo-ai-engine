@@ -3,7 +3,7 @@
 ## 1. Project Vision
 The **IPO-AI Engine** is a state-of-the-art, SEBI-compliant financial technology platform designed to help retail and institutional investors make data-driven decisions on Initial Public Offerings (IPOs) in the Indian Stock Market. 
 
-Instead of relying on rumors or subjective analysis, the platform combines strict mathematical modeling (based on SEBI allotment rules) with advanced Machine Learning (XGBoost) to predict listing gains and calculate exact allotment probabilities.
+Instead of relying on rumors or subjective analysis, the platform combines strict mathematical modeling (based on SEBI allotment rules) with advanced Machine Learning (Gradient Boosting (Scikit-Learn `GradientBoostingClassifier` & `GradientBoostingRegressor`)) to predict listing gains and calculate exact allotment probabilities.
 
 ## 2. Core Pillars & Rules
 
@@ -36,7 +36,7 @@ All mathematical calculations for IPO allotment must strictly follow SEBI's prop
 - **Stage 2: SEBI Allotment Math Engine [COMPLETED]**
   - Built `calculator.py` to process PANs and compute precise lottery odds.
 - **Stage 3: AI Model Training [COMPLETED]**
-  - Trained dual XGBoost models (Regressor for exact %, Classifier for buckets) and saved them via `joblib`.
+  - Trained dual Gradient Boosting (Scikit-Learn `GradientBoostingClassifier` & `GradientBoostingRegressor`) models (Regressor for exact %, Classifier for buckets) and saved them via `joblib`.
 - **Stage 4: FastAPI Core [COMPLETED]**
   - Built the `main.py` server with strict Pydantic schemas exposing `/api/allotment-odds` and `/api/ipo/verdict`.
 - **Stage 5: Live Data Scraper [COMPLETED]**
