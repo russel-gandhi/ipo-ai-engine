@@ -334,15 +334,8 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
         </section>
       )}
 
-      {/* SECTION 5: SEBI Allotment Calculator */}
-      <section className="bg-card-bg border border-card-border rounded-[14px] p-6 shadow-xs space-y-4">
-        <div>
-          <h2 className="text-[18px] font-bold text-primary-text">SEBI Allotment Calculator</h2>
-          <p className="text-[12px] text-secondary-text">
-            Proportionate lottery and quota allotment odds math per SEBI guidelines for Retail, sHNI, and bHNI categories.
-          </p>
-        </div>
-
+      {/* SECTION 5: IPO Application Simulator */}
+      <section className="bg-card-bg border border-card-border rounded-[14px] p-6 shadow-xs">
         <AllotmentCalculator ipo={ipo} showVisuals={true} />
       </section>
 
