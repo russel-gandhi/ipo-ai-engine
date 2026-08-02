@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-02T17:40:31.287470+00:00",
+  "last_updated": "2026-08-02T17:55:46.531260+00:00",
   "ipos": [
     {
       "name": "Optimystix Entertainment",
@@ -77,7 +77,8 @@
           "profit": 24.04,
           "assets": 166.8
         }
-      ]
+      ],
+      "slug": "optimystix-entertainment"
     },
     {
       "name": "Technocraft Ventures",
@@ -162,7 +163,8 @@
           "profit": 43.32,
           "assets": 354.38
         }
-      ]
+      ],
+      "slug": "technocraft-ventures"
     },
     {
       "name": "LAPL Automotive",
@@ -248,7 +250,8 @@
           "profit": 5.64,
           "assets": 53.46
         }
-      ]
+      ],
+      "slug": "lapl-automotive"
     },
     {
       "name": "Ardee Industries",
@@ -327,7 +330,8 @@
           "profit": 84.68,
           "assets": 363.33
         }
-      ]
+      ],
+      "slug": "ardee-industries"
     },
     {
       "name": "Aegeus Technologies",
@@ -407,7 +411,8 @@
           "profit": 4.02,
           "assets": 39.36
         }
-      ]
+      ],
+      "slug": "aegeus-technologies"
     },
     {
       "name": "Anawil Wire & Engineering",
@@ -486,7 +491,8 @@
           "profit": 36.63,
           "assets": 291.62
         }
-      ]
+      ],
+      "slug": "anawil-wire-engineering"
     },
     {
       "name": "Fusion Klassroom",
@@ -569,7 +575,8 @@
           "profit": 7.6,
           "assets": 25.46
         }
-      ]
+      ],
+      "slug": "fusion-klassroom"
     },
     {
       "name": "G.V. Electricals",
@@ -659,6 +666,7 @@
           "pat": 10.47
         }
       ],
+      "slug": "g-v-electricals",
       "issue_type": "Book-Built",
       "open_date_status": "CONFIRMED",
       "close_date_status": "CONFIRMED",
@@ -735,7 +743,8 @@
           "profit": 6.16,
           "assets": 88.99
         }
-      ]
+      ],
+      "slug": "oneindig-technologies"
     },
     {
       "name": "Dhaval Packaging",
@@ -820,7 +829,8 @@
           "profit": 8.04,
           "assets": 66.42
         }
-      ]
+      ],
+      "slug": "dhaval-packaging"
     },
     {
       "name": "MV Electrosystems",
@@ -906,7 +916,8 @@
           "profit": 12.63,
           "assets": 145.74
         }
-      ]
+      ],
+      "slug": "mv-electrosystems"
     },
     {
       "name": "Juniper Green Energy",
@@ -1005,6 +1016,7 @@
           "pat": 40.46
         }
       ],
+      "slug": "juniper-green-energy",
       "issue_type": "Book-Built",
       "open_date_status": "CONFIRMED",
       "close_date_status": "CONFIRMED",
@@ -1098,6 +1110,7 @@
           "pat": 11.41
         }
       ],
+      "slug": "h-r-hygiene-products",
       "issue_type": "Book-Built",
       "open_date_status": "CONFIRMED",
       "close_date_status": "CONFIRMED",
@@ -1186,7 +1199,8 @@
           "profit": 916.52,
           "assets": 24864.5
         }
-      ]
+      ],
+      "slug": "manipal-health"
     },
     {
       "name": "Poojaa Precision",
@@ -1266,7 +1280,8 @@
           "profit": 30.9,
           "assets": 231.38
         }
-      ]
+      ],
+      "slug": "poojaa-precision"
     },
     {
       "name": "Propshop Events",
@@ -1350,7 +1365,8 @@
           "profit": 6.46,
           "assets": 25.71
         }
-      ]
+      ],
+      "slug": "propshop-events"
     },
     {
       "name": "Advance Technoforge",
@@ -1417,7 +1433,8 @@
           "profit": 4.06,
           "assets": 46.92
         }
-      ]
+      ],
+      "slug": "advance-technoforge"
     },
     {
       "name": "Cube Highways Trust",
@@ -1474,7 +1491,8 @@
           "profit": 216.72,
           "assets": 29398.47
         }
-      ]
+      ],
+      "slug": "cube-highways-trust"
     },
     {
       "name": "Zaggle Prepaid Ocean Services",
