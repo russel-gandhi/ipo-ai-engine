@@ -892,12 +892,47 @@ def scrape_ipo_watch():
             if field not in ipo:
                 ipo[field] = None
 
-    # Persistence — atomic write
+    # Persistence — atomic write with existing demo metadata preservation
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+
+    # Read existing file to preserve historical demo records (e.g. Zaggle) and enriched fields
+    existing_ipos = []
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+                existing_ipos = existing_data.get("ipos", [])
+        except Exception:
+            existing_ipos = []
+
+    existing_by_name = {item["name"].lower(): item for item in existing_ipos}
+
+    # Merge scraped items with existing items
+    final_ipos = []
+    scraped_names_lower = set()
+
+    for ipo in ipos:
+        name_key = ipo["name"].lower()
+        scraped_names_lower.add(name_key)
+        existing = existing_by_name.get(name_key)
+        if existing:
+            # Preserve existing enriched fields if missing in scraped item
+            for k, v in existing.items():
+                if ipo.get(k) is None and v is not None:
+                    ipo[k] = v
+        if not ipo.get("slug"):
+            ipo["slug"] = re.sub(r'[^a-z0-9]+', '-', ipo["name"].lower()).strip('-')
+        final_ipos.append(ipo)
+
+    # Retain historical/demo IPOs (like Zaggle or items with basis_of_allotment) not in live scrape
+    for item in existing_ipos:
+        name_key = item.get("name", "").lower()
+        if name_key not in scraped_names_lower:
+            final_ipos.append(item)
 
     output = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
-        "ipos": ipos
+        "ipos": final_ipos
     }
 
     temp_file = DATA_FILE + ".tmp"
