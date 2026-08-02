@@ -653,7 +653,7 @@ def parse_detail_page(html: str, ipo_name: str = "") -> dict:
                 if len(cells) >= 2:
                     category = cells[0].lower()
                     # Skip anchor investor rows — they're a subset of QIB, not separate
-                    if 'anchor' in category:
+                    if 'anchor' in category and 'qib' not in category:
                         continue
                     pct = None
                     for cell_text in reversed(cells[1:]):
@@ -822,6 +822,60 @@ def scrape_ipo_watch():
             f"{scoping_failures}. These will have null detail fields. "
             f"Check scraper_errors.log for per-IPO detail."
         )
+
+    # Pass 3: Subscription Status Data
+    try:
+        sub_url = "https://ipowatch.in/ipo-subscription-status-today/"
+        sub_response = requests.get(sub_url, headers=HEADERS, timeout=15)
+        sub_response.raise_for_status()
+        sub_soup = BeautifulSoup(sub_response.text, 'html.parser')
+        
+        sub_data = {}
+        tables = sub_soup.find_all('table')
+        if not tables:
+            for fig in sub_soup.find_all('figure', class_='wp-block-table'):
+                if fig.find('table'):
+                    tables.append(fig.find('table'))
+                    
+        for table in tables:
+            rows = table.find_all('tr')
+            if not rows: continue
+            header = [th.get_text().strip().lower() for th in rows[0].find_all(['th', 'td'])]
+            if 'qib' in str(header):
+                for row in rows[1:]:
+                    cols = [td.get_text().strip() for td in row.find_all(['td', 'th'])]
+                    if len(cols) >= 7:
+                        name = cols[0]
+                        qib = parse_float_or_none(cols[3])
+                        nii = parse_float_or_none(cols[4])
+                        retail = parse_float_or_none(cols[5])
+                        total = parse_float_or_none(cols[6])
+                        sub_data[name.lower()] = {
+                            "sub_qib": qib,
+                            "sub_nii": nii,
+                            "sub_retail": retail,
+                            "sub_overall": total
+                        }
+                        
+        if sub_data:
+            logger.info(f"Pass 3: Scraped subscription data for {len(sub_data)} IPOs.")
+            for ipo in ipos:
+                name_clean = ipo['name'].lower().strip()
+                matched_sub = sub_data.get(name_clean)
+                if not matched_sub:
+                    for s_name, s_data in sub_data.items():
+                        if s_name in name_clean or name_clean in s_name:
+                            matched_sub = s_data
+                            break
+                            
+                if matched_sub:
+                    ipo["sub_qib"] = matched_sub["sub_qib"]
+                    ipo["sub_nii"] = matched_sub["sub_nii"]
+                    ipo["sub_retail"] = matched_sub["sub_retail"]
+                    ipo["sub_overall"] = matched_sub["sub_overall"]
+                    
+    except Exception as e:
+        logger.error(f"Error scraping subscription status: {e}")
 
     # Ensure all IPOs have all expected fields (set missing to None)
     all_fields = [

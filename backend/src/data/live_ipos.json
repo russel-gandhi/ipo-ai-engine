@@ -1,40 +1,215 @@
 {
-    "last_updated": "2026-07-31T12:33:18.148228+00:00",
+    "last_updated": "2026-08-02T11:31:51.476650+00:00",
     "ipos": [
         {
-            "name": "LAPL Automotive",
+            "name": "Optimystix Entertainment",
             "gmp": 0.0,
-            "price_band": 94.0,
+            "price_band": 0.0,
             "gmp_trend": "flat",
             "est_listing_gain_pct": 0.0,
+            "detail_url": "https://ipowatch.in/optimystix-entertainment-ipo/",
+            "exchange": "NSE SME",
+            "is_sme": true,
+            "status": "upcoming",
+            "open_date": "2026-08-07",
+            "close_date": "2026-08-11",
+            "sector": null,
+            "issue_size": null,
+            "price_band_range": "₹[.] to ₹[.] Per Share",
+            "lot_size": null,
+            "allotment_date": null,
+            "listing_date": null,
+            "sub_qib": null,
+            "sub_nii": null,
+            "sub_retail": null,
+            "sub_overall": null,
+            "lot_distribution": [
+                {
+                    "category": "Individual",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                }
+            ],
+            "offer_breakdown": {
+                "qib_pct": 44.94,
+                "nii_pct": 13.55,
+                "retail_pct": 31.51
+            },
+            "about": "Optimystix Entertainment IPO open date is August 7, 2026 and the IPO will close on August 11, 2026. Optimystix Entertainment IPO is a Book built Issue. The company to raise around ₹[.] crores via IPO that comprises fresh issue of ₹[.] crores and offer for sale up to 12,00,000 equity shares with face value of ₹10 each.",
+            "issue_objective": [
+                "Working Capital Requirements"
+            ],
+            "financials": [
+                {
+                    "period": "2024",
+                    "revenue": 55.88,
+                    "profit": 6.69,
+                    "assets": 105.81
+                },
+                {
+                    "period": "2025",
+                    "revenue": 125.07,
+                    "profit": 17.24,
+                    "assets": 138.93
+                },
+                {
+                    "period": "2026",
+                    "revenue": 135.89,
+                    "profit": 24.04,
+                    "assets": 166.8
+                }
+            ]
+        },
+        {
+            "name": "Technocraft Ventures",
+            "gmp": 0.0,
+            "price_band": 0.0,
+            "gmp_trend": "flat",
+            "est_listing_gain_pct": 0.0,
+            "detail_url": "https://ipowatch.in/technocraft-ventures-ipo/",
+            "exchange": "NSE, BSE",
+            "is_sme": false,
+            "status": "upcoming",
+            "open_date": "2026-08-07",
+            "close_date": "2026-08-11",
+            "sector": null,
+            "issue_size": null,
+            "price_band_range": "₹[.] to ₹[.]  Per Share",
+            "lot_size": null,
+            "allotment_date": null,
+            "listing_date": null,
+            "sub_qib": null,
+            "sub_nii": null,
+            "sub_retail": null,
+            "sub_overall": null,
+            "lot_distribution": [
+                {
+                    "category": "Individual",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": null,
+                    "min_amount": null,
+                    "total_lots": null
+                }
+            ],
+            "offer_breakdown": {
+                "qib_pct": 50.0,
+                "nii_pct": 15.0,
+                "retail_pct": 35.0
+            },
+            "about": "Technocraft Ventures IPO open date is August 7, 2026 and the IPO will close on August 11, 2026. Technocraft Ventures IPO is a Bookbuilding Issue. The company to raise around ₹[.] crores via IPO that comprises fresh issue of ₹[.] crores and offer for sale up to 23,76,000 equity shares with face value of ₹10 each.",
+            "issue_objective": [
+                "Funding working capital requirements of the Company",
+                "General Corporate Purpose"
+            ],
+            "financials": [
+                {
+                    "period": "2023",
+                    "revenue": 180.54,
+                    "profit": 10.81,
+                    "assets": 183.49
+                },
+                {
+                    "period": "2024",
+                    "revenue": 227.3,
+                    "profit": 19.05,
+                    "assets": 258.05
+                },
+                {
+                    "period": "2025",
+                    "revenue": 281.0,
+                    "profit": 28.2,
+                    "assets": 269.74
+                },
+                {
+                    "period": "2026",
+                    "revenue": 347.0,
+                    "profit": 43.32,
+                    "assets": 354.38
+                }
+            ]
+        },
+        {
+            "name": "LAPL Automotive",
+            "gmp": 22.0,
+            "price_band": 94.0,
+            "gmp_trend": "rising",
+            "est_listing_gain_pct": 23.4,
             "detail_url": "https://ipowatch.in/lapl-automotive-ipo/",
             "exchange": "BSE SME",
             "is_sme": true,
             "status": "upcoming",
             "open_date": "2026-08-06",
             "close_date": "2026-08-10",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 32.4,
             "price_band_range": "₹88 to ₹94 Per Share",
             "lot_size": 2400,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 11.5,
-            "sub_nii": 6.8,
-            "sub_retail": 4.25,
-            "sub_overall": 7.5,
+            "sub_qib": null,
+            "sub_nii": null,
+            "sub_retail": null,
+            "sub_overall": null,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 2400,
                     "min_amount": 225600,
-                    "total_lots": 1
+                    "total_lots": 2
                 },
                 {
                     "category": "sHNI",
-                    "min_shares": 4800,
-                    "min_amount": 451200,
-                    "total_lots": 2
+                    "min_shares": 3600,
+                    "min_amount": 338400,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 9600,
+                    "min_amount": 902400,
+                    "total_lots": 8
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 10800,
+                    "min_amount": 1015200,
+                    "total_lots": 9
                 }
             ],
             "offer_breakdown": {
@@ -42,61 +217,85 @@
                 "nii_pct": 15.0,
                 "retail_pct": 35.0
             },
-            "about": "LAPL Automotive Limited is engaged in the manufacturing of high-precision auto components, assemblies, and sub-assemblies for commercial vehicles, passenger cars, and two-wheelers in India and global export markets.",
+            "about": "LAPL Automotive IPO open date is August 6, 2026 and the IPO will close on August 10, 2026. LAPL Automotive IPO is a Bookbuilding Issue. The company to raise around ₹32.40 crores via IPO that comprises fresh issue of ₹32.40 crores and offer for sale up to [.] equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Funding capital expenditure for setting up new automated machining line",
-                "Prepayment/repayment of certain outstanding borrowings",
-                "General corporate purposes"
+                "Funding of capital expenditure requirements of the company towards setting up an additional Manufacturing Unit at Auric City, Aurangabad, Maharashtra.",
+                "Full or part repayment and/or prepayment of certain outstanding secured borrowings availed by the Company",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 142.5,
-                    "profit": 14.8,
-                    "assets": 165.2
+                    "period": "2023",
+                    "revenue": 60.37,
+                    "profit": 1.98,
+                    "assets": 25.15
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 118.2,
-                    "profit": 10.4,
-                    "assets": 138.9
+                    "period": "2024",
+                    "revenue": 61.03,
+                    "profit": 2.17,
+                    "assets": 32.79
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 95.4,
-                    "profit": 7.1,
-                    "assets": 112.3
+                    "period": "2025",
+                    "revenue": 67.07,
+                    "profit": 5.03,
+                    "assets": 44.34
+                },
+                {
+                    "period": "Dec 2025",
+                    "revenue": 62.77,
+                    "profit": 5.64,
+                    "assets": 53.46
                 }
             ]
         },
         {
             "name": "Ardee Industries",
-            "gmp": 10.0,
+            "gmp": 7.0,
             "price_band": 53.0,
-            "gmp_trend": "rising",
-            "est_listing_gain_pct": 18.87,
+            "gmp_trend": "falling",
+            "est_listing_gain_pct": 13.21,
             "detail_url": "https://ipowatch.in/ardee-industries-ipo/",
             "exchange": "NSE, BSE",
             "is_sme": false,
             "status": "upcoming",
             "open_date": "2026-08-05",
             "close_date": "2026-08-07",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 425.87,
             "price_band_range": "₹50 to ₹53 Per Share",
             "lot_size": 281,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 24.1,
-            "sub_nii": 18.5,
-            "sub_retail": 12.4,
-            "sub_overall": 18.3,
+            "sub_qib": null,
+            "sub_nii": null,
+            "sub_retail": null,
+            "sub_overall": null,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 281,
                     "min_amount": 14893,
                     "total_lots": 1
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3934,
+                    "min_amount": 208502,
+                    "total_lots": 14
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 18827,
+                    "min_amount": 997831,
+                    "total_lots": 67
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 19108,
+                    "min_amount": 1012724,
+                    "total_lots": 68
                 }
             ],
             "offer_breakdown": {
@@ -104,30 +303,29 @@
                 "nii_pct": 15.0,
                 "retail_pct": 35.0
             },
-            "about": "Ardee Industries Limited specializes in industrial valves, pumps, and heavy fabrication components used in oil & gas, power, and water treatment sectors.",
+            "about": "Ardee Industries IPO open date is August 5, 2026 and the IPO will close on August 7, 2026. Ardee Industries IPO is a Book built Issue. The company to raise around ₹425.87 crores via IPO that comprises fresh issue of ₹320 crores and offer for sale up to 1,99,75,000 equity shares with face value of ₹2 each.",
             "issue_objective": [
-                "Expansion of manufacturing capacity at Pune facility",
-                "Funding working capital requirements",
-                "General corporate purposes"
+                "Funding incremental working capital requirement of Company",
+                "Repayment and/or pre-payment, in full or in part, of certain borrowings availed by Company"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 88.4,
-                    "profit": 8.9,
-                    "assets": 94.2
+                    "period": "2024",
+                    "revenue": 463.39,
+                    "profit": 8.95,
+                    "assets": 196.12
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 72.1,
-                    "profit": 6.2,
-                    "assets": 78.5
+                    "period": "2025",
+                    "revenue": 743.53,
+                    "profit": 33.27,
+                    "assets": 262.06
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 58.0,
-                    "profit": 4.5,
-                    "assets": 64.1
+                    "period": "2026",
+                    "revenue": 1168.88,
+                    "profit": 84.68,
+                    "assets": 363.33
                 }
             ]
         },
@@ -143,84 +341,120 @@
             "status": "upcoming",
             "open_date": "2026-08-04",
             "close_date": "2026-08-06",
-            "sector": "Technology",
+            "sector": null,
             "issue_size": 23.71,
             "price_band_range": "₹100 to ₹105 Per Share",
             "lot_size": 2400,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 28.5,
-            "sub_nii": 14.2,
-            "sub_retail": 6.8,
-            "sub_overall": 16.4,
+            "sub_qib": null,
+            "sub_nii": null,
+            "sub_retail": null,
+            "sub_overall": null,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 2400,
                     "min_amount": 252000,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3600,
+                    "min_amount": 378000,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 8400,
+                    "min_amount": 882000,
+                    "total_lots": 7
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 9600,
+                    "min_amount": 1008000,
+                    "total_lots": 8
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 17.38,
+                "nii_pct": 12.91,
+                "retail_pct": 29.97
             },
-            "about": "Aegeus Technologies Limited provides AI-driven robotic cleaning solutions and IoT monitoring platforms tailored for utility-scale solar photovoltaic plants.",
+            "about": "Aegeus Technologies IPO open date is August 4, 2026 and the IPO will close on August 6, 2026. Aegeus Technologies IPO is a Book built Issue. The company to raise around ₹23.71 crores via IPO that comprises fresh issue of ₹23.71 crores and offer for sale up to [.] equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "R&D expenditure for next-gen autonomous solar cleaning robots",
-                "Establishment of regional service hubs across India",
-                "General corporate purposes"
+                "Investment in Product Development",
+                "Funding Capital Expenditure towards Setting up of Manufacturing Facility through Purchase of Land and Civil Works.",
+                "To meet out the expenses for Working Capital to fund business growth"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 65.3,
-                    "profit": 9.1,
-                    "assets": 72.4
+                    "period": "2024",
+                    "revenue": 15.28,
+                    "profit": 0.93,
+                    "assets": 13.56
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 42.8,
-                    "profit": 5.4,
-                    "assets": 48.9
+                    "period": "2025",
+                    "revenue": 21.9,
+                    "profit": 1.39,
+                    "assets": 22.09
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 24.1,
-                    "profit": 2.2,
-                    "assets": 28.5
+                    "period": "2026",
+                    "revenue": 41.22,
+                    "profit": 4.02,
+                    "assets": 39.36
                 }
             ]
         },
         {
             "name": "Anawil Wire & Engineering",
-            "gmp": 70.0,
+            "gmp": 80.0,
             "price_band": 270.0,
             "gmp_trend": "rising",
-            "est_listing_gain_pct": 25.93,
+            "est_listing_gain_pct": 29.63,
             "detail_url": "https://ipowatch.in/anawil-wire-engieering-ipo/",
             "exchange": "NSE SME",
             "is_sme": true,
             "status": "upcoming",
             "open_date": "2026-08-03",
             "close_date": "2026-08-05",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 177.81,
             "price_band_range": "₹257 to ₹270 Per Share",
             "lot_size": 800,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 45.0,
-            "sub_nii": 32.4,
-            "sub_retail": 15.8,
-            "sub_overall": 31.2,
+            "sub_qib": null,
+            "sub_nii": null,
+            "sub_retail": null,
+            "sub_overall": null,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 800,
                     "min_amount": 216000,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 1200,
+                    "min_amount": 324000,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3600,
+                    "min_amount": 972000,
+                    "total_lots": 9
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 4000,
+                    "min_amount": 1080000,
+                    "total_lots": 10
                 }
             ],
             "offer_breakdown": {
@@ -228,30 +462,29 @@
                 "nii_pct": 15.0,
                 "retail_pct": 35.0
             },
-            "about": "Anawil Wire & Engineering Limited manufactures stainless steel wires, welding consumables, and specialized alloy wire products for automotive, infrastructure, and heavy engineering industries.",
+            "about": "Anawil Wire & Engineering IPO open date is August 3, 2026 and the IPO will close on August 5, 2026. Anawil Wire & Engineering IPO is a Bookbuilding Issue. The company to raise around ₹177.81 crores via IPO that comprises fresh issue of ₹142.69 crores and offer for sale up to 13,00,800 equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Setting up a new wire drawing unit in Gujarat",
-                "Repayment of short-term debt",
-                "General corporate purposes"
+                "Repayment and/or pre-payment, in full or part, of borrowing availed by Company",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 210.4,
-                    "profit": 18.2,
-                    "assets": 225.1
+                    "period": "2024",
+                    "revenue": 54.08,
+                    "profit": 4.39,
+                    "assets": 89.64
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 175.9,
-                    "profit": 13.5,
-                    "assets": 188.3
+                    "period": "2025",
+                    "revenue": 79.4,
+                    "profit": 12.31,
+                    "assets": 114.42
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 140.2,
-                    "profit": 9.8,
-                    "assets": 152.0
+                    "period": "2026",
+                    "revenue": 143.63,
+                    "profit": 36.63,
+                    "assets": 291.62
                 }
             ]
         },
@@ -259,7 +492,7 @@
             "name": "Fusion Klassroom",
             "gmp": 7.0,
             "price_band": 159.0,
-            "gmp_trend": "rising",
+            "gmp_trend": "falling",
             "est_listing_gain_pct": 4.4,
             "detail_url": "https://ipowatch.in/fusion-klassroom-ipo/",
             "exchange": "BSE SME",
@@ -267,53 +500,74 @@
             "status": "open",
             "open_date": "2026-07-31",
             "close_date": "2026-08-04",
-            "sector": "Education",
+            "sector": null,
             "issue_size": 39.04,
             "price_band_range": "₹151 to ₹159 Per Share",
             "lot_size": 1600,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 22.8,
-            "sub_nii": 15.1,
-            "sub_retail": 8.4,
-            "sub_overall": 15.4,
+            "sub_qib": 0.68,
+            "sub_nii": 0.52,
+            "sub_retail": 0.97,
+            "sub_overall": 0.79,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 1600,
                     "min_amount": 254400,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 2400,
+                    "min_amount": 381600,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 5600,
+                    "min_amount": 890400,
+                    "total_lots": 7
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 6400,
+                    "min_amount": 1017600,
+                    "total_lots": 8
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 18.93,
+                "nii_pct": 14.37,
+                "retail_pct": 33.3
             },
-            "about": "Fusion Klassroom Edtech Limited operates an integrated digital and hybrid coaching platform offering K-12 tuition, test preparation, and vocational skill courses across India.",
+            "about": "Fusion Klassroom IPO open date is July 31, 2026 and the IPO will close on August 4, 2026. Fusion Klassroom IPO is a Book built Issue. The company to raise around ₹39.04 crores via IPO that comprises fresh issue of ₹31.63 crores and offer for sale up to 4,65,800 equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Expanding physical learning centers across Tier-2/3 cities",
-                "Upgrading mobile app features and interactive learning content",
-                "General corporate purposes"
+                "Prepayment or repayment of all or a portion of certain outstanding borrowings availed by Company",
+                "Expenditure towards Technology & AI\\ML Model Development, Servers and Cloud Infrastructure",
+                "Funding the capital expenditure towards Content Development",
+                "Funding the capital expenditure towards procurement of Desktop and Laptops for the new Offline Centers AI/ML labs",
+                "Expenditure towards marketing initiatives",
+                "Funding inorganic growth through unidentified acquisitions and general corporate purposes"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 52.8,
-                    "profit": 6.4,
-                    "assets": 58.9
+                    "period": "2024",
+                    "revenue": 4.62,
+                    "profit": 0.34,
+                    "assets": 4.48
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 38.1,
-                    "profit": 4.1,
-                    "assets": 42.0
+                    "period": "2025",
+                    "revenue": 10.11,
+                    "profit": 2.9,
+                    "assets": 12.06
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 24.5,
-                    "profit": 2.1,
-                    "assets": 27.8
+                    "period": "2026",
+                    "revenue": 23.1,
+                    "profit": 7.6,
+                    "assets": 25.46
                 }
             ]
         },
@@ -329,53 +583,71 @@
             "status": "open",
             "open_date": "2026-07-31",
             "close_date": "2026-08-04",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 42.25,
             "price_band_range": "₹123 to ₹130 Per Share",
             "lot_size": 2000,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 31.0,
-            "sub_nii": 17.5,
-            "sub_retail": 9.6,
-            "sub_overall": 19.3,
+            "sub_qib": 3.52,
+            "sub_nii": 2.18,
+            "sub_retail": 1.65,
+            "sub_overall": 2.3,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 2000,
                     "min_amount": 260000,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3000,
+                    "min_amount": 390000,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 7000,
+                    "min_amount": 910000,
+                    "total_lots": 7
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 8000,
+                    "min_amount": 1040000,
+                    "total_lots": 8
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 18.22,
+                "nii_pct": 13.85,
+                "retail_pct": 32.0
             },
-            "about": "G.V. Electricals Limited manufactures electrical distribution panels, switchgears, transformers, and control panels for industrial, commercial, and residential applications.",
+            "about": "G.V. Electricals IPO open date is July 31, 2026 and the IPO will close on August 4, 2026. G.V. Electricals IPO is a Book built Issue. The company to raise around ₹42.25 crores via IPO that comprises fresh issue of ₹39.00 crores and offer for sale up to 2,50,000 equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Constructing a new manufacturing unit in Maharashtra",
-                "Funding working capital requirement",
-                "General corporate purposes"
+                "Repayment of a portion of certain borrowings availed by the Company;",
+                "Funding of Working Capital Requirements",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 98.2,
-                    "profit": 9.5,
-                    "assets": 105.4
+                    "period": "2024",
+                    "revenue": 112.03,
+                    "profit": 2.8,
+                    "assets": 42.06
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 81.0,
-                    "profit": 7.1,
-                    "assets": 88.2
+                    "period": "2025",
+                    "revenue": 131.36,
+                    "profit": 4.66,
+                    "assets": 51.43
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 64.3,
-                    "profit": 4.8,
-                    "assets": 71.0
+                    "period": "2026",
+                    "revenue": 156.66,
+                    "profit": 10.47,
+                    "assets": 78.4
                 }
             ]
         },
@@ -391,62 +663,73 @@
             "status": "open",
             "open_date": "2026-07-30",
             "close_date": "2026-08-03",
-            "sector": "Technology",
+            "sector": null,
             "issue_size": 27.65,
             "price_band_range": "₹91 to ₹96 Per Share",
             "lot_size": 2400,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 12.0,
-            "sub_nii": 7.4,
-            "sub_retail": 3.8,
-            "sub_overall": 7.7,
+            "sub_qib": 1.04,
+            "sub_nii": 0.45,
+            "sub_retail": 0.79,
+            "sub_overall": 0.79,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 2400,
                     "min_amount": 230400,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3600,
+                    "min_amount": 345600,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 9600,
+                    "min_amount": 921600,
+                    "total_lots": 8
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 10800,
+                    "min_amount": 1036800,
+                    "total_lots": 9
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 18.96,
+                "nii_pct": 14.37,
+                "retail_pct": 33.33
             },
-            "about": "Oneindig Technologies Limited delivers enterprise software development, cloud migration, cybersecurity consulting, and managed IT services for global enterprise clients.",
+            "about": "Oneindig Technologies IPO open date is July 30, 2026 and the IPO will close on August 3, 2026. Oneindig Technologies IPO is a Book built Issue. The company to raise around ₹27.65 crores via IPO that comprises fresh issue of ₹27.65 crores and offer for sale up to [.] equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Expanding overseas sales offices in the UAE and USA",
-                "Investments in proprietary cloud management IP",
-                "General corporate purposes"
+                "To meet working capital requirements",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 45.6,
-                    "profit": 7.8,
-                    "assets": 51.2
+                    "period": "2025",
+                    "revenue": 46.14,
+                    "profit": 4.17,
+                    "assets": 35.53
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 32.4,
-                    "profit": 5.1,
-                    "assets": 36.8
-                },
-                {
-                    "period": "FY22",
-                    "revenue": 21.0,
-                    "profit": 3.0,
-                    "assets": 24.5
+                    "period": "January 2026",
+                    "revenue": 57.56,
+                    "profit": 6.16,
+                    "assets": 88.99
                 }
             ]
         },
         {
             "name": "Dhaval Packaging",
-            "gmp": 15.0,
+            "gmp": 12.0,
             "price_band": 97.0,
-            "gmp_trend": "rising",
-            "est_listing_gain_pct": 15.46,
+            "gmp_trend": "falling",
+            "est_listing_gain_pct": 12.37,
             "detail_url": "https://ipowatch.in/dhaval-packaging-ipo/",
             "exchange": "BSE SME",
             "is_sme": true,
@@ -459,118 +742,165 @@
             "lot_size": 2400,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 19.5,
-            "sub_nii": 11.8,
-            "sub_retail": 7.1,
-            "sub_overall": 12.8,
+            "sub_qib": 1.05,
+            "sub_nii": 1.43,
+            "sub_retail": 1.7,
+            "sub_overall": 1.4,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 2400,
                     "min_amount": 232800,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3600,
+                    "min_amount": 349200,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 9600,
+                    "min_amount": 931200,
+                    "total_lots": 8
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 10800,
+                    "min_amount": 1047600,
+                    "total_lots": 9
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 18.34,
+                "nii_pct": 13.8,
+                "retail_pct": 32.14
             },
-            "about": "Dhaval Packaging Limited manufactures flexible packaging materials, corrugated boxes, and eco-friendly paper packaging solutions for FMCG, pharmaceutical, and industrial clients.",
+            "about": "Dhaval Packaging IPO open date is July 30, 2026 and the IPO will close on August 3, 2026. Dhaval Packaging IPO is a Book build Issue. The company to raise around ₹36.36 crores via IPO that comprises fresh issue of ₹36.36 crores and offer for sale up to [.] equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Procurement of high-speed printing and laminating machinery",
-                "Prepayment of term loans",
-                "General corporate purposes"
+                "Part finance the cost of establishing new manufacturing facility at Plot No. E – 552 in the Sanand – II Industrial Estate, Hirapur, Taluka Sanand, District Ahmedabad (“Proposed facility”)",
+                "Full or part repayment and/or prepayment of certain outstanding secured borrowings availed by the Company"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 112.4,
-                    "profit": 11.2,
-                    "assets": 119.8
+                    "period": "2023",
+                    "revenue": 43.14,
+                    "profit": 0.51,
+                    "assets": 29.27
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 94.1,
-                    "profit": 8.4,
-                    "assets": 101.2
+                    "period": "2024",
+                    "revenue": 48.08,
+                    "profit": 1.55,
+                    "assets": 33.7
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 76.5,
-                    "profit": 5.9,
-                    "assets": 82.0
+                    "period": "2025",
+                    "revenue": 52.43,
+                    "profit": 6.04,
+                    "assets": 47.89
+                },
+                {
+                    "period": "2026",
+                    "revenue": 65.2,
+                    "profit": 8.04,
+                    "assets": 66.42
                 }
             ]
         },
         {
             "name": "MV Electrosystems",
-            "gmp": 120.0,
+            "gmp": 133.0,
             "price_band": 425.0,
             "gmp_trend": "rising",
-            "est_listing_gain_pct": 28.24,
+            "est_listing_gain_pct": 31.29,
             "detail_url": "https://ipowatch.in/mv-electrosystems-ipo/",
             "exchange": "NSE, BSE",
             "is_sme": false,
             "status": "open",
             "open_date": "2026-07-30",
             "close_date": "2026-08-03",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 290.0,
             "price_band_range": "₹400 to ₹425 Per Share",
             "lot_size": 34,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 65.2,
-            "sub_nii": 48.0,
-            "sub_retail": 22.4,
-            "sub_overall": 45.2,
+            "sub_qib": 0.97,
+            "sub_nii": 16.76,
+            "sub_retail": 42.28,
+            "sub_overall": 12.79,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 34,
                     "min_amount": 14450,
                     "total_lots": 1
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 476,
+                    "min_amount": 202300,
+                    "total_lots": 14
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 2346,
+                    "min_amount": 997050,
+                    "total_lots": 69
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 2380,
+                    "min_amount": 1011500,
+                    "total_lots": 70
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
+                "qib_pct": 30.0,
                 "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "retail_pct": 10.0
             },
-            "about": "MV Electrosystems Limited manufactures high-end wiring harnesses, electro-mechanical assemblies, and control boxes for defense, aerospace, and heavy transport equipment.",
+            "about": "MV Electrosystems IPO open date is July 30, 2026 and the IPO will close on August 3, 2026. MV Electrosystems IPO is a Bookbuilding Issue. The company to raise around ₹290 crores via IPO that comprises fresh issue of ₹290 crores and offer for sale up to [.] equity shares with face value of ₹5 each.",
             "issue_objective": [
-                "Capital expenditure for defense-certified testing lab",
-                "Working capital support",
-                "General corporate purposes"
+                "Funding long-term working capital requirements of the Company",
+                "Investment in research design and development activities for new power electronic equipment",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 340.5,
-                    "profit": 38.2,
-                    "assets": 380.1
+                    "period": "2023",
+                    "revenue": 68.13,
+                    "profit": 1.19,
+                    "assets": 44.76
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 280.1,
-                    "profit": 29.4,
-                    "assets": 312.4
+                    "period": "2024",
+                    "revenue": 50.57,
+                    "profit": 0.56,
+                    "assets": 65.58
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 215.8,
-                    "profit": 20.1,
-                    "assets": 245.0
+                    "period": "2025",
+                    "revenue": 64.64,
+                    "profit": 1.4,
+                    "assets": 74.12
+                },
+                {
+                    "period": "2026",
+                    "revenue": 49.79,
+                    "profit": 12.63,
+                    "assets": 145.74
                 }
             ]
         },
         {
             "name": "Juniper Green Energy",
-            "gmp": 10.0,
+            "gmp": 4.0,
             "price_band": 225.0,
             "gmp_trend": "falling",
-            "est_listing_gain_pct": 4.44,
+            "est_listing_gain_pct": 1.78,
             "detail_url": "https://ipowatch.in/juniper-green-energy-ipo/",
             "exchange": "NSE, BSE",
             "is_sme": false,
@@ -583,47 +913,71 @@
             "lot_size": 66,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 18.2,
-            "sub_nii": 8.4,
-            "sub_retail": 3.07,
-            "sub_overall": 9.9,
+            "sub_qib": 1.25,
+            "sub_nii": 0.09,
+            "sub_retail": 0.23,
+            "sub_overall": 0.49,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 66,
                     "min_amount": 14850,
                     "total_lots": 1
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 924,
+                    "min_amount": 207900,
+                    "total_lots": 14
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 4422,
+                    "min_amount": 994950,
+                    "total_lots": 67
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 4488,
+                    "min_amount": 1009800,
+                    "total_lots": 68
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 19.98,
+                "nii_pct": 14.98,
+                "retail_pct": 34.96
             },
-            "about": "Juniper Green Energy Limited is a leading independent renewable energy power producer in India, developing, constructing, and operating solar, wind, and hybrid energy assets.",
+            "about": "Juniper Green Energy IPO open date is July 30, 2026 and the IPO will close on August 3, 2026. Juniper Green Energy IPO is a Book Built Issue. The company to raise around ₹1,800 crores via IPO that comprises fresh issue of ₹1,800 crores and offer for sale up to [.] equity shares with face value of ₹1 each.",
             "issue_objective": [
-                "Funding construction of 500 MW solar-wind hybrid project in Rajasthan",
-                "Repayment of project finance debt",
-                "General corporate purposes"
+                "Repayment/pre-payment, in full or part of certain borrowings availed by our Company",
+                "Investment in our Material Subsidiaries namely Juniper Green Gamma One Private Limited, Juniper Green Three Private Limited, Juniper Green Field Private Limited, Juniper Green Beam Private Limited, and our Subsidiaries namely Juniper Green Kite Private Limited and Juniper Green Ray Two Private Limited for repayment/ pre-payment, in full or in part, of all or a portion of certain of their outstanding borrowings",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 1450.2,
-                    "profit": 210.5,
-                    "assets": 4200.0
+                    "period": "2023",
+                    "revenue": 362.49,
+                    "profit": 12.06,
+                    "assets": 3212.01
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 1120.8,
-                    "profit": 145.2,
-                    "assets": 3450.0
+                    "period": "2024",
+                    "revenue": 424.45,
+                    "profit": 40.06,
+                    "assets": 4986.44
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 820.4,
-                    "profit": 92.1,
-                    "assets": 2700.0
+                    "period": "2025",
+                    "revenue": 569.78,
+                    "profit": 36.48,
+                    "assets": 10356.81
+                },
+                {
+                    "period": "2026",
+                    "revenue": 804.93,
+                    "profit": 40.46,
+                    "assets": 19538.45
                 }
             ]
         },
@@ -636,7 +990,7 @@
             "detail_url": "https://ipowatch.in/hr-hygiene-products-ipo/",
             "exchange": "BSE SME",
             "is_sme": true,
-            "status": "closing_today",
+            "status": "closed",
             "open_date": "2026-07-29",
             "close_date": "2026-07-31",
             "sector": "Consumer",
@@ -645,109 +999,150 @@
             "lot_size": 3200,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 14.2,
-            "sub_nii": 9.8,
-            "sub_retail": 5.1,
-            "sub_overall": 9.7,
+            "sub_qib": 2.81,
+            "sub_nii": 11.83,
+            "sub_retail": 6.74,
+            "sub_overall": 6.65,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 3200,
                     "min_amount": 281600,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 4800,
+                    "min_amount": 422400,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 11200,
+                    "min_amount": 985600,
+                    "total_lots": 7
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 12800,
+                    "min_amount": 1126400,
+                    "total_lots": 8
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 19.94,
+                "nii_pct": 14.25,
+                "retail_pct": 33.25
             },
-            "about": "H.R. Hygiene Products Limited manufactures personal hygiene and sanitation items, including baby wipes, adult diapers, sanitary napkins, and disinfectant products.",
+            "about": "H.R. Hygiene Products IPO open date is July 29, 2026 and the IPO will close on July 31, 2026. H.R. Hygiene Products IPO is a Bookbuilding Issue. The company to raise around ₹53.95 crores via IPO that comprises fresh issue of ₹43.17 crores and offer for sale up to 12,25,600 equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Setting up automated hygiene products manufacturing line",
-                "Brand marketing and distribution expansion",
-                "General corporate purposes"
+                "Setting up a new manufacturing facility at Rajkot, Gujarat (Proposed facility Unit 2)",
+                "Prepayment / repayment of Loan",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 78.9,
-                    "profit": 7.4,
-                    "assets": 82.1
+                    "period": "2024",
+                    "revenue": 85.33,
+                    "profit": 4.66,
+                    "assets": 48.87
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 61.2,
-                    "profit": 5.1,
-                    "assets": 65.4
+                    "period": "2025",
+                    "revenue": 115.15,
+                    "profit": 9.08,
+                    "assets": 90.56
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 46.8,
-                    "profit": 3.2,
-                    "assets": 50.1
+                    "period": "2026",
+                    "revenue": 131.9,
+                    "profit": 11.41,
+                    "assets": 170.92
                 }
             ]
         },
         {
             "name": "Manipal Health",
-            "gmp": 6.0,
+            "gmp": 0.0,
             "price_band": 590.0,
             "gmp_trend": "falling",
-            "est_listing_gain_pct": 1.02,
+            "est_listing_gain_pct": 0.0,
             "detail_url": "https://ipowatch.in/manipal-health-ipo/",
             "exchange": "NSE, BSE",
             "is_sme": false,
-            "status": "closing_today",
+            "status": "closed",
             "open_date": "2026-07-29",
             "close_date": "2026-07-31",
-            "sector": "Healthcare",
+            "sector": null,
             "issue_size": 9273.64,
             "price_band_range": "₹560 to ₹590 Per Share",
             "lot_size": 25,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 38.0,
-            "sub_nii": 14.5,
-            "sub_retail": 4.8,
-            "sub_overall": 19.1,
+            "sub_qib": 8.54,
+            "sub_nii": 1.06,
+            "sub_retail": 0.98,
+            "sub_overall": 5.12,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 25,
                     "min_amount": 14750,
                     "total_lots": 1
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 350,
+                    "min_amount": 206500,
+                    "total_lots": 14
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 1675,
+                    "min_amount": 988250,
+                    "total_lots": 67
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 1700,
+                    "min_amount": 1003000,
+                    "total_lots": 68
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 29.95,
+                "nii_pct": 14.97,
+                "retail_pct": 9.98
             },
-            "about": "Manipal Health Enterprises Limited is one of India's largest multi-specialty healthcare delivery networks, operating over 30 tertiary and quaternary care hospitals across India.",
+            "about": "Manipal Health IPO open date is July 29, 2026 and the IPO will close on July 31, 2026. Manipal Health Enterprises IPO is a Book build Issue. The company to raise around ₹9,273.64 crores via IPO that comprises fresh issue of ₹7,998.43 crores and offer for sale up to 2,16,13,834 equity shares with face value of ₹2 each.",
             "issue_objective": [
-                "Funding acquisition and greenfield expansion of multi-specialty hospital units",
-                "Debt prepayment",
-                "General corporate purposes"
+                "Repayment/ prepayment, in full or in part, of certain outstanding borrowings and accrued interest thereon availed by one of the Material Subsidiaries, Manipal Hospitals Private Limited",
+                "Acquisition of minority stake in the stepdown Subsidiary, Sahyadri Hospitals Private Limited"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 4850.0,
-                    "profit": 620.4,
-                    "assets": 6800.0
+                    "period": "2023",
+                    "revenue": 4927.57,
+                    "profit": 414.2,
+                    "assets": 7936.78
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 4120.0,
-                    "profit": 490.1,
-                    "assets": 5900.0
+                    "period": "2024",
+                    "revenue": 6265.17,
+                    "profit": 533.2,
+                    "assets": 10818.83
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 3400.0,
-                    "profit": 350.8,
-                    "assets": 4950.0
+                    "period": "2025",
+                    "revenue": 8362.79,
+                    "profit": 1081.67,
+                    "assets": 14072.08
+                },
+                {
+                    "period": "2026",
+                    "revenue": 10520.52,
+                    "profit": 916.52,
+                    "assets": 24864.5
                 }
             ]
         },
@@ -763,53 +1158,71 @@
             "status": "closed",
             "open_date": "2026-07-28",
             "close_date": "2026-07-30",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 159.83,
             "price_band_range": "₹285 to ₹301 Per Share",
             "lot_size": 800,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 78.4,
-            "sub_nii": 52.0,
-            "sub_retail": 28.5,
-            "sub_overall": 53.0,
+            "sub_qib": 206.46,
+            "sub_nii": 463.43,
+            "sub_retail": 247.58,
+            "sub_overall": 278.83,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 800,
                     "min_amount": 240800,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 1200,
+                    "min_amount": 361200,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3200,
+                    "min_amount": 963200,
+                    "total_lots": 8
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 3600,
+                    "min_amount": 1083600,
+                    "total_lots": 9
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 18.84,
+                "nii_pct": 14.15,
+                "retail_pct": 32.98
             },
-            "about": "Poojaa Precision Engineering Limited designs and manufactures high-accuracy metal components, CNC machined parts, and tooling systems for aerospace, defense, and automotive OEMs.",
+            "about": "Poojaa Precision IPO open date is July 28, 2026 and the IPO will close on July 30, 2026. Poojaa Precision IPO is a Book built Issue. The company to raise around ₹159.83 crores via IPO that comprises fresh issue of ₹159.83 crores and offer for sale up to [.] equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Purchase of 5-axis CNC machining centers",
-                "Working capital funding",
-                "General corporate purposes"
+                "Funding capital expenditure towards setting up of manufacturing facility",
+                "To meet working capital requirements",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 89.6,
-                    "profit": 12.4,
-                    "assets": 95.1
+                    "period": "2024",
+                    "revenue": 174.59,
+                    "profit": 16.1,
+                    "assets": 96.75
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 71.3,
-                    "profit": 8.9,
-                    "assets": 76.4
+                    "period": "2025",
+                    "revenue": 222.8,
+                    "profit": 23.93,
+                    "assets": 135.92
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 54.0,
-                    "profit": 5.8,
-                    "assets": 58.2
+                    "period": "2026",
+                    "revenue": 295.2,
+                    "profit": 30.9,
+                    "assets": 231.38
                 }
             ]
         },
@@ -825,53 +1238,75 @@
             "status": "closed",
             "open_date": "2026-07-27",
             "close_date": "2026-07-29",
-            "sector": "Consumer",
+            "sector": null,
             "issue_size": 28.57,
             "price_band_range": "₹65 to ₹69 Per Share",
             "lot_size": 4000,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 8.2,
-            "sub_nii": 4.5,
-            "sub_retail": 2.9,
-            "sub_overall": 5.2,
+            "sub_qib": 1.37,
+            "sub_nii": 1.38,
+            "sub_retail": 1.77,
+            "sub_overall": 1.53,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 4000,
                     "min_amount": 276000,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 6000,
+                    "min_amount": 414000,
+                    "total_lots": 3
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 14000,
+                    "min_amount": 966000,
+                    "total_lots": 7
+                },
+                {
+                    "category": "bHNI",
+                    "min_shares": 16000,
+                    "min_amount": 1104000,
+                    "total_lots": 8
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "qib_pct": 30.12,
+                "nii_pct": 30.73,
+                "retail_pct": 39.15
             },
-            "about": "Propshop Events Limited provides end-to-end experiential marketing, corporate event management, wedding design, and brand activation services across major Indian metros.",
+            "about": "Propshop Events IPO open date is July 27, 2026 and the IPO will close on July 29, 2026. Propshop Events IPO is a Bookbuilding Issue. The company to raise around ₹28.57 crores via IPO that comprises fresh issue of ₹23.05 crores and offer for sale up to 8,00,000 equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Investment in proprietary event decor and AV technology assets",
-                "Opening new branch offices in Bengaluru and Dubai",
-                "General corporate purposes"
+                "Funding working capital requirements of the Company"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 38.4,
-                    "profit": 4.5,
-                    "assets": 41.0
+                    "period": "2023",
+                    "revenue": 25.93,
+                    "profit": 0.97,
+                    "assets": 8.15
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 28.1,
-                    "profit": 3.0,
-                    "assets": 30.2
+                    "period": "2024",
+                    "revenue": 30.57,
+                    "profit": 2.19,
+                    "assets": 11.1
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 18.5,
-                    "profit": 1.6,
-                    "assets": 20.4
+                    "period": "2025",
+                    "revenue": 51.59,
+                    "profit": 6.32,
+                    "assets": 18.46
+                },
+                {
+                    "period": "Feb 2026",
+                    "revenue": 59.94,
+                    "profit": 6.46,
+                    "assets": 25.71
                 }
             ]
         },
@@ -887,115 +1322,58 @@
             "status": "closed",
             "open_date": "2026-07-27",
             "close_date": "2026-07-29",
-            "sector": "Manufacturing",
+            "sector": null,
             "issue_size": 24.03,
             "price_band_range": "₹95 Per Share",
             "lot_size": 2400,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 16.5,
-            "sub_nii": 10.2,
-            "sub_retail": 6.4,
-            "sub_overall": 11.0,
+            "sub_qib": 0.0,
+            "sub_nii": 0.43,
+            "sub_retail": 2.68,
+            "sub_overall": 1.55,
             "lot_distribution": [
                 {
                     "category": "Individual",
                     "min_shares": 2400,
                     "min_amount": 228000,
-                    "total_lots": 1
+                    "total_lots": 2
+                },
+                {
+                    "category": "sHNI",
+                    "min_shares": 3600,
+                    "min_amount": 342000,
+                    "total_lots": 3
                 }
             ],
             "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
+                "nii_pct": 47.44,
+                "retail_pct": 47.44
             },
-            "about": "Advance Technoforge Limited manufactures closed-die steel forgings, machined crankshafts, and gear blanks for automotive, agricultural, and industrial machinery applications.",
+            "about": "Advance Technoforge IPO open date is July 27, 2026 and the IPO will close on July 29, 2026. Advance Technoforge IPO is a Fixed Price Issue. The company to raise around ₹24.03 crores via IPO that comprises fresh issue of ₹24.03 crores and offer for sale up to [.] equity shares with face value of ₹10 each.",
             "issue_objective": [
-                "Installing press forging line and heat treatment furnace",
-                "Repayment of term loans",
-                "General corporate purposes"
+                "Purchase and installation of machinery for manufacturing of precision machine components at the Existing Premises (Including GST)",
+                "Part Funding of working capital requirements",
+                "General Corporate Purpose"
             ],
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 105.2,
-                    "profit": 9.8,
-                    "assets": 112.5
+                    "period": "2024",
+                    "revenue": 48.24,
+                    "profit": 1.7,
+                    "assets": 28.65
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 87.4,
-                    "profit": 7.1,
-                    "assets": 93.8
+                    "period": "2025",
+                    "revenue": 51.16,
+                    "profit": 2.7,
+                    "assets": 39.51
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 70.1,
-                    "profit": 4.9,
-                    "assets": 75.0
-                }
-            ]
-        },
-        {
-            "name": "Silverstorm Parks",
-            "gmp": 5.0,
-            "price_band": 133.0,
-            "gmp_trend": "rising",
-            "est_listing_gain_pct": 3.76,
-            "detail_url": "https://ipowatch.in/silverstorm-parks-resorts-ipo/",
-            "exchange": "BSE SME",
-            "is_sme": true,
-            "status": "closed",
-            "open_date": "2026-07-24",
-            "close_date": "2026-07-28",
-            "sector": "Consumer",
-            "issue_size": 82.43,
-            "price_band_range": "₹123 to ₹133 Per Share",
-            "lot_size": 2000,
-            "allotment_date": null,
-            "listing_date": null,
-            "sub_qib": 12.4,
-            "sub_nii": 7.8,
-            "sub_retail": 4.5,
-            "sub_overall": 8.2,
-            "lot_distribution": [
-                {
-                    "category": "Individual",
-                    "min_shares": 2000,
-                    "min_amount": 266000,
-                    "total_lots": 1
-                }
-            ],
-            "offer_breakdown": {
-                "qib_pct": 50.0,
-                "nii_pct": 15.0,
-                "retail_pct": 35.0
-            },
-            "about": "Silverstorm Parks Limited operates water parks, amusement parks, and eco-resort properties in South India, catering to family tourism and leisure entertainment.",
-            "issue_objective": [
-                "Construction of new rides and water park attractions",
-                "Solar power installation for park energy captive supply",
-                "General corporate purposes"
-            ],
-            "financials": [
-                {
-                    "period": "FY24",
-                    "revenue": 62.1,
-                    "profit": 8.4,
-                    "assets": 78.5
-                },
-                {
-                    "period": "FY23",
-                    "revenue": 48.0,
-                    "profit": 5.9,
-                    "assets": 62.1
-                },
-                {
-                    "period": "FY22",
-                    "revenue": 31.4,
-                    "profit": 2.8,
-                    "assets": 45.0
+                    "period": "2026",
+                    "revenue": 50.73,
+                    "profit": 4.06,
+                    "assets": 46.92
                 }
             ]
         },
@@ -1011,16 +1389,16 @@
             "status": "closed",
             "open_date": "2026-07-22",
             "close_date": "2026-07-24",
-            "sector": "Infrastructure",
+            "sector": null,
             "issue_size": 5000.0,
             "price_band_range": "₹151 to ₹152 Per Share",
             "lot_size": 95,
             "allotment_date": null,
             "listing_date": null,
-            "sub_qib": 9.5,
-            "sub_nii": 4.2,
-            "sub_retail": 1.8,
-            "sub_overall": 5.1,
+            "sub_qib": 13.2,
+            "sub_nii": 4.74,
+            "sub_retail": 0.0,
+            "sub_overall": 9.35,
             "lot_distribution": [
                 {
                     "category": "Individual",
@@ -1033,30 +1411,26 @@
                 "qib_pct": 75.0,
                 "nii_pct": 25.0
             },
-            "about": "Cube Highways Trust is an Infrastructure Investment Trust (InvIT) backed by I Squared Capital, managing a portfolio of toll road assets and highway corridors across India.",
-            "issue_objective": [
-                "Acquisitions of operating toll road highway concessions",
-                "Refinancing existing project debt",
-                "General InvIT corporate expenses"
-            ],
+            "about": "Cube Highways Trust InvIT IPO open date is July 22, 2026 and the IPO will close on July 24, 2026. Cube Highways Trust InvIT IPO is a Book build Issue. The company to raise around ₹5000 crores via IPO that comprises fresh issue of ₹[.] crores and offer for sale up to 32,89,47,368 equity shares with face value of ₹[.] each.",
+            "issue_objective": null,
             "financials": [
                 {
-                    "period": "FY24",
-                    "revenue": 2850.0,
-                    "profit": 410.2,
-                    "assets": 12500.0
+                    "period": "2024",
+                    "revenue": 3074.11,
+                    "profit": 705.92,
+                    "assets": 24625.75
                 },
                 {
-                    "period": "FY23",
-                    "revenue": 2400.0,
-                    "profit": 330.0,
-                    "assets": 11000.0
+                    "period": "2025",
+                    "revenue": 3453.15,
+                    "profit": 35.72,
+                    "assets": 28000.16
                 },
                 {
-                    "period": "FY22",
-                    "revenue": 1950.0,
-                    "profit": 250.4,
-                    "assets": 9200.0
+                    "period": "2026",
+                    "revenue": 4359.03,
+                    "profit": 216.72,
+                    "assets": 29398.47
                 }
             ]
         }

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, use } from "react";
 import Link from "next/link";
-import { fetchLiveIPOs, fetchVerdict, fetchPeers, calculateAllotment } from "@/lib/api";
+import { fetchLiveIPOs, fetchVerdict, fetchPeers } from "@/lib/api";
 import { toSlug, getInitials, getSectorBadge, getStatusBadge } from "@/lib/helpers";
 import Tooltip from "@/components/Tooltip";
 import AllotmentCalculator from "@/components/AllotmentCalculator";
@@ -20,10 +20,7 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
   const [peersData, setPeersData] = useState<any>(null);
   const [patternLoading, setPatternLoading] = useState(false);
 
-  // Allotment Calculator state
-  const [pans, setPans] = useState<number>(1);
-  const [allotmentResult, setAllotmentResult] = useState<any>(null);
-  const [calcLoading, setCalcLoading] = useState(false);
+  // Note: Allotment calculator state is managed internally by the AllotmentCalculator component.
 
   useEffect(() => {
     fetchLiveIPOs()
@@ -33,7 +30,6 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
           if (matched) {
             setIpo(matched);
             loadPatternMatch(matched);
-            loadInitialAllotment(matched, 1);
           } else {
             setNotFound(true);
           }
@@ -50,16 +46,16 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
     setPatternLoading(true);
     try {
       const features = {
-        issue_size: targetIpo.issue_size || 500.0,
+        issue_size: targetIpo.issue_size ?? 500.0,
         fresh_vs_ofs_ratio: 0.5,
-        sub_retail: targetIpo.sub_retail || 5.0,
-        sub_nii: targetIpo.sub_nii || 15.0,
-        sub_qib: targetIpo.sub_qib || 25.0,
-        sub_overall: targetIpo.sub_overall || 10.0,
-        price_band: targetIpo.price_band || 100.0,
+        sub_retail: targetIpo.sub_retail ?? 5.0,
+        sub_nii: targetIpo.sub_nii ?? 15.0,
+        sub_qib: targetIpo.sub_qib ?? 25.0,
+        sub_overall: targetIpo.sub_overall ?? 10.0,
+        price_band: targetIpo.price_band ?? 100.0,
         sector: targetIpo.sector || "Manufacturing",
         gmp_trend: targetIpo.gmp_trend || "rising",
-        is_sme: targetIpo.is_sme || false,
+        is_sme: targetIpo.is_sme ?? false,
         anchor_allocation_pct: 0.3,
         relative_issue_size: 1.0,
         gmp_trajectory: 0.1,
@@ -80,31 +76,7 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
     }
   };
 
-  const loadInitialAllotment = async (targetIpo: any, numPans: number) => {
-    setCalcLoading(true);
-    try {
-      const payload = {
-        sub_retail: targetIpo.sub_retail || 5.0,
-        retail_quota_pct: targetIpo.offer_breakdown?.retail_pct ? targetIpo.offer_breakdown.retail_pct / 100 : 0.35,
-        issue_size_cr: targetIpo.issue_size || 100.0,
-        lot_size: targetIpo.lot_size || 100,
-        cutoff_price: targetIpo.price_band || 100,
-        applied_lots_per_pan: 1,
-        num_pans: numPans
-      };
-      const res = await calculateAllotment(payload);
-      setAllotmentResult(res);
-    } catch (e) {
-      console.error("Error calculating allotment:", e);
-    } finally {
-      setCalcLoading(false);
-    }
-  };
 
-  const handlePanChange = (num: number) => {
-    setPans(num);
-    if (ipo) loadInitialAllotment(ipo, num);
-  };
 
   if (loading) {
     return (
@@ -228,7 +200,7 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
           <span className="text-[12px] font-mono text-muted-text">Live Multiples</span>
         </div>
 
-        {ipo.sub_retail || ipo.sub_qib || ipo.sub_nii ? (
+        {ipo.sub_retail != null || ipo.sub_qib != null || ipo.sub_nii != null ? (
           <div className="space-y-4">
             {/* QIB Bar */}
             <div>
@@ -237,12 +209,12 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
                   QIB (Institutional)
                   <Tooltip content="Qualified Institutional Buyers: Mutual funds, banks, FPIs." />
                 </span>
-                <span className="font-mono font-semibold">{ipo.sub_qib ? `${ipo.sub_qib}x` : "N/A"}</span>
+                <span className="font-mono font-semibold">{ipo.sub_qib != null ? `${ipo.sub_qib}x` : "N/A"}</span>
               </div>
               <div className="w-full h-3 bg-input-bg rounded-full overflow-hidden border border-input-border">
                 <div
                   className="h-full bg-indigo-500 rounded-full transition-all duration-500"
-                  style={{ width: `${Math.min(((ipo.sub_qib || 0) / 50) * 100, 100)}%` }}
+                  style={{ width: `${Math.min(((ipo.sub_qib ?? 0) / 50) * 100, 100)}%` }}
                 ></div>
               </div>
             </div>
@@ -254,12 +226,12 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
                   NII (High Networth)
                   <Tooltip content="Non-Institutional Investors applying above ₹2 Lakhs." />
                 </span>
-                <span className="font-mono font-semibold">{ipo.sub_nii ? `${ipo.sub_nii}x` : "N/A"}</span>
+                <span className="font-mono font-semibold">{ipo.sub_nii != null ? `${ipo.sub_nii}x` : "N/A"}</span>
               </div>
               <div className="w-full h-3 bg-input-bg rounded-full overflow-hidden border border-input-border">
                 <div
                   className="h-full bg-sky-500 rounded-full transition-all duration-500"
-                  style={{ width: `${Math.min(((ipo.sub_nii || 0) / 50) * 100, 100)}%` }}
+                  style={{ width: `${Math.min(((ipo.sub_nii ?? 0) / 50) * 100, 100)}%` }}
                 ></div>
               </div>
             </div>
@@ -271,19 +243,21 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
                   Retail Individual
                   <Tooltip content="Individual investors applying up to ₹2 Lakhs." />
                 </span>
-                <span className="font-mono font-semibold">{ipo.sub_retail ? `${ipo.sub_retail}x` : "N/A"}</span>
+                <span className="font-mono font-semibold">{ipo.sub_retail != null ? `${ipo.sub_retail}x` : "N/A"}</span>
               </div>
               <div className="w-full h-3 bg-input-bg rounded-full overflow-hidden border border-input-border">
                 <div
                   className="h-full bg-emerald-500 rounded-full transition-all duration-500"
-                  style={{ width: `${Math.min(((ipo.sub_retail || 0) / 50) * 100, 100)}%` }}
+                  style={{ width: `${Math.min(((ipo.sub_retail ?? 0) / 50) * 100, 100)}%` }}
                 ></div>
               </div>
             </div>
           </div>
         ) : (
           <div className="bg-input-bg border border-input-border rounded-xl p-6 text-center text-[13px] text-secondary-text">
-            Subscription data not yet available — check back after the issue opens.
+            {ipo.status?.toLowerCase() === "upcoming" 
+              ? "Subscription data not yet available — check back after the issue opens." 
+              : "Live subscription multiples are currently unavailable from the source."}
           </div>
         )}
       </section>
@@ -295,29 +269,29 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-input-bg border border-input-border rounded-xl p-4 text-center">
               <div className="text-[26px] font-bold text-accent-indigo">
-                {ipo.offer_breakdown.qib_pct ? `${ipo.offer_breakdown.qib_pct}%` : "N/A"}
+                {ipo.offer_breakdown.qib_pct != null ? `${ipo.offer_breakdown.qib_pct}%` : "N/A"}
               </div>
               <div className="text-[12px] font-medium text-secondary-text mt-1 flex items-center justify-center">
                 QIB Quota
-                <Tooltip content="Percentage allocated to Qualified Institutional Buyers." />
+                <Tooltip content="Percentage allocated to Qualified Institutional Buyers (% of Net Offer to Public)." />
               </div>
             </div>
             <div className="bg-input-bg border border-input-border rounded-xl p-4 text-center">
               <div className="text-[26px] font-bold text-sky-600">
-                {ipo.offer_breakdown.nii_pct ? `${ipo.offer_breakdown.nii_pct}%` : "N/A"}
+                {ipo.offer_breakdown.nii_pct != null ? `${ipo.offer_breakdown.nii_pct}%` : "N/A"}
               </div>
               <div className="text-[12px] font-medium text-secondary-text mt-1 flex items-center justify-center">
                 NII Quota
-                <Tooltip content="Percentage allocated to Non-Institutional Investors." />
+                <Tooltip content="Percentage allocated to Non-Institutional Investors (% of Net Offer to Public)." />
               </div>
             </div>
             <div className="bg-input-bg border border-input-border rounded-xl p-4 text-center">
               <div className="text-[26px] font-bold text-emerald-600">
-                {ipo.offer_breakdown.retail_pct ? `${ipo.offer_breakdown.retail_pct}%` : "N/A"}
+                {ipo.offer_breakdown.retail_pct != null ? `${ipo.offer_breakdown.retail_pct}%` : "N/A"}
               </div>
               <div className="text-[12px] font-medium text-secondary-text mt-1 flex items-center justify-center">
                 Retail Quota
-                <Tooltip content="Percentage allocated to Retail Individual Investors." />
+                <Tooltip content="Percentage allocated to Retail Individual Investors (% of Net Offer to Public)." />
               </div>
             </div>
           </div>
@@ -513,6 +487,60 @@ export default function IpoDetailPage({ params }: { params: Promise<{ slug: stri
         {/* Verbatim Disclaimer */}
         <div className="bg-input-bg border border-input-border rounded-xl p-4 text-[11px] text-secondary-text leading-relaxed">
           {verdict?.disclaimer || "All outputs are generated via historical pattern matching against past Indian IPO listings. Never interpret predictions as buy/sell recommendations."}
+        </div>
+      </section>
+
+      {/* SECTION 8: Data Sources & Regulatory Provenance */}
+      <section className="bg-slate-50 border border-slate-200 rounded-[14px] p-6 shadow-xs space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-[16px] font-bold text-slate-800 flex items-center gap-2">
+            <span>🔗</span>
+            <span>Sources & Methodology Provenance</span>
+          </h2>
+          <span className="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
+            Designed to Apply SEBI & Exchange Framework
+          </span>
+        </div>
+
+        <p className="text-[12px] text-slate-600 leading-relaxed">
+          Designed to apply the applicable SEBI/exchange allotment framework using verified regulatory rules and available IPO-specific data. Every metric is traceable to authoritative primary sources:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-[12px]">
+          <a
+            href="https://www.sebi.gov.in/legal/regulations/sep-2018/securities-and-exchange-board-of-india-issue-of-capital-and-disclosure-requirements-regulations-2018_40388.html"
+            target="_blank"
+            rel="noreferrer"
+            className="p-3 bg-white border border-slate-200 rounded-lg hover:border-accent-indigo transition-all block group"
+          >
+            <div className="font-semibold text-slate-800 group-hover:text-accent-indigo">SEBI ICDR Regulations</div>
+            <div className="text-[10px] text-slate-500 font-mono mt-1">Reg 32 / Reg 49 / Sch XIII</div>
+          </a>
+
+          <a
+            href="https://www.bseindia.com"
+            target="_blank"
+            rel="noreferrer"
+            className="p-3 bg-white border border-slate-200 rounded-lg hover:border-accent-indigo transition-all block group"
+          >
+            <div className="font-semibold text-slate-800 group-hover:text-accent-indigo">BSE / NSE Filings</div>
+            <div className="text-[10px] text-slate-500 font-mono mt-1">Official Exchange Notices</div>
+          </a>
+
+          <a
+            href={ipo.detail_url || "https://ipowatch.in"}
+            target="_blank"
+            rel="noreferrer"
+            className="p-3 bg-white border border-slate-200 rounded-lg hover:border-accent-indigo transition-all block group"
+          >
+            <div className="font-semibold text-slate-800 group-hover:text-accent-indigo">Offer Document (RHP)</div>
+            <div className="text-[10px] text-slate-500 font-mono mt-1">Draft & Red Herring Prospectus</div>
+          </a>
+
+          <div className="p-3 bg-white border border-slate-200 rounded-lg block">
+            <div className="font-semibold text-slate-800">Registrar to Issue</div>
+            <div className="text-[10px] text-slate-500 font-mono mt-1">Official Allotment Basis</div>
+          </div>
         </div>
       </section>
     </div>

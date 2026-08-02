@@ -34,6 +34,8 @@ class AllotmentRequest(BaseModel):
     applied_lots: Optional[int] = Field(1, ge=1)
     applied_lots_per_pan: Optional[int] = Field(1, ge=1)
     num_pans: Optional[int] = Field(1, ge=1, le=20)
+    min_shni_lots: Optional[int] = Field(None, ge=1, description="Minimum lot threshold for sHNI category (IPO-specific)")
+    min_bhni_lots: Optional[int] = Field(None, ge=1, description="Minimum lot threshold for bHNI category (IPO-specific)")
 
 class AllotmentResponse(BaseModel):
     category: str = "Retail"

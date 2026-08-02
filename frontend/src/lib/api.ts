@@ -32,11 +32,23 @@ export async function fetchPeers(issue_size: number, sector: string) {
 }
 
 export async function calculateAllotment(payload: Record<string, unknown>) {
-  const res = await fetch(`${API_BASE}/api/allotment-odds`, {
+  const res = await fetch(`${API_BASE}/api/ipo/calculate-allotment`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
-  if (!res.ok) throw new Error(`allotment-odds failed: ${res.status}`);
+  if (!res.ok) {
+    // Try fallback endpoint
+    const fallbackRes = await fetch(`${API_BASE}/api/allotment-odds`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!fallbackRes.ok) {
+      const errData = await fallbackRes.json().catch(() => ({}));
+      throw new Error(errData.detail || `Calculation failed: ${fallbackRes.status}`);
+    }
+    return fallbackRes.json();
+  }
   return res.json();
 }

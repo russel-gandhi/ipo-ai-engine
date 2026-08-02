@@ -8,6 +8,7 @@ interface IpoCardProps {
     name: string;
     gmp?: number;
     price_band?: number;
+    lot_size?: number | null;
     gmp_trend?: string;
     est_listing_gain_pct?: number;
     exchange?: string;
@@ -25,7 +26,7 @@ export default function IpoCard({ ipo }: IpoCardProps) {
   const statusBadge = getStatusBadge(ipo);
   const sectorBadge = getSectorBadge(ipo.sector || null);
 
-  const gainPct = ipo.est_listing_gain_pct ?? (ipo.gmp && ipo.price_band ? Math.round((ipo.gmp / ipo.price_band) * 100) : 0);
+  const gainPct = ipo.est_listing_gain_pct ?? (ipo.gmp != null && ipo.price_band ? Math.round((ipo.gmp / ipo.price_band) * 100) : 0);
 
   return (
     <div className="bg-card-bg border border-card-border rounded-[14px] p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
@@ -77,7 +78,11 @@ export default function IpoCard({ ipo }: IpoCardProps) {
           <div>
             <div className="text-[10px] uppercase font-semibold text-muted-text tracking-wider mb-0.5">Price / Lot</div>
             <div className="font-semibold text-primary-text">
-              {ipo.price_band ? `₹${ipo.price_band}` : "N/A"}
+              {ipo.price_band != null && ipo.price_band > 0
+                ? ipo.lot_size
+                  ? `₹${(ipo.price_band * ipo.lot_size).toLocaleString("en-IN")}`
+                  : `₹${ipo.price_band}`
+                : "TBA"}
             </div>
           </div>
           <div>
@@ -92,13 +97,13 @@ export default function IpoCard({ ipo }: IpoCardProps) {
           <div>
             <div className="text-[10px] uppercase font-semibold text-muted-text tracking-wider mb-0.5">GMP</div>
             <div className="font-semibold text-primary-text">
-              {ipo.gmp !== undefined && ipo.gmp !== null ? `₹${ipo.gmp}` : "N/A"}
+              {ipo.gmp != null ? `₹${ipo.gmp}` : "TBA"}
             </div>
           </div>
           <div>
             <div className="text-[10px] uppercase font-semibold text-muted-text tracking-wider mb-0.5">Issue Size</div>
             <div className="font-semibold text-primary-text">
-              {ipo.issue_size ? `₹${ipo.issue_size} Cr` : "N/A"}
+              {ipo.issue_size != null && ipo.issue_size > 0 ? `₹${ipo.issue_size} Cr` : "TBA"}
             </div>
           </div>
         </div>
